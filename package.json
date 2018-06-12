@@ -1,0 +1,35 @@
+{
+  "name": "sam-xie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sam Xie",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "dev-server": "webpack-dev-server --open",
+    "prettier": "yarn prettier-js && yarn prettier-json && yarn prettier-scss",
+    "prettier-js": "prettier --write src/**/*.js && prettier --write src/**/**/*.js",
+    "prettier-json": "prettier --write *.json",
+    "prettier-scss": "prettier --write src/**/*.scss && prettier --write src/**/**/*.scss"
+  },
+  "dependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.4",
+    "node-sass": "^4.9.0",
+    "normalize.css": "7.0.0",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "webpack": "3.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.5",
+    "webpack-dev-server": "2.5.1"
+  }
+}
