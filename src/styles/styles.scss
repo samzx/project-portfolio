@@ -1,2 +1,9 @@
 @import "./base/settings";
 @import "./base/base";
+
+@import "./components/_browser.scss";
+@import "./components/_header.scss";
+
+body {
+  background: #f9f9f9;
+}
