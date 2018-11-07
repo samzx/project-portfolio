@@ -1,23 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
-import Browser from './components/Browser';
-import Header from './components/Header';
+import Browser from "./components/Browser";
+import Header from "./components/Header";
+
+import images from "./data/images.json"
 
 export const urls = [
   "https://mphwatch.solexstudios.com/0bfbef832c137478240043c7d430815a940e19ddb481928cf51b811fc02297cd",
   "http://www.solexstudios.com/project-drift",
-  "https://bookitmaps.samxie.net/",
-]
+  "https://bookitmaps.samxie.net/"
+];
 
 export const external = [
   "https://github.com/samzx",
   "https://www.linkedin.com/in/xiesam/",
-]
+  "https://medium.com/@samxie"
+];
 
 const customStyles = {
   content: {
@@ -34,19 +37,18 @@ const customStyles = {
 };
 
 class App extends React.Component {
-
   state = {
-    app: '',
-    showModal: false,
-  }
+    app: "",
+    showModal: false
+  };
 
   closeModal = () => {
     this.setState({ showModal: false });
-  }
+  };
 
   render() {
     return (
-      <div className="app" >
+      <div className="app">
         <Header />
         <Modal
           ariaHideApp={false}
@@ -59,17 +61,21 @@ class App extends React.Component {
         >
           <Browser app={urls[this.state.app]} closeModal={this.closeModal} />
         </Modal>
-        <button 
-          onClick={() => {
-            this.setState((prevState) => ({ 
-              app: (prevState.app+1)%(urls.length),
-              showModal: true
-            }))
-          }}
-          style={{margin: "2rem auto", display: "inherit"}}
-        >
-          Click me!
-        </button>
+        <div className="image-container">
+          {
+            images.map(image => {
+              return (
+                <div className="card">
+                  <h1>{image.description}</h1>
+                  <img src={image.src} className="image" />
+                </div>
+              );
+            })
+          }
+        </div>
+        {
+          external.map(link => <div style={{textAlign: "center", margin: "1rem"}}><a href={link} target="blank">{link}</a></div>)
+        }
       </div>
     );
   }

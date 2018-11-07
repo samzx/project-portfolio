@@ -1,4 +1,4 @@
-$browser--banner-padding: 0.25rem;
+$browser--banner-padding: 0.5rem;
 $browser--banner-font: 0.75rem;
 $browser--banner-height: 2 * $browser--banner-padding + $browser--banner-font;
 
@@ -6,7 +6,7 @@ $browser--banner-height: 2 * $browser--banner-padding + $browser--banner-font;
   height: 100%;
   background: #fff;
   border-radius: 0.5rem 0.5rem 0 0;
-  box-shadow: 0 0 5rem 2rem #eee;
+  box-shadow: 0 0 5rem 2rem rgba(0, 0, 0, 0.05);
 }
 
 .browser--banner {
@@ -27,22 +27,30 @@ $browser--banner-height: 2 * $browser--banner-padding + $browser--banner-font;
   border: 0;
   display: flex;
   margin: auto;
-  height: calc( 2 * ( 100% - #{$browser--banner-height} ));
+  height: calc(2 * (100% - #{$browser--banner-height}));
   width: 200%;
   transform: scale(0.5, 0.5);
   transform-origin: top left;
-  // border: 1px solid black;
 }
+
+// .ReactModal__Content {
+//   top: 10% !important;
+//   left: 10% !important;
+//   right: 10% !important;
+//   bottom: 10% !important;
+// }
 
 @media only screen and (max-width: 720px) {
   .browser--app {
-    height: 100%;
-    width: 100%;
-    transform: scale(1, 1);
+    height: calc(1.33 * (100% - #{$browser--banner-height}));
+    width: 133.33%;
+    transform: scale(0.75, 0.75);
   }
   .ReactModal__Content {
-    top: 0 !important;
-    bottom: 0 !important;
+    top: 10% !important;
+    left: 10% !important;
+    right: 10% !important;
+    bottom: 10% !important;
   }
 }
 
@@ -55,9 +63,9 @@ $browser--banner-height: 2 * $browser--banner-padding + $browser--banner-font;
   transition: opacity 200ms ease-in-out;
   background: rgba(0, 0, 0, 0.15);
   &--after-open {
-      opacity: 1;
+    opacity: 1;
   }
   &--before-close {
-      opacity: 0;
+    opacity: 0;
   }
 }
