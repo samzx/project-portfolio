@@ -10,12 +10,6 @@ import Header from "./components/Header";
 
 import images from "./data/images.json"
 
-export const urls = [
-  "https://mphwatch.solexstudios.com/0bfbef832c137478240043c7d430815a940e19ddb481928cf51b811fc02297cd",
-  "http://www.solexstudios.com/project-drift",
-  "https://bookitmaps.samxie.net/"
-];
-
 export const external = [
   "https://github.com/samzx",
   "https://www.linkedin.com/in/xiesam/",
@@ -59,13 +53,13 @@ class App extends React.Component {
           onRequestClose={this.closeModal}
           closeTimeoutMS={200}
         >
-          <Browser app={urls[this.state.app]} closeModal={this.closeModal} />
+          <Browser closeModal={this.closeModal} />
         </Modal>
         <div className="image-container">
           {
             images.map(image => {
               return (
-                <div className="card">
+                <div className="card" key={image.src}>
                   <h1>{image.description}</h1>
                   <img src={image.src} className="image" />
                 </div>
@@ -74,7 +68,7 @@ class App extends React.Component {
           }
         </div>
         {
-          external.map(link => <div style={{textAlign: "center", margin: "1rem"}}><a href={link} target="blank">{link}</a></div>)
+          external.map(link => <div style={{textAlign: "center", margin: "1rem"}} key={link}><a href={link} target="blank">{link}</a></div>)
         }
       </div>
     );
