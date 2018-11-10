@@ -1,4 +1,4 @@
-[
+export const images = [
   {
     "description": "Good Old Mates",
     "src": "https://res.cloudinary.com/xielabs/image/upload/v1541582261/goodoldmates.png",
