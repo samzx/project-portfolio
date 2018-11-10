@@ -9,14 +9,14 @@ const Landing = () => {
     <div className="app">
       <Hero />
       <div style={{textAlign: "center"}}>
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <a href="/projects">Go to Projects 👉</a>
       </div>
-      <h2 style={{textAlign: "center"}}>Profile</h2>
+      <h1 style={{textAlign: "center"}}>Profile</h1>
       {
         profile.map(link => <div style={{textAlign: "center", margin: "1rem"}} key={link.name}><a href={link.src} target="blank">{link.name}</a></div>)
       }
-      <h2 style={{textAlign: "center"}}>Follow</h2>
+      <h1 style={{textAlign: "center"}}>Follow</h1>
       {
         follow.map(link => <div style={{textAlign: "center", margin: "1rem"}} key={link.name}><a href={link.src} target="blank">{link.name}</a></div>)
       }
