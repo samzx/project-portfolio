@@ -4,11 +4,9 @@
 @import "./components/_browser.scss";
 @import "./components/_header.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather:900');
-
 body {
   background: #fff;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
