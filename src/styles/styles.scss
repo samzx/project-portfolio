@@ -115,3 +115,19 @@ $project-size: 15rem;
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (max-width: 600px) {
+  .card-overlay-contents h1{
+    font-size: 2.4rem;
+  }
+  .card-overlay-button {
+    background: transparent;
+    border: 0.1rem solid white;
+    padding: 1.2rem;
+    margin: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+  }
+}
