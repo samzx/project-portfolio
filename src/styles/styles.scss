@@ -9,30 +9,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.card {
-  text-align: center;
-  margin: 8rem;
-}
-
-.image {
-  display: block;
-  max-width: 100%;
-  max-height: 30rem;
-  margin: 2rem auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.image-container {
-  max-width: 72rem;
-  margin: auto auto;
-}
-
 .button {
-  font-size: 2rem;
   background: transparent;
   border: 0.1rem solid black;
-  padding: 2rem;
-  margin: 2rem;
+  padding: 1.6rem;
+  margin: 1.6rem;
   display: inline-block;
   text-transform: uppercase;
   color: black;
@@ -40,8 +21,97 @@ body {
 }
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 6.4rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+$project-size: 15rem;
+
+.project {
+  width: $project-size;
+  height: $project-size;
+  padding: $project-size / 3;
+  margin: $project-size / 3;
+  background: linear-gradient(45deg, rgb(251, 0, 255), blue);
+  border-radius: $project-size / 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-size: $project-size;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+.card {
+  max-width: 72rem;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  position: relative;
+}
+.image {
+  max-width: 72rem;
+  width: 100%;
+}
+
+.card-overlay{
+  text-align: center;
+  background: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.card-overlay-contents {
+  max-width: 36rem;
+  margin: auto;
+  color: white;
+}
+
+.card-overlay-button {
+  background: transparent;
+  border: 0.1rem solid white;
+  padding: 1.6rem;
+  margin: 0.8rem;
+  display: inline-block;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+
+.back {
+  position: absolute;
+  margin: 2rem;
+  text-decoration: none;
+  color: black;
 }

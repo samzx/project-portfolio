@@ -10,7 +10,7 @@ const Social = () => (
         key={link.name}
       >
         <a href={link.src} target="_blank">
-          <img width={50} src={link.image} />
+            <img width="50px" height="50px" src={link.image} />
         </a>
       </div>
     ))}

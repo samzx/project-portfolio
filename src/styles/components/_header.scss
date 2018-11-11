@@ -1,8 +1,7 @@
 .header {
-  text-align: center;
-  padding: 2rem;
-}
-
-.header h1 {
-  font-size: 6.4rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
 }

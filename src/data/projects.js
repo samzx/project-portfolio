@@ -1,26 +1,30 @@
 export const developments = [
   {
-    description: "Good Old Mates",
+    name: "Good Old Mates",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582261/goodoldmates.png",
-    link: ""
+    link: "",
+    description: "Good Old Mates aims to empower elderly users to connect with each other by simplifying their user experience."
   },
   {
-    description: "MPHWatch",
+    name: "MPHWatch",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582260/mphwatch.png",
-    link: ""
+    link: "https://github.com/samzx/mphwatch",
+    description: "Stats for miners mining on Mining Pool Hub. Clean and simple interface for monitoring mining activity."
   },
   {
-    description: "BookIT Maps",
+    name: "BookIT Maps",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/bookitmaps.png",
-    link: ""
+    link: "https://github.com/samzx/bookit-maps-front",
+    description: "BookIT Maps guides users of the library booking system from bookit.unimelb.au to find the location of their bookings through an interactive map."
   },
   {
-    description: "Zendesk Coding Challenge",
+    name: "Zendesk Coding Challenge",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/zendesk_mobile_ticket_viewer.png",
-    link: ""
+    link: "https://github.com/samzx/zendesk-coding-challenge",
+    description: "A mobile ticket viewer for Zendesk's coding challenge."
   }
 ];

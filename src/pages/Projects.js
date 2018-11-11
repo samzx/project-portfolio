@@ -1,21 +1,19 @@
 import React from "react";
 import { developments } from "../data/projects";
+import Card from "../components/Card"
 
 const Projects = () => {
   return (
     <div>
-      <h1 style={{textAlign: "center"}}>Releases</h1>
-
-      <h1 style={{textAlign: "center"}}>Developments</h1>
-      <div>
-        {developments.map(image => {
-          return (
-            <div className="card" key={image.src}>
-              <h2>{image.description}</h2>
-              <img src={image.src} className="image" />
-            </div>
-          );
-        })}
+      <a href="/" className="back">←</a>
+      <div className="hero">
+        <h1>Projects</h1>
+        <h2>Apps, apps and more apps!</h2>
+      </div>
+      <div className="project-container">
+      {
+        developments.map(item => <Card item={item}/>)
+      }
       </div>
     </div>
   );
