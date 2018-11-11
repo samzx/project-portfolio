@@ -1,6 +1,6 @@
 import React from "react";
 
-import { follow, profile } from "../data/links";
+import { follow, profile } from "../data/social";
 
 const Social = () => (
   <div style={{ textAlign: "center" }}>

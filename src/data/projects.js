@@ -1,4 +1,4 @@
-export const images = [
+export const developments = [
   {
     description: "Good Old Mates",
     src:

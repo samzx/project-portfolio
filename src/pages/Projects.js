@@ -1,17 +1,22 @@
 import React from "react";
-import { images } from "../data/images";
+import { developments } from "../data/projects";
 
 const Projects = () => {
   return (
-    <div className="image-container">
-      {images.map(image => {
-        return (
-          <div className="card" key={image.src}>
-            <h1>{image.description}</h1>
-            <img src={image.src} className="image" />
-          </div>
-        );
-      })}
+    <div>
+      <h1 style={{textAlign: "center"}}>Releases</h1>
+
+      <h1 style={{textAlign: "center"}}>Developments</h1>
+      <div>
+        {developments.map(image => {
+          return (
+            <div className="card" key={image.src}>
+              <h2>{image.description}</h2>
+              <img src={image.src} className="image" />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

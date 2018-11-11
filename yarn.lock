@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@jxnblk/simple-icons@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@jxnblk/simple-icons/-/simple-icons-1.0.0.tgz#7c8e3c6b55b5b3fb8b2c693398b8680b70650c75"
-
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
@@ -4521,12 +4517,6 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
-
-react-simple-icons@^1.0.0-beta.5:
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-simple-icons/-/react-simple-icons-1.0.0-beta.5.tgz#b022badb6bd8060ab3ed6cf3ce503e300a706356"
-  dependencies:
-    "@jxnblk/simple-icons" "^1.0.0"
 
 react@16.0.0:
   version "16.0.0"
