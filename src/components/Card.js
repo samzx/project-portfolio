@@ -12,9 +12,8 @@ class Card extends React.Component {
         onMouseLeave={() => {this.setState(() => ({ hovering: false }) )}}
         className={"card"}
       >
-        {
-          this.state.hovering &&          
-          <div className="card-overlay">
+        {   
+          <div className={this.state.hovering ? "card-overlay" : "card-overlay card-overlay__hide"}>
             <div className="card-overlay-contents">
               <h1>{item.name}</h1>
               <p>{item.description}</p>

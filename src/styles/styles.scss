@@ -77,19 +77,25 @@ $project-size: 15rem;
 .image {
   max-width: 72rem;
   width: 100%;
+  vertical-align: middle;
 }
 
 .card-overlay{
   text-align: center;
-  background: transparent;
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // overflow-y: scroll;
+  opacity: 1;
   background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s;
+}
+
+.card-overlay__hide {
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .card-overlay-contents {

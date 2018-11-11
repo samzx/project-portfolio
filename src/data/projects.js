@@ -1,5 +1,10 @@
 export const developments = [
   {
+    name: "Project Elude",
+    src: "https://thumbs.gfycat.com/UnsteadyFarDutchshepherddog.webp",
+    description: "Virtual reality locomotion game. (Coming Soon)"
+  },
+  {
     name: "Good Old Mates",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582261/goodoldmates.png",
