@@ -56,7 +56,7 @@ $project-size: 15rem;
   justify-content: center;
   color: white;
   font-size: $project-size;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .project-container {
@@ -80,7 +80,7 @@ $project-size: 15rem;
   vertical-align: middle;
 }
 
-.card-overlay{
+.card-overlay {
   text-align: center;
   position: absolute;
   height: 100%;
@@ -122,8 +122,14 @@ $project-size: 15rem;
   color: black;
 }
 
+.placeholder-image {
+  max-width: 72rem;
+  width: 100%;
+  height: 40rem;
+}
+
 @media only screen and (max-width: 600px) {
-  .card-overlay-contents h1{
+  .card-overlay-contents h1 {
     font-size: 2.4rem;
   }
   .card-overlay-button {
