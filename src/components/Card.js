@@ -10,16 +10,13 @@ class Card extends React.Component {
     return (
       <div
         className={"card"}
-        onMouseDown={() => {
-          this.setState((prevState) => ({ hovering: !prevState.hovering }));
+        style={!item.src ? { cursor: "default" } : null}
+        onClick={() => {
+          this.setState(prevState => ({ hovering: !prevState.hovering }));
           setTimeout(() => {
-            this.setState((prevState) => ({ buttonEnabled: !prevState.buttonEnabled}))
-          }, 300);
-        }}
-        onTouchStart={() => {
-          this.setState((prevState) => ({ hovering: !prevState.hovering }));
-          setTimeout(() => {
-            this.setState((prevState) => ({ buttonEnabled: !prevState.buttonEnabled}))
+            this.setState(prevState => ({
+              buttonEnabled: !prevState.buttonEnabled
+            }));
           }, 300);
         }}
       >
@@ -37,7 +34,9 @@ class Card extends React.Component {
               {!!item.link && (
                 <a
                   className="card-overlay-button"
-                  href={this.state.buttonEnabled || !item.src ? item.link : null}
+                  href={
+                    this.state.buttonEnabled || !item.src ? item.link : null
+                  }
                   target="_blank"
                 >
                   Details

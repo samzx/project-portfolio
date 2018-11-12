@@ -13,7 +13,7 @@ const Projects = () => {
         <h2>Apps, apps and more apps!</h2>
       </div>
       <div className="project-container">
-        {developments.map(item => <Card key={item.name} item={item}/>)}
+        {developments.map(item => <Card key={item.name} item={item} />)}
       </div>
     </div>
   );
