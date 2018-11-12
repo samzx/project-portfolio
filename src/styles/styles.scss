@@ -67,17 +67,29 @@ $project-size: 15rem;
   align-content: center;
 }
 
+$card-radius: 1rem;
+
 .card {
   max-width: 72rem;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   margin: 1rem;
   position: relative;
+  border-radius: $card-radius;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
 }
+
+.card:hover {
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+}
+
 .image {
   max-width: 72rem;
   width: 100%;
   vertical-align: middle;
+  border-radius: $card-radius;
 }
 
 .card-overlay {
@@ -91,6 +103,7 @@ $project-size: 15rem;
   opacity: 1;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 0.3s;
+  border-radius: $card-radius;
 }
 
 .card-overlay__hide {
@@ -113,6 +126,7 @@ $project-size: 15rem;
   text-transform: uppercase;
   color: white;
   text-decoration: none;
+  z-index: 5;
 }
 
 .back {
@@ -126,6 +140,7 @@ $project-size: 15rem;
   max-width: 72rem;
   width: 100%;
   height: 40rem;
+  border-radius: $card-radius;
 }
 
 @media only screen and (max-width: 600px) {
@@ -141,5 +156,23 @@ $project-size: 15rem;
     text-transform: uppercase;
     color: white;
     text-decoration: none;
+  }
+  .placeholder-image {
+    max-width: 72rem;
+    width: 100%;
+    height: 24rem;
+    border-radius: $card-radius / 2;
+  }
+  .card-overlay {
+    border-radius: $card-radius / 2;
+  }
+  .card {
+    border-radius: $card-radius / 2;
+  }
+  .placeholder-image {
+    border-radius: $card-radius / 2;
+  }
+  .image {
+    border-radius: $card-radius / 2;
   }
 }

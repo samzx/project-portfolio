@@ -2,19 +2,26 @@ import React from "react";
 
 class Card extends React.Component {
   state = {
-    hovering: false
+    hovering: false,
+    buttonEnabled: false
   };
   render() {
     const { item } = this.props;
     return (
       <div
-        onMouseEnter={() => {
-          this.setState(() => ({ hovering: true }));
-        }}
-        onMouseLeave={() => {
-          this.setState(() => ({ hovering: false }));
-        }}
         className={"card"}
+        onMouseDown={() => {
+          this.setState((prevState) => ({ hovering: !prevState.hovering }));
+          setTimeout(() => {
+            this.setState((prevState) => ({ buttonEnabled: !prevState.buttonEnabled}))
+          }, 300);
+        }}
+        onTouchStart={() => {
+          this.setState((prevState) => ({ hovering: !prevState.hovering }));
+          setTimeout(() => {
+            this.setState((prevState) => ({ buttonEnabled: !prevState.buttonEnabled}))
+          }, 300);
+        }}
       >
         {
           <div
@@ -30,7 +37,7 @@ class Card extends React.Component {
               {!!item.link && (
                 <a
                   className="card-overlay-button"
-                  href={item.link}
+                  href={this.state.buttonEnabled || !item.src ? item.link : null}
                   target="_blank"
                 >
                   Details
