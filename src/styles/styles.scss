@@ -144,6 +144,9 @@ $card-radius: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 3.6rem;
+  }
   .card-overlay-contents h1 {
     font-size: 2.4rem;
   }
