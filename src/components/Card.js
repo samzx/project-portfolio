@@ -12,11 +12,11 @@ class Card extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      const { y } = this._card.current.getBoundingClientRect();
-      const cardPos = this.props.scrollY + y
-      this.setState(() => ({ hovering: this.props.scrollBarPos > cardPos, buttonEnabled: true }))
-    })
+    // window.addEventListener('scroll', () => {
+    //   const { y } = this._card.current.getBoundingClientRect();
+    //   const cardPos = this.props.scrollY + y
+    //   this.setState(() => ({ hovering: this.props.scrollBarPos > cardPos, buttonEnabled: true }))
+    // })
   }
 
   handleClick = () => {

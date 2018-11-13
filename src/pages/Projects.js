@@ -9,25 +9,25 @@ class Projects extends React.Component {
     documentHeight: 0
   }
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      const innerHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollMax = documentHeight - window.innerHeight;
+    // window.addEventListener('scroll', () => {
+    //   const innerHeight = window.innerHeight;
+    //   const documentHeight = document.documentElement.scrollHeight;
+    //   const scrollMax = documentHeight - window.innerHeight;
       
-      const scrollY = window.scrollY;
-      let scrollBarPos = 0;
-      if (scrollMax != 0) {
-        scrollBarPos = scrollY + innerHeight / 8;
-      }
-      this.setState(() => ({ scrollBarPos, scrollY, documentHeight }))
-    })
+    //   const scrollY = window.scrollY;
+    //   let scrollBarPos = 0;
+    //   if (scrollMax != 0) {
+    //     scrollBarPos = scrollY + innerHeight / 8;
+    //   }
+    //   this.setState(() => ({ scrollBarPos, scrollY, documentHeight }))
+    // })
   }
   render() {
     const { scrollY, scrollBarPos, documentHeight } = this.state;
     return (
-      <div>
-        <div className="hero">
-          <h1>Let's see what I've made 👾</h1>
+      <div className="projects">
+        <div className="title">
+          <h1>Let's see what I've made 🦁</h1>
           <h2>Apps, apps and more apps!</h2>
         </div>
         <div className="project-container">

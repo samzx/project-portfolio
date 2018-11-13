@@ -9,23 +9,25 @@ const Hero = () => (
       <h2>This site is a work in progress. Stay tuned 🤫</h2>
       <Social />
     </div>
-    <div
-      style={{
-        cursor: "pointer",
-        position: "absolute",
-        bottom: "5rem",
-        textAlign: "center",
-        width: "100%"
-      }}
-    >
-      <h1>
-        <a
-          onClick={() => {
-            window.scrollTo(0,window.innerHeight)
-          }}
-        >👾</a>
-      </h1>
-    </div>
+    {
+      // <div
+      //   style={{
+      //     cursor: "pointer",
+      //     position: "absolute",
+      //     bottom: "5rem",
+      //     textAlign: "center",
+      //     width: "100%"
+      //   }}
+      // >
+      //   <h1>
+      //     <a
+      //       onClick={() => {
+      //         window.scrollTo(0,window.innerHeight)
+      //       }}
+      //     >👾</a>
+      //   </h1>
+      // </div>
+    }
   </div>
 );
 

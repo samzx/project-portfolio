@@ -40,6 +40,11 @@ html {
   padding: 2rem;
 }
 
+.title {
+  text-align: center;
+  padding: 2rem;
+}
+
 .hero h1 {
   font-size: 6.4rem;
 }
@@ -112,6 +117,7 @@ $card-radius: 1rem;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 0.3s;
   border-radius: $card-radius;
+  z-index: 2;
 }
 
 .card-overlay__hide {
