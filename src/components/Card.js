@@ -26,8 +26,8 @@ class Card extends React.Component {
         buttonEnabled: !prevState.buttonEnabled
       }));
     }, 300);
-  }
-  
+  };
+
   render() {
     const { item } = this.props;
     return (

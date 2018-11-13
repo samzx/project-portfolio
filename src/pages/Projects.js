@@ -7,13 +7,12 @@ class Projects extends React.Component {
     scrollBarPos: 0,
     scrollY: 0,
     documentHeight: 0
-  }
+  };
   componentDidMount() {
     // window.addEventListener('scroll', () => {
     //   const innerHeight = window.innerHeight;
     //   const documentHeight = document.documentElement.scrollHeight;
     //   const scrollMax = documentHeight - window.innerHeight;
-      
     //   const scrollY = window.scrollY;
     //   let scrollBarPos = 0;
     //   if (scrollMax != 0) {
@@ -31,12 +30,20 @@ class Projects extends React.Component {
           <h2>Apps, apps and more apps!</h2>
         </div>
         <div className="project-container">
-          {developments.map(item => <Card key={item.name} item={item} scrollY={scrollY} documentHeight={documentHeight} scrollBarPos={scrollBarPos}/>)}
+          {developments.map(item => (
+            <Card
+              key={item.name}
+              item={item}
+              scrollY={scrollY}
+              documentHeight={documentHeight}
+              scrollBarPos={scrollBarPos}
+            />
+          ))}
         </div>
-        <div style={{margin: "30vh 0"}}/>
+        <div style={{ margin: "30vh 0" }} />
       </div>
     );
   }
-};
+}
 
 export default Projects;
