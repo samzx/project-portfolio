@@ -40,7 +40,7 @@ class Projects extends React.Component {
             />
           ))}
         </div>
-        <div style={{ margin: "30vh 0" }} />
+        <div style={{ margin: "2rem 0" }} />
       </div>
     );
   }
