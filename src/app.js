@@ -4,6 +4,6 @@ import ReactDOM from "react-dom";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
-import AppRouter from "./pages/AppRouter";
+import Landing from "./pages/Landing";
 
-ReactDOM.render(<AppRouter />, document.getElementById("app"));
+ReactDOM.render(<Landing />, document.getElementById("app"));

@@ -9,6 +9,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.projects {
+  min-height: 100vh;
+}
+
 .button {
   background: transparent;
   border: 0.1rem solid black;
@@ -20,7 +28,7 @@ body {
   text-decoration: none;
 }
 
-.app {
+.landing {
   min-height: 100vh;
   display: flex;
   justify-content: center;
