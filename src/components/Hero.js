@@ -23,7 +23,7 @@ const Hero = () => (
           onClick={() => {
             window.scrollTo(0,window.innerHeight)
           }}
-        >⬇👾⬇</a>
+        >👾</a>
       </h1>
     </div>
   </div>
