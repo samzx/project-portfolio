@@ -5,20 +5,37 @@ class Card extends React.Component {
     hovering: false,
     buttonEnabled: false
   };
+
+  constructor(props) {
+    super(props);
+    this._card = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      const { y } = this._card.current.getBoundingClientRect();
+      const cardPos = this.props.scrollY + y
+      this.setState(() => ({ hovering: this.props.scrollBarPos > cardPos, buttonEnabled: true }))
+    })
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({ hovering: !prevState.hovering }));
+    setTimeout(() => {
+      this.setState(prevState => ({
+        buttonEnabled: !prevState.buttonEnabled
+      }));
+    }, 300);
+  }
+  
   render() {
     const { item } = this.props;
     return (
       <div
         className={"card"}
         style={!item.src ? { cursor: "default" } : null}
-        onClick={() => {
-          this.setState(prevState => ({ hovering: !prevState.hovering }));
-          setTimeout(() => {
-            this.setState(prevState => ({
-              buttonEnabled: !prevState.buttonEnabled
-            }));
-          }, 300);
-        }}
+        onClick={this.handleClick}
+        ref={this._card}
       >
         {
           <div
@@ -38,6 +55,7 @@ class Card extends React.Component {
                     this.state.buttonEnabled || !item.src ? item.link : null
                   }
                   target="_blank"
+                  onClick={this.handleClick}
                 >
                   Details
                 </a>
