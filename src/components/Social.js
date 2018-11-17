@@ -1,8 +1,22 @@
 import React from "react";
 
 import { follow, profile } from "../data/social";
+import { Github, Instagram, Medium, LinkedIn } from '../assets/SocialIcons'
 
-const Social = () => (
+const Icon = (name, width, color) => {
+  switch (name) {
+    case "Github":
+      return <Github width={width} color={color}/>
+    case "LinkedIn":
+      return <LinkedIn width={width} color={color}/>
+    case "Medium":
+      return <Medium width={width} color={color}/>
+    case "Instagram":
+      return <Instagram width={width} color={color}/>
+  }
+}
+
+const Social = (props) => (
   <div style={{ textAlign: "center" }}>
     {[...profile, ...follow].map(link => (
       <div
@@ -10,7 +24,9 @@ const Social = () => (
         key={link.name}
       >
         <a href={link.src} target="_blank">
-          <img width="50px" height="50px" src={link.image} />
+            <div className="social-img">
+              {Icon(link.name, 50, props.color)}
+            </div>
         </a>
       </div>
     ))}

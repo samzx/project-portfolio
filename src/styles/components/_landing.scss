@@ -1,0 +1,35 @@
+
+.landing {
+  min-height: calc(100vh - 10rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+}
+
+.landing-content {
+  padding: 2rem;
+}
+
+.hero {
+  font-size: 6.4rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(0, 0, 0), #7815a9);
+  background-attachment: fixed;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.title {
+  text-align: center;
+  padding: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    font-size: 4.8rem;
+  }
+}

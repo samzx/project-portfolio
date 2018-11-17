@@ -1,0 +1,15 @@
+$project-size: 15rem;
+
+.project-title {
+  position: fixed;
+  bottom: 20rem;
+  text-align: center;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+}

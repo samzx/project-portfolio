@@ -11,14 +11,6 @@ class Card extends React.Component {
     this._card = React.createRef();
   }
 
-  componentDidMount() {
-    // window.addEventListener('scroll', () => {
-    //   const { y } = this._card.current.getBoundingClientRect();
-    //   const cardPos = this.props.scrollY + y
-    //   this.setState(() => ({ hovering: this.props.scrollBarPos > cardPos, buttonEnabled: true }))
-    // })
-  }
-
   handleClick = () => {
     this.setState(prevState => ({ hovering: !prevState.hovering }));
     setTimeout(() => {
@@ -33,7 +25,12 @@ class Card extends React.Component {
     return (
       <div
         className={"card"}
-        style={!item.src ? { cursor: "default" } : null}
+        style={{
+          top: window.innerHeight - 100 - this.props.index*20,
+          zIndex: -this.props.index + 10,
+          transform: `scale(${1 - this.props.index*0.01})`,
+          position: "absolute"
+          }}
         onClick={this.handleClick}
         ref={this._card}
       >

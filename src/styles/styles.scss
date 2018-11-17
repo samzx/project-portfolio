@@ -1,8 +1,10 @@
 @import "./base/settings";
 @import "./base/base";
 
-@import "./components/_browser.scss";
-@import "./components/_header.scss";
+@import "./components/_card.scss";
+@import "./components/_landing.scss";
+@import "./components/_social.scss";
+@import "./components/_projects.scss";
 
 body {
   background: #fff;
@@ -13,183 +15,15 @@ html {
   scroll-behavior: smooth;
 }
 
-.projects {
-  min-height: 100vh;
-}
-
-.button {
-  background: transparent;
-  border: 0.1rem solid black;
-  padding: 1.6rem;
-  margin: 1.6rem;
-  display: inline-block;
-  text-transform: uppercase;
-  color: black;
-  text-decoration: none;
-}
-
-.landing {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.hero {
-  text-align: center;
-  padding: 2rem;
-}
-
-.title {
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 6.4rem;
-}
-
-.card-container {
-  display: flex;
-  flex-direction: column;
-}
-
-$project-size: 15rem;
-
-.project {
-  width: $project-size;
-  height: $project-size;
-  padding: $project-size / 3;
-  margin: $project-size / 3;
-  background: linear-gradient(45deg, rgb(251, 0, 255), blue);
-  border-radius: $project-size / 3;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  font-size: $project-size;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.project-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column wrap;
-  align-content: center;
-}
-
-$card-radius: 1rem;
-
-.card {
-  max-width: 72rem;
-  width: 100%;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  margin: 1rem;
-  position: relative;
-  border-radius: $card-radius;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
-}
-
-.card:hover {
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s;
-}
-
-.image {
-  max-width: 72rem;
-  width: 100%;
-  vertical-align: middle;
-  border-radius: $card-radius;
-}
-
-.card-overlay {
-  text-align: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 0.3s;
-  border-radius: $card-radius;
-  z-index: 2;
-}
-
-.card-overlay__hide {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card-overlay-contents {
-  max-width: 36rem;
-  margin: auto;
-  color: white;
-}
-
-.card-overlay-button {
-  background: transparent;
-  border: 0.1rem solid white;
-  padding: 1.6rem;
-  margin: 0.8rem;
-  display: inline-block;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-  z-index: 5;
-}
-
 .back {
-  position: absolute;
+  position: fixed;
   margin: 2rem;
   text-decoration: none;
   color: black;
-}
-
-.placeholder-image {
-  max-width: 72rem;
-  width: 100%;
-  height: 40rem;
-  border-radius: $card-radius;
+  font-size: 2.4rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
-  .hero h1 {
-    font-size: 3.6rem;
-  }
-  .card-overlay-contents h1 {
-    font-size: 2.4rem;
-  }
-  .card-overlay-button {
-    background: transparent;
-    border: 0.1rem solid white;
-    padding: 1.2rem;
-    margin: 0;
-    display: inline-block;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-  }
-  .placeholder-image {
-    max-width: 72rem;
-    width: 100%;
-    height: 24rem;
-    border-radius: $card-radius / 2;
-  }
-  .card-overlay {
-    border-radius: $card-radius / 2;
-  }
-  .card {
-    border-radius: $card-radius / 2;
-  }
-  .placeholder-image {
-    border-radius: $card-radius / 2;
-  }
-  .image {
-    border-radius: $card-radius / 2;
-  }
+
 }
