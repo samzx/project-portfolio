@@ -4,7 +4,7 @@ $card-radius: 1rem;
   max-width: 72rem;
   width: 100%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  position: fixed;
+  // position: fixed;
   border-radius: $card-radius;
   cursor: pointer;
   transition: box-shadow 0.3s;
@@ -43,20 +43,19 @@ $card-radius: 1rem;
 
 .card-overlay-button {
   background-color: transparent;
-  border: 0.1rem solid white;
+  border: 0.1rem solid black;
   padding: 1.6rem;
   margin: 0.8rem;
   display: inline-block;
   text-transform: uppercase;
-  color: white;
   text-decoration: none;
   z-index: 5;
   transition: background-color 0.3s;
 }
 
 .card-overlay-button:hover {
-  background-color: white;
-  color: #111;
+  background-color: black;
+  color: white;
   transition: background-color 0.3s;
 }
 
@@ -74,7 +73,7 @@ $card-radius: 1rem;
 
 
 .image {
-  max-width: 72rem;
+  max-width: 100%;
   width: 100%;
   vertical-align: middle;
   border-radius: $card-radius;

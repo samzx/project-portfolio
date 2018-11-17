@@ -3,69 +3,100 @@ import React from "react";
 class Card extends React.Component {
   state = {
     hovering: false,
-    buttonEnabled: false
+    buttonEnabled: false,
+    zoom: false
   };
 
-  constructor(props) {
-    super(props);
-    this._card = React.createRef();
-  }
-
   handleClick = () => {
-    this.setState(prevState => ({ hovering: !prevState.hovering }));
-    setTimeout(() => {
-      this.setState(prevState => ({
-        buttonEnabled: !prevState.buttonEnabled
-      }));
-    }, 300);
+    // ZOOMS INTO IMAGE
+    console.log("Zoom in image")
+    this.setState((prevState) => ({ zoom: !prevState.zoom }))
   };
 
   render() {
-    const { item } = this.props;
+    const { item, index, scroll, total, showLength } = this.props;
+    const showTime = index / (total)
+    const showEnd = (index + 1) / (total)
+    const FINAL_OFFSET = 100
+    const STARTING_OFFSET = FINAL_OFFSET / total
+    const staticPos = window.innerHeight - STARTING_OFFSET - (FINAL_OFFSET*index/total)
     return (
-      <div
-        className={"card"}
-        style={{
-          top: window.innerHeight - 100 - this.props.index*20,
-          zIndex: -this.props.index + 10,
-          transform: `scale(${1 - this.props.index*0.01})`,
-          position: "absolute"
-          }}
-        onClick={this.handleClick}
-        ref={this._card}
-      >
-        {
+        <div
+          className={"card"}
+          style={{
+            top: scroll > showTime ? staticPos + showLength * index : staticPos, // TODO: Fix this
+            zIndex: -index + 100,
+            position: scroll > showTime ? "absolute" : "fixed",
+            // transform: `scale(${1 - index * 0.01})`
+            }}
+          onClick={this.handleClick}
+        >
+          {
+          // <div
+          //   className={
+          //     this.state.hovering || !item.src || scroll > (showTime + (showEnd - showTime) * 3 / 4)
+          //       ? "card-overlay"
+          //       : "card-overlay card-overlay__hide"
+          //   }
+          // >
+          //   <div className="card-overlay-contents">
+          //     <h1>{item.name}</h1>
+          //     <p>{item.description}</p>
+          //     {!!item.link && (
+          //       <a
+          //         className="card-overlay-button"
+          //         href={
+          //           this.state.buttonEnabled || !item.src ? item.link : null
+          //         }
+          //         target="_blank"
+          //         onClick={this.handleClick}
+          //       >
+          //         Details
+          //       </a>
+          //     )}
+          //   </div>
+          // </div>
+          }
           <div
-            className={
-              this.state.hovering || !item.src
-                ? "card-overlay"
-                : "card-overlay card-overlay__hide"
-            }
+            className="outer-card"
+            style={{
+              maxWidth: "72rem",
+              width: "100%",
+              textAlign: "center",
+              position: "fixed",
+              top: 0,
+              display: scroll > showTime && scroll < showEnd ? null : "none"
+            }}
           >
-            <div className="card-overlay-contents">
+            <div style={{padding: "2rem"}}>
               <h1>{item.name}</h1>
               <p>{item.description}</p>
               {!!item.link && (
-                <a
-                  className="card-overlay-button"
-                  href={
-                    this.state.buttonEnabled || !item.src ? item.link : null
-                  }
-                  target="_blank"
-                  onClick={this.handleClick}
-                >
-                  Details
-                </a>
-              )}
+                    <a
+                      className="card-overlay-button"
+                      href={
+                        this.state.buttonEnabled || !item.src ? item.link : null
+                      }
+                      target="_blank"
+                    >
+                      Details
+                    </a>
+                  )}
             </div>
           </div>
-        }
-        {item.src ? (
-          <img src={item.src} className="image" />
-        ) : (
-          <div className="placeholder-image" />
-        )}
-      </div>
+          {item.src ? (
+            <img
+              style={{
+                transform: this.state.zoom ? "scale(1.5)" : "scale(1)",
+                transition: "transform 0.3s"
+              }}
+              src={item.src}
+              className="image"
+            />
+          ) : (
+            <div className="placeholder-image" />
+          )}
+        </div>
     );
   }
 }

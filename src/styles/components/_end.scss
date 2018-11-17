@@ -1,0 +1,14 @@
+.end {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.end-container {
+  padding: 2rem;
+}

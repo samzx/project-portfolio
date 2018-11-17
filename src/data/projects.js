@@ -35,5 +35,5 @@ export const developments = [
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/zendesk_mobile_ticket_viewer.png",
     link: "https://github.com/samzx/zendesk-coding-challenge",
     description: "A mobile ticket viewer for Zendesk's coding challenge."
-  }
+  },
 ];

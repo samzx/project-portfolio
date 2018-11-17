@@ -6,6 +6,7 @@ import "./styles/styles.scss";
 
 import Projects from "./components/Projects";
 import Landing from './components/Landing'
+import End from "./components/End"
 
 class App extends React.Component{
   state = {
@@ -23,6 +24,7 @@ class App extends React.Component{
     })
   }
   render() {
+    const { scroll } = this.state;
     return (
       <div className="app">
         {
@@ -30,6 +32,7 @@ class App extends React.Component{
         }
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
+        <End scroll={scroll}/>
       </div>
     );
   }

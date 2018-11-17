@@ -1,6 +1,6 @@
 
 .landing {
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -16,6 +16,9 @@
 .hero {
   font-size: 6.4rem;
   font-weight: 700;
+}
+
+.majestic {
   background: linear-gradient(45deg, rgb(0, 0, 0), #7815a9);
   background-attachment: fixed;
   -webkit-text-fill-color: transparent;
