@@ -1,4 +1,4 @@
-import { Github, Instagram, Medium, Linkedin } from '../assets/SocialIcons'
+import { Github, Instagram, Medium, Linkedin } from "../assets/SocialIcons";
 
 export const follow = [
   {

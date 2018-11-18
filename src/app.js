@@ -5,24 +5,25 @@ import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
 import Projects from "./components/Projects";
-import Landing from './components/Landing'
-import End from "./components/End"
-import Helper from "./components/Helper"
+import Landing from "./components/Landing";
+import End from "./components/End";
+import Helper from "./components/Helper";
 
-class App extends React.Component{
+class App extends React.Component {
   state = {
     scroll: 0
   };
 
   handleScroll = () => {
-    const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollMax =
+      document.documentElement.scrollHeight - window.innerHeight;
     const scrollY = window.scrollY;
     const scroll = scrollY / scrollMax;
-    this.setState(() => ({ scroll }))
-  }
+    this.setState(() => ({ scroll }));
+  };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   render() {

@@ -68,14 +68,12 @@ $card-radius: 1rem;
   border-radius: $card-radius;
 }
 
-
 .image {
   max-width: 100%;
   width: 100%;
   vertical-align: middle;
   border-radius: $card-radius;
 }
-
 
 @media only screen and (max-width: 600px) {
   .card-overlay-contents h1 {

@@ -1,12 +1,15 @@
 import React from "react";
 
 class Card extends React.Component {
-  
   handleClick = () => {
-    const { showTime, showLength, staticPos, projectOffset } = this.props
-    const scrollPos = (showTime) * (document.documentElement.scrollHeight - window.innerHeight) - projectOffset + window.innerHeight / 2 + this.props.calcImgHeight() / 2
+    const { showTime, showLength, staticPos, projectOffset } = this.props;
+    const scrollPos =
+      showTime * (document.documentElement.scrollHeight - window.innerHeight) -
+      projectOffset +
+      window.innerHeight / 2 +
+      this.props.calcImgHeight() / 2;
     window.scrollTo(0, scrollPos);
-  }
+  };
 
   render() {
     const { scroll, showTime, staticPos, showLength, index, src } = this.props;
@@ -21,15 +24,15 @@ class Card extends React.Component {
             zIndex: -index + 100,
             position: scroll > showTime ? "absolute" : "fixed",
             transform: `scale(${1 - index * 0.01})`,
-            transition: "box-shadow 0.3s, transform 0.3s",
-            }}
-            onClick={this.handleClick}
+            transition: "box-shadow 0.3s, transform 0.3s"
+          }}
+          onClick={this.handleClick}
         >
-            {src ? (
-              <img src={src} className="image"/>
-            ) : (
-              <div className="placeholder-image" />
-            )}
+          {src ? (
+            <img src={src} className="image" />
+          ) : (
+            <div className="placeholder-image" />
+          )}
         </div>
       </div>
     );
