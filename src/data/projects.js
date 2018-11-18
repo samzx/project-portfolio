@@ -3,7 +3,8 @@ export const developments = [
     name: "Project Elude",
     src:
       "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
-    description: "An upcoming virtual reality game. With a unique locomotion system, blaze through dangerous environments."
+    description:
+      "An upcoming virtual reality game. With a unique locomotion system, blaze through dangerous environments."
   },
   {
     name: "Good Old Mates",
@@ -38,7 +39,8 @@ export const developments = [
   },
   {
     name: "OpenGL Art",
-    src: "https://camo.githubusercontent.com/58d58e7ebfd73bb95d07c5221b84e217270e2d32/68747470733a2f2f7468756d62732e6766796361742e636f6d2f4461726c696e674a6f7966756c416d65726963616e726f62696e2d73697a655f726573747269637465642e676966",
+    src:
+      "https://res.cloudinary.com/xielabs/image/upload/v1542539504/opengl.gif",
     link: "https://github.com/samzx/opengl2d-drawing",
     description: "Animated artwork made with OpenGL as a study in graphics."
   }
