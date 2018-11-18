@@ -49,6 +49,3 @@ visit `localhost:8080` in browser to see it run
 ```
 yarn build
 ```
-
-## Contributions
-Contributions are welcome! Fork and send a pull request with enhancements.
