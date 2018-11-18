@@ -1,11 +1,13 @@
 import React from "react";
 
 class Card extends React.Component {
+  
   handleClick = () => {
     const { showTime, showLength, staticPos, projectOffset } = this.props
     const scrollPos = (showTime) * (document.documentElement.scrollHeight - window.innerHeight) - projectOffset + window.innerHeight / 2 + this.props.calcImgHeight() / 2
     window.scrollTo(0, scrollPos);
   }
+
   render() {
     const { scroll, showTime, staticPos, showLength, index, src } = this.props;
 

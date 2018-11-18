@@ -1,17 +1,9 @@
 export const developments = [
   {
-    name: "Project Elude",
+    name: "🐰 Project Elude (Coming Soon)",
     src:
       "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
-    description: "Virtual reality locomotion game. (Coming Soon)"
-  },
-  {
-    name: "Good Old Mates",
-    src:
-      "https://res.cloudinary.com/xielabs/image/upload/v1541582261/goodoldmates.png",
-    link: "",
-    description:
-      "Good Old Mates aims to empower elderly users to connect with each other by simplifying their user experience."
+    description: "Virtual reality locomotion game."
   },
   {
     name: "MPHWatch",

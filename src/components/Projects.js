@@ -8,8 +8,25 @@ const heroOffset = 1
 
 class Projects extends React.Component {
 
+  state = {
+    innerHeight: 1,
+    innerWidth: 1,
+  }
+
+  setInnerDimensions = () => {
+    this.setState(() => ({
+      innerHeight: window.innerHeight,
+      innerWidth: window.innerWidth
+    }))
+  }
+
+  componentDidMount() {
+    this.setInnerDimensions()
+    window.addEventListener('resize', this.setInnerDimensions)
+  }
+
   calcImgHeight = () => {
-    const width = window.innerWidth;
+    const width = this.state.innerWidth;
     if (width < 800) {
       return width / 1.8;
     } else {
@@ -33,8 +50,9 @@ class Projects extends React.Component {
               index={index}
               scroll={this.props.scroll}
               total={developments.length}
-              showLength={window.innerHeight + this.calcImgHeight()}
+              showLength={this.state.innerHeight + this.calcImgHeight()}
               calcImgHeight={this.calcImgHeight}
+              innerHeight={this.state.innerHeight}
             />
           ))}
         </div>

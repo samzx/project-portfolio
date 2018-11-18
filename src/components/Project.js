@@ -5,14 +5,15 @@ import ProjectDetails from "./ProjectDetails";
 
 class Project extends React.Component {
 
+
   render() {
-    const { item, index, scroll, total, showLength } = this.props;
+    const { item, index, scroll, total, showLength, innerHeight } = this.props;
     const showTime = index / (total)
     const showEnd = (index + 1) / (total)
     const FINAL_OFFSET = 100
     const STARTING_OFFSET = FINAL_OFFSET / total
     const projectOffset = FINAL_OFFSET * index / total
-    const staticPos = window.innerHeight - STARTING_OFFSET - projectOffset
+    const staticPos = innerHeight - STARTING_OFFSET - projectOffset
     return (
         <div>
           <Card
