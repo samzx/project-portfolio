@@ -4,15 +4,12 @@ $card-radius: 1rem;
   max-width: 72rem;
   width: 100%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  // position: fixed;
   border-radius: $card-radius;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
 }
 
 .card:hover {
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .card-overlay {
@@ -61,7 +58,7 @@ $card-radius: 1rem;
 
 .card-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .placeholder-image {

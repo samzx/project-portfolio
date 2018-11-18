@@ -1,9 +1,25 @@
 $project-size: 15rem;
 
 .project-title {
-  position: fixed;
-  bottom: 20rem;
-  text-align: center;
+  // color: black
+}
+
+.project-title__link {
+  background: linear-gradient(45deg, rgb(0, 0, 0), #7815a9);
+  background-attachment: fixed;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+}
+.project-title__link {
+  border-bottom: 0rem solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.project-title__link:hover {
+  border-bottom: 0.3rem solid #5a0078;
+  transition: border-bottom 0.3s;
 }
 
 .project-container {
@@ -12,4 +28,8 @@ $project-size: 15rem;
   justify-content: center;
   flex-flow: column wrap;
   align-content: center;
+}
+
+.project-details {
+  justify-content: center;
 }

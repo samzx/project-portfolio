@@ -25,7 +25,7 @@ class End extends React.Component {
         display: scroll > showTime ? "flex" : "none",
       }}>
         <div className="end-container">
-          <h1 style={{color}}>Find me elsewhere 👨‍💻</h1>
+          <h1 style={{color}}>Find me around 👨‍💻</h1>
           <Social color={color} />
           <a className="button" href="mailto:team@solexstudios.com">Contact</a>
         </div>

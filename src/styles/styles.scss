@@ -6,6 +6,7 @@
 @import "./components/_social.scss";
 @import "./components/_projects.scss";
 @import "./components/_end.scss";
+@import "./components/_helper.scss";
 
 body {
   background: #fff;
@@ -26,7 +27,7 @@ html {
 }
 
 .button {
-  background: transparent;
+  background-color: transparent;
   padding: 1.4rem;
   margin: 1.4rem;
   display: inline-block;
@@ -36,13 +37,13 @@ html {
   letter-spacing: 0.2rem;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .button:hover {
-  background: #3469a2;
+  background-color: #3469a2;
   color: white;
-  transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 

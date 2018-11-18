@@ -7,22 +7,24 @@ import "./styles/styles.scss";
 import Projects from "./components/Projects";
 import Landing from './components/Landing'
 import End from "./components/End"
+import Helper from "./components/Helper"
 
 class App extends React.Component{
   state = {
     scroll: 0
   };
-  componentDidMount() {
-    window.addEventListener('scroll', () => {
-      const innerHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollMax = documentHeight - window.innerHeight;
-      const scrollY = window.scrollY;
-      const scroll = scrollY / scrollMax;
-      console.log(scroll);
-      this.setState(() => ({scroll}))
-    })
+
+  handleScroll = () => {
+    const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollY = window.scrollY;
+    const scroll = scrollY / scrollMax;
+    this.setState(() => ({ scroll }))
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
   render() {
     const { scroll } = this.state;
     return (
@@ -32,7 +34,8 @@ class App extends React.Component{
         }
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
-        <End scroll={scroll}/>
+        <End scroll={scroll} />
+        <Helper scroll={scroll} />
       </div>
     );
   }

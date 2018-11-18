@@ -5,15 +5,16 @@ import Social from "./Social";
 const color = "#521372"
 
 class Landing extends React.Component {
+
   state = {
     oneScreenScroll: 1
   }
 
   componentDidMount() {
     const oneScreenScroll = window.innerHeight / (document.documentElement.scrollHeight - window.innerHeight);
-    console.log(oneScreenScroll)
     this.setState(() => ({ oneScreenScroll }))
   }
+  
   render() {
     const { oneScreenScroll } = this.state;
     const { scroll } = this.props;
@@ -25,9 +26,7 @@ class Landing extends React.Component {
           display: scroll > oneScreenScroll / 2 ? "none" : "unset"
         }}>
           <h1 className="hero majestic">Hi there, I'm Sam 👋</h1>
-          {
-            <h1 style={{fontWeight: "normal", color}}>I like to make things 🎨</h1>
-          }
+          <h1 style={{fontWeight: "normal", color}}>I like to make things 🎨</h1>
           <Social color={color}/>
           <h1 style={{color}} >Let's see what I've made 🦁</h1>
         </div>

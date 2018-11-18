@@ -1,0 +1,15 @@
+.helper {
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 2;
+}
+.helper-bar {
+  height: 10px;
+  background: #3469a2;
+  width: 20rem;
+  border-radius: 100px;
+  cursor: pointer;
+}

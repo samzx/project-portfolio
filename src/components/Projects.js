@@ -1,6 +1,8 @@
 import React from "react";
+
 import { developments } from "../data/projects";
-import Card from "../components/Card";
+import Card from "./Card";
+import Project from "./Project";
 
 const heroOffset = 1
 
@@ -8,7 +10,6 @@ class Projects extends React.Component {
 
   calcImgHeight = () => {
     const width = window.innerWidth;
-    return 400;
     if (width < 800) {
       return width / 1.8;
     } else {
@@ -19,16 +20,21 @@ class Projects extends React.Component {
   render() {
     const numShows = developments.length + heroOffset;
     return (
-      <div className="projects" style={{height: `calc(${numShows * 100}vh + ${(numShows - heroOffset) * this.calcImgHeight()}px)`}}>
-        <div className="project-container">
+      <div
+        style={{
+          height: `calc(${numShows * 100}vh + ${(numShows - heroOffset) * this.calcImgHeight()}px)`
+        }}
+      >
+        <div>
           {developments.map((item, index) => (
-            <Card
+            <Project
               key={item.name}
               item={item}
               index={index}
               scroll={this.props.scroll}
               total={developments.length}
               showLength={window.innerHeight + this.calcImgHeight()}
+              calcImgHeight={this.calcImgHeight}
             />
           ))}
         </div>
