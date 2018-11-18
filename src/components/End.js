@@ -1,7 +1,7 @@
 import React from "react";
 import Social from "./Social";
 
-const color = "#3469a2";
+const color = "#4d036e";
 
 class End extends React.Component {
   state = {
@@ -36,7 +36,7 @@ class End extends React.Component {
         <div className="end-container">
           <h1 style={{ color }}>Find me around 👨‍💻</h1>
           <Social color={color} />
-          <a className="button" href="mailto:team@solexstudios.com">
+          <a className="end-button" href="mailto:team@solexstudios.com">
             Contact
           </a>
         </div>

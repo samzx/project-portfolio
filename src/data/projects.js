@@ -1,6 +1,6 @@
 export const developments = [
   {
-    name: "🐰 Project Elude (Coming Soon)",
+    name: "Project Elude",
     src:
       "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
     description: "Virtual reality locomotion game."

@@ -40,6 +40,7 @@ class Projects extends React.Component {
         style={{
           height: `calc(${numShows * 100}vh + ${(numShows - heroOffset) *
             this.calcImgHeight()}px)`
+          // height: `${numShows * this.state.innerHeight + (numShows - heroOffset) * this.calcImgHeight()}px`
         }}
       >
         <div>

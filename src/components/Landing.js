@@ -1,8 +1,10 @@
 import React from "react";
 
 import Social from "./Social";
+import Descriptions from "./Descriptions";
 
 const color = "#521372";
+const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 
 class Landing extends React.Component {
   state = {
@@ -40,10 +42,10 @@ class Landing extends React.Component {
         >
           <h1 className="hero majestic">Hi there, I'm Sam 👋</h1>
           <h1 style={{ fontWeight: "normal", color }}>
-            I like to make things 🎨
+            I ❤ {<Descriptions descriptions={synonyms} />} things.
           </h1>
           <Social color={color} />
-          <h1 style={{ color }}>Let's see what I've made 🦁</h1>
+          <h1 style={{ color }}>Grad a card below 🦄</h1>
         </div>
       </div>
     );

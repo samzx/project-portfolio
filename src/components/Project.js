@@ -23,15 +23,16 @@ class Project extends React.Component {
           src={item.src}
           projectOffset={projectOffset}
           calcImgHeight={this.props.calcImgHeight}
+          innerHeight={innerHeight}
         />
         <ProjectDetails
           scroll={scroll}
           showTime={showTime}
           showEnd={showEnd}
-          name={item.name}
-          description={item.description}
-          src={item.src}
-          link={item.link}
+          item={item}
+          projectOffset={projectOffset}
+          calcImgHeight={this.props.calcImgHeight}
+          innerHeight={innerHeight}
         />
       </div>
     );

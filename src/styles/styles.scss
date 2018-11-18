@@ -26,25 +26,5 @@ html {
   cursor: pointer;
 }
 
-.button {
-  background-color: transparent;
-  padding: 1.4rem;
-  margin: 1.4rem;
-  display: inline-block;
-  border: 0.3rem solid #3469a2;
-  text-transform: uppercase;
-  color: #3469a2;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #3469a2;
-  color: white;
-  transition: color 0.3s, background-color 0.3s;
-}
-
 @media only screen and (max-width: 600px) {
 }
