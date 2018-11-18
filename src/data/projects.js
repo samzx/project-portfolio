@@ -3,7 +3,7 @@ export const developments = [
     name: "Project Elude",
     src:
       "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
-    description: "Virtual reality locomotion game."
+    description: "An upcoming virtual reality game. With a unique locomotion system, blaze through dangerous environments."
   },
   {
     name: "MPHWatch",
