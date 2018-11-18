@@ -1,4 +1,4 @@
-# sam-xie
+# samxie
 
 <p align="center">
   <img src="https://res.cloudinary.com/xielabs/image/upload/v1542536660/samxie.png" alt="webpreview"/>
@@ -23,7 +23,7 @@ Live demo [here](https://samxie.net/).
 
 Clone the project
 ```
-git clone https://github.com/samzx/sam-xie.git
+git clone https://github.com/samzx/samxie.git
 ```
 
 Move into directory
