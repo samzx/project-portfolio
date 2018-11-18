@@ -41,8 +41,8 @@ class Landing extends React.Component {
           }}
         >
           <h1 className="hero majestic">Hi there, I'm Sam 👋</h1>
-          <h1 style={{ fontWeight: "normal", color }}>
-            I ❤ {<Descriptions descriptions={synonyms} />} things.
+          <h1 className="majestic" style={{ fontWeight: "normal", color }}>
+            I <span style={{fontSize: "0.67em"}}>❤️</span> {<Descriptions descriptions={synonyms} />} things.
           </h1>
           <Social color={color} />
           <h1 style={{ color }}>Grad a card below 🦄</h1>
