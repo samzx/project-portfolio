@@ -1,6 +1,9 @@
 import React from "react";
 
 class Card extends React.Component {
+  state = {
+    hovering: false
+  }
   handleClick = () => {
     const { showTime, showLength, staticPos, projectOffset, STARTING_OFFSET } = this.props;
     const scrollPos =
@@ -25,10 +28,12 @@ class Card extends React.Component {
             zIndex: -index + 100,
             position: scroll > showTime ? "absolute" : "fixed",
             transform: `scale(${1 - index * 0.01})`,
-            transition: "box-shadow 0.3s, transform 0.3s",
-            filter: scroll > showTime ? null : "grayscale(1)",
+            transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s",
+            filter: scroll > showTime || this.state.hovering ? null : "grayscale(1)",
           }}
           onClick={this.handleClick}
+          onMouseOver={() => this.setState({ hovering: true })}
+          onMouseOut={() => this.setState({ hovering: false })}
         >
           {src ? (
             <img src={src} className="image" />
