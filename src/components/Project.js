@@ -9,7 +9,7 @@ class Project extends React.Component {
     const showTime = index / total;
     const showEnd = (index + 1) / total;
     const FINAL_OFFSET = 100;
-    const STARTING_OFFSET = FINAL_OFFSET / total;
+    const STARTING_OFFSET = FINAL_OFFSET / total + 50;
     const projectOffset = (FINAL_OFFSET * index) / total;
     const staticPos = innerHeight - STARTING_OFFSET - projectOffset;
     return (
@@ -24,6 +24,7 @@ class Project extends React.Component {
           projectOffset={projectOffset}
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
+          STARTING_OFFSET={STARTING_OFFSET}
         />
         <ProjectDetails
           scroll={scroll}

@@ -38,7 +38,7 @@ class ProjectDetails extends React.Component {
                 target="_blank"
                 className="project-title project-title__link"
               >
-                🔗 {name}
+                {name}
               </a>
             </h1>
           ) : (

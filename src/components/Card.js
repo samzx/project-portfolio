@@ -2,12 +2,13 @@ import React from "react";
 
 class Card extends React.Component {
   handleClick = () => {
-    const { showTime, showLength, staticPos, projectOffset } = this.props;
+    const { showTime, showLength, staticPos, projectOffset, STARTING_OFFSET } = this.props;
     const scrollPos =
       showTime * (document.documentElement.scrollHeight - window.innerHeight) -
       projectOffset +
       window.innerHeight / 2 +
-      this.props.calcImgHeight() / 2;
+      this.props.calcImgHeight() / 2 -
+      STARTING_OFFSET;
     window.scrollTo(0, scrollPos);
   };
 
@@ -24,7 +25,8 @@ class Card extends React.Component {
             zIndex: -index + 100,
             position: scroll > showTime ? "absolute" : "fixed",
             transform: `scale(${1 - index * 0.01})`,
-            transition: "box-shadow 0.3s, transform 0.3s"
+            transition: "box-shadow 0.3s, transform 0.3s",
+            filter: scroll > showTime ? null : "grayscale(1)",
           }}
           onClick={this.handleClick}
         >
