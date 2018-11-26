@@ -14,8 +14,8 @@ class Projects extends React.Component {
 
   setInnerDimensions = () => {
     this.setState(() => ({
-      innerHeight: window.innerHeight,
-      innerWidth: window.innerWidth
+      innerHeight: document.documentElement.clientHeight,
+      innerWidth: document.documentElement.clientWidth
     }));
   };
 

@@ -10,8 +10,8 @@ class End extends React.Component {
 
   setScreenScroll = () => {
     const oneScreenScroll =
-      window.innerHeight /
-      (document.documentElement.scrollHeight - window.innerHeight);
+      document.documentElement.clientHeight /
+      (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     this.setState(() => ({ oneScreenScroll }));
   };
 
