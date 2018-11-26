@@ -5,7 +5,7 @@ class Helper extends React.Component {
     const { scroll } = this.props;
     if (scroll < 0.99) {
       console.log(scroll);
-      window.scrollTo(0, document.body.clientHeight);
+      window.scrollTo(0, document.body.offsetHeight);
     } else {
       window.scrollTo(0, 0);
     }
