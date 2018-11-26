@@ -7,7 +7,7 @@ class Card extends React.Component {
   handleClick = () => {
     const { showTime, showLength, staticPos, projectOffset, STARTING_OFFSET } = this.props;
     const scrollPos =
-      showTime * (document.body.offsetHeight - window.innerHeight) -
+      showTime * (document.body.clientHeight - window.innerHeight) -
       projectOffset +
       window.innerHeight / 2 +
       this.props.calcImgHeight() / 2 -
