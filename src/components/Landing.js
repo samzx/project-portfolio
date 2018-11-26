@@ -35,7 +35,7 @@ class Landing extends React.Component {
               1 -
               (scroll > oneScreenScroll / 2
                 ? 1
-                : (scroll / oneScreenScroll) * 2),
+                : (scroll / oneScreenScroll) * 4),
             zIndex: scroll > oneScreenScroll / 2 ? -1 : 1,
             display: scroll > oneScreenScroll / 2 ? "none" : "unset"
           }}
