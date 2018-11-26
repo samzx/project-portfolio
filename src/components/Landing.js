@@ -13,8 +13,8 @@ class Landing extends React.Component {
 
   setScreenScroll = () => {
     const oneScreenScroll =
-      document.documentElement.clientHeight /
-      (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+      window.innerHeight /
+      (document.body.clientHeight - window.innerHeight);
     this.setState(() => ({ oneScreenScroll }));
   };
 

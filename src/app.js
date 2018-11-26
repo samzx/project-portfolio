@@ -16,7 +16,7 @@ class App extends React.Component {
 
   handleScroll = () => {
     const scrollMax =
-      document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.body.clientHeight - window.innerHeight;
     const scrollY = window.scrollY;
     const scroll = scrollY / scrollMax;
     this.setState(() => ({ scroll }));
