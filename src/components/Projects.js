@@ -19,7 +19,7 @@ class Projects extends React.Component {
     }));
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.setInnerDimensions();
     window.addEventListener("resize", this.setInnerDimensions);
   }
@@ -35,10 +35,11 @@ class Projects extends React.Component {
 
   render() {
     const numShows = developments.length + heroOffset;
+    const { innerHeight } = this.state;
     return (
       <div
         style={{
-          height: `calc(${numShows * window.innerHeight}px + ${(numShows - heroOffset) *
+          height: `calc(${numShows * innerHeight}px + ${(numShows - heroOffset) *
             this.calcImgHeight()}px)`
           // height: `${numShows * this.state.innerHeight + (numShows - heroOffset) * this.calcImgHeight()}px`
         }}
