@@ -1,6 +1,18 @@
 import React from "react";
 
 class ProjectDetails extends React.Component {
+  calcOpacity = (scroll, showTime, pcOffset, showEnd) => {
+    const showPeak = (showEnd + showTime) / 2 - pcOffset;
+    if (scroll < showPeak) {
+      return ((scroll - showTime + pcOffset * (scroll - showTime) / showPeak) / (showEnd - showTime)) * 2
+    } else {
+      if (scroll > showEnd) {
+        return 0;
+      } else {
+        return (1 - (scroll - showTime + pcOffset * (scroll - showTime) / showPeak) / (showEnd - showTime)) * 2
+      }
+    }
+  }
   render() {
     const {
       scroll,
@@ -21,14 +33,10 @@ class ProjectDetails extends React.Component {
           textAlign: "center",
           position: "fixed",
           height: (innerHeight - calcImgHeight() - projectOffset) / 2,
-          // bottom: innerHeight / 2 + calcImgHeight() / 2 + 30,
           top: 0,
           display: scroll > showTime && scroll < showEnd ? "flex" : "none",
           flexDirection: "column",
-          opacity:
-            scroll < (showEnd + showTime) / 2 - pcOffset
-              ? ((scroll - showTime + pcOffset) / (showEnd - showTime)) * 2
-              : (1 - (scroll - showTime + pcOffset) / (showEnd - showTime)) * 2
+          opacity: this.calcOpacity(scroll, showTime, pcOffset, showEnd)
         }}
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
