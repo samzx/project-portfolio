@@ -5,13 +5,14 @@ import ProjectDetails from "./ProjectDetails";
 
 class Project extends React.Component {
   render() {
-    const { item, index, scroll, total, showLength, innerHeight } = this.props;
-    const showTime = index / total;
-    const showEnd = (index + 1) / total;
+    const { item, index, scroll, total, showLength, innerHeight, numShows } = this.props;
     const FINAL_OFFSET = 100;
     const STARTING_OFFSET = FINAL_OFFSET / total + 50;
+    const showTime = index / total;
+    const showEnd = (index + 1) / total;
     const projectOffset = (FINAL_OFFSET * index) / total;
     const staticPos = innerHeight - STARTING_OFFSET - projectOffset;
+    const pcOffset = (projectOffset + STARTING_OFFSET) / (document.body.clientHeight - window.innerHeight)
     return (
       <div>
         <Card
@@ -34,6 +35,7 @@ class Project extends React.Component {
           projectOffset={projectOffset}
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
+          pcOffset={pcOffset}
         />
       </div>
     );

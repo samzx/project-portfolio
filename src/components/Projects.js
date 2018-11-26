@@ -55,6 +55,7 @@ class Projects extends React.Component {
               showLength={this.state.innerHeight + this.calcImgHeight()}
               calcImgHeight={this.calcImgHeight}
               innerHeight={this.state.innerHeight}
+              numShows={numShows}
             />
           ))}
         </div>

@@ -9,7 +9,8 @@ class ProjectDetails extends React.Component {
       item,
       innerHeight,
       calcImgHeight,
-      projectOffset
+      projectOffset,
+      pcOffset
     } = this.props;
     const { name, description, link } = item;
     return (
@@ -25,9 +26,9 @@ class ProjectDetails extends React.Component {
           display: scroll > showTime && scroll < showEnd ? "flex" : "none",
           flexDirection: "column",
           opacity:
-            scroll < (showEnd + showTime) / 2
-              ? ((scroll - showTime) / (showEnd - showTime)) * 2
-              : (1 - (scroll - showTime) / (showEnd - showTime)) * 2
+            scroll < (showEnd + showTime) / 2 - pcOffset
+              ? ((scroll - showTime + pcOffset) / (showEnd - showTime)) * 2
+              : (1 - (scroll - showTime + pcOffset) / (showEnd - showTime)) * 2
         }}
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
