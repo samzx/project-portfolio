@@ -32,7 +32,7 @@ class ProjectDetails extends React.Component {
           width: "100%",
           textAlign: "center",
           position: "fixed",
-          height: (innerHeight - calcImgHeight() - projectOffset) / 2,
+          height: (innerHeight - calcImgHeight()) / 2,
           top: 0,
           display: scroll > showTime && scroll < showEnd ? "flex" : "none",
           flexDirection: "column",
