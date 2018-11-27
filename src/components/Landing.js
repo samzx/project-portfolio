@@ -2,6 +2,7 @@ import React from "react";
 
 import Social from "./Social";
 import Descriptions from "./Descriptions";
+import { getScroll } from "../tools/Scroll";
 
 const color = "#521372";
 const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
@@ -21,11 +22,12 @@ class Landing extends React.Component {
   componentDidMount() {
     this.setScreenScroll();
     window.addEventListener("resize", this.setScreenScroll);
+    window.addEventListener("scroll", () => this.forceUpdate());
   }
 
   render() {
     const { oneScreenScroll } = this.state;
-    const { scroll } = this.props;
+    const scroll = getScroll()
     return (
       <div className="landing">
         <div

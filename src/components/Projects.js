@@ -50,7 +50,6 @@ class Projects extends React.Component {
               key={item.name}
               item={item}
               index={index}
-              scroll={this.props.scroll}
               total={developments.length}
               showLength={this.state.innerHeight + this.calcImgHeight()}
               calcImgHeight={this.calcImgHeight}

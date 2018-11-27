@@ -2,17 +2,22 @@ import React from "react";
 
 import Card from "./Card";
 import ProjectDetails from "./ProjectDetails";
+import { getScroll } from "../tools/Scroll";
 
 class Project extends React.Component {
+  componentDidMount() {
+    window.addEventListener("scroll", () => this.forceUpdate());
+  }
   render() {
-    const { item, index, scroll, total, showLength, innerHeight, numShows } = this.props;
+    const { item, index, total, showLength, innerHeight, numShows, scrollMax } = this.props;
+    const scroll = getScroll();
     const FINAL_OFFSET = 100;
     const STARTING_OFFSET = FINAL_OFFSET / total + 50;
     const showTime = index / total;
     const showEnd = (index + 1) / total;
     const projectOffset = (FINAL_OFFSET * index) / total;
     const staticPos = innerHeight - STARTING_OFFSET - projectOffset;
-    const pcOffset = (projectOffset + STARTING_OFFSET) / (document.body.clientHeight - window.innerHeight)
+    const pcOffset = scrollMax == 0 ? 0 : (projectOffset + STARTING_OFFSET) / (document.body.clientHeight - window.innerHeight)
     return (
       <div>
         <Card

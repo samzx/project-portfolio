@@ -4,11 +4,13 @@ class ProjectDetails extends React.Component {
   calcOpacity = (scroll, showTime, pcOffset, showEnd) => {
     const showPeak = (showEnd + showTime) / 2 - pcOffset;
     if (scroll < showPeak) {
+      if (showPeak - showTime  == 0 || showEnd - showTime == 0) return 0;
       return ((scroll - showTime + pcOffset * (scroll - showTime) / (showPeak - showTime)) / (showEnd - showTime)) * 2
     } else {
       if (scroll > showEnd) {
         return 0;
       } else {
+        if (showPeak - showTime  == 0 || showEnd - showTime == 0) return 0;
         return (1 - (scroll - showTime + pcOffset * (scroll - showTime) / (showPeak - showTime)) / (showEnd - showTime)) * 2
       }
     }

@@ -1,8 +1,12 @@
 import React from "react";
+import { getScroll } from "../tools/Scroll";
 
 class Helper extends React.Component {
+  componentDidMount() {
+    window.addEventListener("scroll", () => this.forceUpdate());
+  }
   handleClick = () => {
-    const { scroll } = this.props;
+    const scroll = getScroll();
     if (scroll < 0.99) {
       window.scrollTo(0, document.body.clientHeight);
     } else {

@@ -1,5 +1,6 @@
 import React from "react";
 import Social from "./Social";
+import { getScroll } from "../tools/Scroll";
 
 const color = "#4d036e";
 
@@ -18,10 +19,11 @@ class End extends React.Component {
   componentDidMount() {
     this.setScreenScroll();
     window.addEventListener("resize", this.setScreenScroll);
+    window.addEventListener("scroll", () => this.forceUpdate());
   }
 
   render() {
-    const { scroll } = this.props;
+    const scroll = getScroll();
     const { oneScreenScroll } = this.state;
     const showTime = 1 - oneScreenScroll / 2;
     return (

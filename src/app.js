@@ -10,33 +10,16 @@ import End from "./components/End";
 import Helper from "./components/Helper";
 
 class App extends React.Component {
-  state = {
-    scroll: 0
-  };
-
-  handleScroll = () => {
-    const scrollMax =
-      document.body.clientHeight - window.innerHeight;
-    const scrollY = window.scrollY;
-    const scroll = scrollY / scrollMax;
-    this.setState(() => ({ scroll }));
-  };
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-
   render() {
-    const { scroll } = this.state;
     return (
       <div className="app">
         {
           // <div className="back">🎲</div>
         }
-        <Landing scroll={scroll} />
-        <Projects scroll={scroll} />
-        <End scroll={scroll} />
-        <Helper scroll={scroll} />
+        <Landing/>
+        <Projects/>
+        <End/>
+        <Helper/>
       </div>
     );
   }
