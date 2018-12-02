@@ -5,6 +5,8 @@ $card-radius: 1rem;
   width: 100%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   border-radius: $card-radius;
+  min-height: 15rem;
+  background: white;
 }
 
 .card:hover {

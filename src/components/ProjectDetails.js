@@ -13,6 +13,19 @@ class ProjectDetails extends React.Component {
       }
     }
   }
+  selectIcon = (name) => {
+    switch (name) {
+      case "Source":
+        return "project-link-source"
+        break;
+      case "Demo":
+        return "project-link-demo"
+        break;
+      default:
+        return "project-link-other"
+        break;
+    }
+  }
   render() {
     const {
       scroll,
@@ -46,7 +59,16 @@ class ProjectDetails extends React.Component {
           <p>{description}</p>
           <p>
             <b>
-              {links && links.map(link => <a className="project-link" href={link.url} target="_blank" key={link.url}>{link.name}</a>)}
+              {
+                links && links.map(link =>
+                  <a
+                    className={`project-link ${this.selectIcon(link.name)}`}
+                    href={link.url}
+                    target="_blank"
+                    key={link.url}>{link.name}
+                  </a>
+                )
+              }
             </b>
           </p>
         </div>

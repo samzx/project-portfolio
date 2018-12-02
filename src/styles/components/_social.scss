@@ -1,5 +1,7 @@
 .social-img {
   transition: transform 0.3s;
+  font-size: 5rem;
+  color: #4d036e;
 }
 .social-img:hover {
   transform: scale(1.1);
@@ -7,7 +9,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .social-img svg {
-    width: 40px;
+  .social-img {
+    font-size: 4rem;
   }
 }

@@ -25,17 +25,31 @@ $project-size: 15rem;
   margin: auto 1rem;
   text-decoration: none;
   color: #5a0078;
-  opacity: 1;
+  opacity: 0.65;
   transition: opacity 0.3s;
 }
 
-.project-link:hover::before {
+.project-link:hover {
   opacity: 1;
   transition: opacity 0.3s;
 }
 
 .project-link::before {
-  opacity: 0.5;
-  content: "🔗";
+  font-family: "Font Awesome 5 Free";
   transition: opacity 0.3s;
+  padding-right: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.project-link-other::before {
+  content: "\f0c1";
+}
+
+.project-link-source::before {
+  content: "\f126";
+}
+
+.project-link-demo::before {
+  content: "\f04b";
 }
