@@ -30,6 +30,7 @@ class App extends React.Component {
     const { scroll } = this.state;
     return (
       <div className="app">
+        <div className="background"/>
         {
           // <div className="back">🎲</div>
         }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { follow, profile } from "../data/social";
-import { Github, Instagram, Medium, LinkedIn } from "../assets/SocialIcons";
+import { Github, Instagram, Medium, LinkedIn, Youtube, Twitter } from "../assets/SocialIcons";
 
 const Icon = (name, width, color) => {
   switch (name) {
@@ -13,6 +13,10 @@ const Icon = (name, width, color) => {
       return <Medium width={width} color={color} />;
     case "Instagram":
       return <Instagram width={width} color={color} />;
+    case "Twitter":
+      return <Twitter width={width} color={color} />;
+    case "Youtube":
+      return <Youtube width={width} color={color} />;
   }
 };
 

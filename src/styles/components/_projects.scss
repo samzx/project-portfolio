@@ -9,19 +9,6 @@ $project-size: 15rem;
   // color: #4d036e;
 }
 
-.project-title__link {
-  text-decoration: none;
-}
-.project-title__link {
-  border-bottom: 0rem solid transparent;
-  transition: border-bottom 0.3s;
-}
-
-.project-title__link:hover {
-  border-bottom: 0.3rem solid #5a0078;
-  transition: border-bottom 0.3s;
-}
-
 .project-container {
   display: flex;
   align-items: center;
@@ -32,4 +19,17 @@ $project-size: 15rem;
 
 .project-details {
   justify-content: center;
+}
+
+.project-link {
+  margin: auto 1rem;
+  text-decoration: none;
+  color: #5a0078;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.project-link:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s;
 }

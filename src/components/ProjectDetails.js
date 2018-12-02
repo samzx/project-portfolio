@@ -24,7 +24,7 @@ class ProjectDetails extends React.Component {
       projectOffset,
       pcOffset
     } = this.props;
-    const { name, description, link } = item;
+    const { name, description, links } = item;
     return (
       <div
         className="project-details"
@@ -40,20 +40,15 @@ class ProjectDetails extends React.Component {
         }}
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
-          {link ? (
-            <h1>
-              <a
-                href={link}
-                target="_blank"
-                className="project-title project-title__link"
-              >
-                {name}
-              </a>
-            </h1>
-          ) : (
-            <h1 className="project-title">🛠 {name}</h1>
-          )}
+          <h1 className="project-title">
+            {name}
+          </h1>
           <p>{description}</p>
+          <p>
+            <b>
+              {links && links.map(link => <a className="project-link" href={link.url} target="_blank" key={link.url}>{link.name}</a>)}
+            </b>
+          </p>
         </div>
       </div>
     );

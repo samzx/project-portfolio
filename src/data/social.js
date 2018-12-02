@@ -1,5 +1,3 @@
-import { Github, Instagram, Medium, Linkedin } from "../assets/SocialIcons";
-
 export const follow = [
   {
     name: "Medium",
@@ -7,11 +5,13 @@ export const follow = [
     image: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/medium.svg"
   },
   {
-    name: "Instagram",
-    src: "https://www.instagram.com/samxstudio",
-    image:
-      "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg"
-  }
+    name: "Youtube",
+    src: "https://www.youtube.com/user/Sxalpha",
+  },
+  {
+    name: "Twitter",
+    src: "https://twitter.com/samzxie",
+  },
 ];
 
 export const profile = [
