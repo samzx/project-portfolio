@@ -5,7 +5,7 @@ export const developments = [
       "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
     links: [
       {
-        name: "𝍌 Website",
+        name: "Website",
         url:  "https://elude.samxie.net"
       }
     ],
@@ -18,11 +18,11 @@ export const developments = [
       "https://res.cloudinary.com/xielabs/image/upload/v1541582260/mphwatch.png",
     links: [
       {
-        name: "⑂ Repository",
+        name: "Source",
         url: "https://github.com/samzx/mphwatch"
       },
       {
-        name: "★ Demo",
+        name: "Demo",
         url: "https://mphwatch.samxie.net"
       }
     ],
@@ -35,7 +35,7 @@ export const developments = [
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/bookitmaps.png",
     links: [
       {
-        name: "⑂ Repository",
+        name: "Source",
         url:  "https://github.com/samzx/bookit-maps-front"
       }
     ],
@@ -48,7 +48,7 @@ export const developments = [
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/zendesk_mobile_ticket_viewer.png",
     links: [
       {
-        name: "⑂ Repository",
+        name: "Source",
         url: "https://github.com/samzx/zendesk-coding-challenge",
       }
     ],
@@ -60,7 +60,7 @@ export const developments = [
       "https://res.cloudinary.com/xielabs/image/upload/v1542539504/opengl.gif",
     links: [
       {
-        name: "⑂ Repository",
+        name: "Source",
         url: "https://github.com/samzx/opengl2d-drawing",
       }
     ],

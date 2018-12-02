@@ -29,7 +29,13 @@ $project-size: 15rem;
   transition: opacity 0.3s;
 }
 
-.project-link:hover {
+.project-link:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.project-link::before {
   opacity: 0.5;
+  content: "🔗";
   transition: opacity 0.3s;
 }
