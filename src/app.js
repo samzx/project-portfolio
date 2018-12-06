@@ -31,9 +31,6 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="background"/>
-        {
-          // <div className="back">🎲</div>
-        }
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
         <End scroll={scroll} />

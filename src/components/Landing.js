@@ -2,6 +2,7 @@ import React from "react";
 
 import Social from "./Social";
 import Descriptions from "./Descriptions";
+import Blog from "./Blog";
 
 const color = "$primary-color";
 const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
@@ -39,6 +40,7 @@ class Landing extends React.Component {
             display: scroll > oneScreenScroll / 2 ? "none" : null
           }}
         >
+          <Blog />
           <h1 className="hero">Hi there, I'm Sam</h1>
           <h1 className="" style={{ fontWeight: "normal", color }}>
             I <span style={{fontFamily:"serif"}}>♥</span> {<Descriptions descriptions={synonyms} />} things.
