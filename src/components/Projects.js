@@ -21,7 +21,6 @@ class Projects extends React.Component {
 
   componentWillMount() {
     this.setInnerDimensions();
-    window.addEventListener("resize", this.setInnerDimensions);
   }
 
   calcImgHeight = () => {

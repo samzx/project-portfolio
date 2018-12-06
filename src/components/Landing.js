@@ -20,7 +20,6 @@ class Landing extends React.Component {
 
   componentDidMount() {
     this.setScreenScroll();
-    window.addEventListener("resize", this.setScreenScroll);
   }
 
   render() {
