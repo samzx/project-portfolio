@@ -35,7 +35,7 @@ class End extends React.Component {
       >
         <div className="end-container">
           <Blog />
-          <h1 style={{ color }}>Find me around 🦄</h1>
+          <h1 style={{ color }}>Find me around 🐼</h1>
           <Social color={color} />
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">
