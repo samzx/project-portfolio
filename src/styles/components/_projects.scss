@@ -1,12 +1,7 @@
 $project-size: 15rem;
 
 .project-title {
-  background: linear-gradient(45deg, rgb(0, 0, 0), #7815a9);
-  background-attachment: fixed;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  // color: #4d036e;
+  color: $primary-color;
 }
 
 .project-container {
@@ -24,7 +19,7 @@ $project-size: 15rem;
 .project-link {
   margin: auto 1rem;
   text-decoration: none;
-  color: #5a0078;
+  color: $primary-color;
   opacity: 0.65;
   transition: opacity 0.3s;
 }

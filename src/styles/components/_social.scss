@@ -1,7 +1,7 @@
 .social-img {
   transition: transform 0.3s;
   font-size: 5rem;
-  color: #4d036e;
+  color: $primary-color;
 }
 .social-img:hover {
   transform: scale(1.1);

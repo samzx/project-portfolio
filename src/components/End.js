@@ -1,7 +1,7 @@
 import React from "react";
 import Social from "./Social";
 
-const color = "#4d036e";
+const color = "$primary-color";
 
 class End extends React.Component {
   state = {

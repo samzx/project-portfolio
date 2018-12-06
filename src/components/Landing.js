@@ -3,7 +3,7 @@ import React from "react";
 import Social from "./Social";
 import Descriptions from "./Descriptions";
 
-const color = "#521372";
+const color = "$primary-color";
 const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 
 class Landing extends React.Component {

@@ -18,9 +18,9 @@
   padding: 1.4rem;
   margin: 1.4rem;
   display: inline-block;
-  border: 0.3rem solid #4d036e;
+  border: 0.3rem solid $primary-color;
   text-transform: uppercase;
-  color: #4d036e;
+  color: $primary-color;
   letter-spacing: 0.2rem;
   text-decoration: none;
   font-weight: bold;
@@ -28,7 +28,7 @@
 }
 
 .end-button:hover {
-  background-color: #4d036e;
+  background-color: $primary-color;
   color: white;
   transition: color 0.3s, background-color 0.3s;
 }

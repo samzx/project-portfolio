@@ -11,7 +11,7 @@ const Social = props => (
         key={link.name}
       >
         <a href={link.src} target="_blank">
-          <div className="social-img"><i className={`fab ${link.icon}`}></i></div>
+          <div className="social-img"><i className={`${link.icon}`}></i></div>
         </a>
       </div>
     ))

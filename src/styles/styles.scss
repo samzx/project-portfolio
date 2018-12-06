@@ -9,18 +9,19 @@
 @import "./components/_helper.scss";
 
 body {
-  background: #fff;
+  background: white;
   font-family: "Roboto", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  color: #2f0046;
+  color: $primary-color;
 }
 
 .background {
   background-attachment: fixed;
-  background: linear-gradient(45deg, #f8ebfe, #ecf6fd);
+  // background: linear-gradient(45deg, #20052c, #041b2b);
+  background: white;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
