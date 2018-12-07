@@ -34,6 +34,8 @@
 
 .landing-statement {
   color: $primary-color;
+  width: fit-content;
+  margin: auto;
   cursor: pointer;
   transition: color 0.3s, transform 0.3s;
 }

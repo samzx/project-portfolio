@@ -35,27 +35,16 @@ class ProjectDetails extends React.Component {
       innerHeight,
       calcImgHeight,
       projectOffset,
-      pcOffset
     } = this.props;
     const { name, description, links } = item;
     return (
       <div
         className="project-details"
-        style={{
-          width: "100%",
-          textAlign: "center",
-          position: "fixed",
-          height: (innerHeight - calcImgHeight()) / 2,
-          top: 0,
-          display: scroll > showTime && scroll < showEnd ? "flex" : "none",
-          flexDirection: "column",
-          opacity: this.calcOpacity(scroll, showTime, pcOffset, showEnd)
-        }}
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
-          <h1 className="project-title">
+          <h2>
             {name}
-          </h1>
+          </h2>
           <p>{description}</p>
           <p>
             <b>

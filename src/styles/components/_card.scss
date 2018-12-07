@@ -1,7 +1,8 @@
 $card-radius: 1rem;
+$width: 36rem;
 
 .card {
-  max-width: 72rem;
+  max-width: $width;
   width: 100%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   border-radius: $card-radius;
@@ -64,17 +65,17 @@ $card-radius: 1rem;
 }
 
 .placeholder-image {
-  max-width: 72rem;
+  max-width: $width;
   width: 100%;
   height: 40rem;
-  border-radius: $card-radius;
+  border-radius: $card-radius $card-radius 0 0;
 }
 
 .image {
   max-width: 100%;
   width: 100%;
   vertical-align: middle;
-  border-radius: $card-radius;
+  border-radius: $card-radius $card-radius 0 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -98,15 +99,15 @@ $card-radius: 1rem;
     border-radius: $card-radius / 2;
   }
   .placeholder-image {
-    max-width: 72rem;
+    max-width: $width;
     width: 100%;
     height: 24rem;
-    border-radius: $card-radius / 2;
+    border-radius: $card-radius / 2 $card-radius / 2 0 0;
   }
   .placeholder-image {
-    border-radius: $card-radius / 2;
+    border-radius: $card-radius / 2 $card-radius / 2 0 0;
   }
   .image {
-    border-radius: $card-radius / 2;
+    border-radius: $card-radius / 2 $card-radius / 2 0 0;
   }
 }

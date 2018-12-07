@@ -4,8 +4,18 @@ import Card from "./Card";
 import ProjectDetails from "./ProjectDetails";
 
 class Project extends React.Component {
+
+  componentDidMount() {
+    window.addEventListener("scroll", () => {
+        const { index, total, setBackgroundUrl, scroll, item } = this.props;
+        if (scroll > index / total && scroll < (index + 1) / total) {
+          setBackgroundUrl(item.src);
+        }
+    })
+  }
+
   render() {
-    const { item, index, scroll, total, showLength, innerHeight, numShows } = this.props;
+    const { item, index, scroll, total, showLength, innerHeight, numShows} = this.props;
     const FINAL_OFFSET = 100;
     const STARTING_OFFSET = FINAL_OFFSET / total + 50;
     const showTime = index / total;
@@ -22,20 +32,12 @@ class Project extends React.Component {
           showLength={showLength}
           index={index}
           src={item.src}
-          projectOffset={projectOffset}
-          calcImgHeight={this.props.calcImgHeight}
-          innerHeight={innerHeight}
-          STARTING_OFFSET={STARTING_OFFSET}
-        />
-        <ProjectDetails
-          scroll={scroll}
-          showTime={showTime}
-          showEnd={showEnd}
           item={item}
           projectOffset={projectOffset}
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
-          pcOffset={pcOffset}
+          STARTING_OFFSET={STARTING_OFFSET}
+          setBackgroundUrl={this.setBackgroundUrl}
         />
       </div>
     );

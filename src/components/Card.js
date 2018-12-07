@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectDetails from "./ProjectDetails"
 
 class Card extends React.Component {
   state = {
@@ -10,13 +11,13 @@ class Card extends React.Component {
       showTime * (document.body.clientHeight - window.innerHeight) -
       projectOffset +
       window.innerHeight / 2 +
-      this.props.calcImgHeight() / 2 -
+      this.props.calcImgHeight()/2 -
       STARTING_OFFSET;
     window.scrollTo(0, scrollPos);
   };
 
   render() {
-    const { scroll, showTime, staticPos, showLength, index, src } = this.props;
+    const { scroll, showTime, staticPos, showLength, index, src, showEnd, item, projectOffset } = this.props;
 
     return (
       <div className="card-container">
@@ -40,6 +41,15 @@ class Card extends React.Component {
           ) : (
             <div className="placeholder-image" />
           )}
+          <ProjectDetails
+            scroll={scroll}
+            showTime={showTime}
+            showEnd={showEnd}
+            projectOffset={projectOffset}
+            calcImgHeight={this.props.calcImgHeight}
+            innerHeight={innerHeight}
+            item={item}
+          />
         </div>
       </div>
     );

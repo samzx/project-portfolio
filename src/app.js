@@ -11,7 +11,8 @@ import Helper from "./components/Helper";
 
 class App extends React.Component {
   state = {
-    scroll: 0
+    scroll: 0,
+    backgroundUrl: null
   };
 
   handleScroll = () => {
@@ -26,13 +27,17 @@ class App extends React.Component {
     window.addEventListener("scroll", this.handleScroll);
   }
 
+  setBackgroundUrl = (backgroundUrl) => {
+    this.setState(() => ({ backgroundUrl }))
+  }
+
   render() {
     const { scroll } = this.state;
     return (
       <div className="app">
-        <div className="background"/>
+        <div className="background" style={{background: `url(${this.state.backgroundUrl})`}}/>
         <Landing scroll={scroll} />
-        <Projects scroll={scroll} />
+        <Projects scroll={scroll} setBackgroundUrl={this.setBackgroundUrl} />
         <End scroll={scroll} />
         <Helper scroll={scroll} />
       </div>

@@ -25,14 +25,18 @@ html {
 
 .background {
   background-attachment: fixed;
-  // background: linear-gradient(45deg, #20052c, #041b2b);
-  background: white;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat !important;
   height: 100vh;
+  filter: blur(10px);
   width: 100vw;
+  transform: scale(1.2);
+  background-size: cover !important;
   position: fixed;
+  background-position: center !important;
   top: 0;
 }
+
+
 
 @media only screen and (max-width: 600px) {
 }

@@ -50,6 +50,7 @@ class Projects extends React.Component {
               item={item}
               index={index}
               scroll={this.props.scroll}
+              setBackgroundUrl={this.props.setBackgroundUrl}
               total={developments.length}
               showLength={this.state.innerHeight + this.calcImgHeight()}
               calcImgHeight={this.calcImgHeight}
