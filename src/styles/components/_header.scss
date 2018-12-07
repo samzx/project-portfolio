@@ -69,6 +69,11 @@
   opacity: 0;
 }
 
+.modalContainer {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media only screen and (max-width: 600px) {
   .header__desktop{
     display: none;

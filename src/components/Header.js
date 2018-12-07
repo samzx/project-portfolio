@@ -67,10 +67,10 @@ class Header extends React.Component {
           >
             {
               // Modal Contents
-              <div style={{height: "100%"}}>
+              <div className="modalContainer">
                 <div className="closeModal" onClick={this.closeModal}><i className="fas fa-times"/></div>
                 {
-                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"calc(100% - 39px)", border: 0}} />
+                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"calc(100% - 39px)", border: 0, position: "absolute"}} />
                 }
               </div>
             }
