@@ -5,17 +5,17 @@ export const follow = [
   //   image: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/medium.svg",
   //   icon: "fa-medium"
   // },
-  {
-    name: "Blog",
-    src: "https://www.samxie.net/blog",
-    image: "",
-    icon: "fas fa-rss-square"
-  },
   // {
-  //   name: "Youtube",
-  //   src: "https://www.youtube.com/user/Sxalpha",
-  //   icon: "fab fa-youtube-square"
+  //   name: "Blog",
+  //   src: "https://www.samxie.net/blog",
+  //   image: "",
+  //   icon: "fas fa-rss-square"
   // },
+  {
+    name: "Youtube",
+    src: "https://www.youtube.com/user/Sxalpha",
+    icon: "fab fa-youtube-square"
+  },
   {
     name: "Twitter",
     src: "https://twitter.com/samzxie",

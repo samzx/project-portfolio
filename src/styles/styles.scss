@@ -7,6 +7,7 @@
 @import "./components/_projects.scss";
 @import "./components/_end.scss";
 @import "./components/_helper.scss";
+@import "./components/_header.scss";
 
 body {
   background: white;
@@ -27,23 +28,6 @@ html {
   width: 100vw;
   position: fixed;
   top: 0;
-}
-
-.blog {
-  position: absolute;
-  text-decoration: none;
-  background: black;
-  z-index: 10;
-  top: 10px;
-  right: 0;
-  padding: 0.5rem 2rem;
-  box-shadow: 3px 3px 0px grey;
-}
-
-.blog a {
-  text-decoration: none;
-  font-weight: 700;
-  color: white;
 }
 
 @media only screen and (max-width: 600px) {

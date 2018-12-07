@@ -28,7 +28,20 @@
 }
 
 .heart {
+  font-family:"serif";
   font-size: 2.4rem;
+}
+
+.landing-statement {
+  color: $primary-color;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.landing-statement:hover {
+  color: $secondary-color;
+  transform: scale(1.1);
+  transition: color 0.3s, transform 0.3s;
 }
 
 @media only screen and (max-width: 600px) {
@@ -43,6 +56,6 @@
     min-height: calc(100vh - 20rem);
   }
   .heart {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }

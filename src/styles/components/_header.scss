@@ -1,0 +1,86 @@
+.header__desktop {
+  position: absolute;
+  text-decoration: none;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  text-align: right;
+  width: 100%;
+  margin: 3rem 0;
+}
+
+.header a {
+  text-decoration: none;
+  font-weight: 700;
+  color: lighten($primary-color, 50%);
+  margin-right: 4rem;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.header a:hover {
+  color: $secondary-color;
+}
+
+.header__ellipsis {
+  display: none;
+}
+
+.header__mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  transition: opacity 0.3s;
+  display: none;
+}
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.closeModal {
+  position: relative;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+  color: $primary-color;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__desktop{
+    display: none;
+  }
+  .header__ellipsis {
+    display: inline;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+  }
+  .header__mobile {
+    display: block;
+  }
+  .header a {
+    margin: 2rem;
+  }
+}

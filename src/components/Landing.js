@@ -2,9 +2,8 @@ import React from "react";
 
 import Social from "./Social";
 import Descriptions from "./Descriptions";
-import Blog from "./Blog";
+import Header from "./Header";
 
-const color = "$primary-color";
 const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 
 class Landing extends React.Component {
@@ -21,6 +20,20 @@ class Landing extends React.Component {
 
   componentDidMount() {
     this.setScreenScroll();
+  }
+
+  handleCuriosity = () => {
+    const iterations = 2;
+    const interval = 100;
+    const scrollDistance = 10;
+    for(let i=0; i<iterations; i++) {
+      setTimeout(() => {
+        window.scrollTo(0, scrollDistance)
+      }, i*2*interval);
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, i*2*interval + interval);
+    }
   }
 
   render() {
@@ -40,13 +53,13 @@ class Landing extends React.Component {
             display: scroll > oneScreenScroll / 2 ? "none" : null
           }}
         >
-          <Blog />
-          <h1 className="hero">Hi there, I'm Sam</h1>
-          <h1 className="" style={{ fontWeight: "normal", color }}>
-            I <span style={{fontFamily:"serif"}}>♥</span> {<Descriptions descriptions={synonyms} />} things.
+          <Header />
+          <h1 className="hero">Hi there, I'm <span className="accent">Sam</span></h1>
+          <h1>
+            I <span className="heart">♥</span> {<Descriptions descriptions={synonyms} />} things.
           </h1>
-          <Social color={color} />
-          <h1 style={{ color }}>Select a project below <i className="fas fa-hand-point-down"></i></h1>
+          <Social />
+          <h2 className="landing-statement" onClick={this.handleCuriosity}><i className="fas fa-fingerprint"/> Be curious.</h2>
         </div>
       </div>
     );

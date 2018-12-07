@@ -1,0 +1,85 @@
+import React from 'react';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    zIndex: 1000,
+    boxShadow: "0 0 5rem #ccc",
+    position: "relative",
+    top: "100px",
+    maxWidth: "720px",
+    margin: "auto",
+    height: "400px",
+    border: "none",
+    left: 0,
+    top: 40,
+    right: 0,
+    bottom: 0,
+    height: "calc(100vh - 80px)",
+    // Remove once iframe gone
+    overflow: "hidden",
+    padding: "0",
+  }
+}
+
+class Header extends React.Component {
+  state = {
+    ellipsis: false,
+    modalIsOpen: false,
+  }
+
+  handleEllipsis = () => {
+    this.setState((prevState) => ({ ellipsis: !prevState.ellipsis }))
+  }
+
+  handleAbout = () => {
+    this.setState((prevState) => ({ modalIsOpen: true }))
+  }
+
+  closeModal = () => {
+    this.setState((prevState) => ({ modalIsOpen: false }))
+  }
+
+  render() {
+    return (
+      <div className="header">
+        <div className="header__desktop">
+          <a onClick={this.handleAbout}><i className="fas fa-info-circle"/> About</a>
+          <a href="/blog"><i className="fas fa-book"/> Blog</a>
+        </div>
+        <div className="header__ellipsis">
+          <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis}/>
+        </div>
+        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0}}>
+          <a onClick={this.handleAbout}><i className="fas fa-info-circle"/> About</a>
+          <a href="/blog"><i className="fas fa-book"/> Blog</a>
+        </div>
+        {
+          // Modal
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            shouldCloseOnOverlayClick
+            contentLabel="About Modal"
+            ariaHideApp={false}
+            closeTimeoutMS={300}
+          >
+            {
+              // Modal Contents
+              <div style={{height: "100%"}}>
+                <div className="closeModal" onClick={this.closeModal}><i class="fas fa-times"></i></div>
+                {
+                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"100%", border: 0}} />
+                }
+              </div>
+            }
+          </Modal>
+        }
+      </div>
+    );
+  }
+}
+
+
+export default Header;

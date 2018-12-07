@@ -1,8 +1,6 @@
 import React from "react";
 import Social from "./Social";
-import Blog from "./Blog";
-
-const color = "$primary-color";
+import Header from "./Header";
 
 class End extends React.Component {
   state = {
@@ -34,9 +32,9 @@ class End extends React.Component {
         }}
       >
         <div className="end-container">
-          <Blog />
-          <h1 style={{ color }}>Find me around 🐼</h1>
-          <Social color={color} />
+          <Header />
+          <h1>Find me around 🐼</h1>
+          <Social/>
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">
               Contact

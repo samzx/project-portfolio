@@ -22,7 +22,7 @@ class Descriptions extends React.Component {
   }
 
   render() {
-    return <span>{this.state.description}</span>;
+    return <span className="accent">{this.state.description}</span>;
   }
 }
 
