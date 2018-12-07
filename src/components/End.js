@@ -33,7 +33,7 @@ class End extends React.Component {
       >
         <div className="end-container">
           <Header />
-          <h1>Find me around 🐼</h1>
+          <h1>Stay curious.</h1>
           <Social/>
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">

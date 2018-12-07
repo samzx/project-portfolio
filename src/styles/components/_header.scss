@@ -11,12 +11,15 @@
 
 .header a {
   text-decoration: none;
-  font-weight: 700;
-  color: lighten($primary-color, 50%);
+  font-weight: 400;
+  color: lighten($primary-color, 20%);
+  letter-spacing: .4px;
   margin-right: 4rem;
   transition: color 0.3s;
   cursor: pointer;
   text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: sans-serif;
 }
 
 .header a:hover {
