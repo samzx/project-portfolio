@@ -17,7 +17,7 @@ const customStyles = {
     bottom: 0,
     height: "calc(100vh - 80px)",
     // Remove once iframe gone
-    overflow: "hidden",
+    // overflow: "hidden",
     padding: "0",
   }
 }

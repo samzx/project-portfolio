@@ -72,6 +72,7 @@
 .modalContainer {
   height: 100%;
   -webkit-overflow-scrolling: touch;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 600px) {
