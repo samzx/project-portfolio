@@ -44,15 +44,15 @@ class Header extends React.Component {
     return (
       <div className="header">
         <div className="header__desktop">
-          <a onClick={this.handleAbout}><i className="fas fa-info-circle"/> About</a>
-          <a href="/blog"><i className="fas fa-book"/> Blog</a>
+          <a onClick={this.handleAbout}>About</a>
+          <a href="/blog">Blog</a>
         </div>
         <div className="header__ellipsis">
           <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis}/>
         </div>
         <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0}}>
-          <a onClick={this.handleAbout}><i className="fas fa-info-circle"/> About</a>
-          <a href="/blog"><i className="fas fa-book"/> Blog</a>
+          <a onClick={this.handleAbout}> About</a>
+          <a href="/blog">Blog</a>
         </div>
         {
           // Modal
@@ -68,9 +68,9 @@ class Header extends React.Component {
             {
               // Modal Contents
               <div style={{height: "100%"}}>
-                <div className="closeModal" onClick={this.closeModal}><i class="fas fa-times"></i></div>
+                <div className="closeModal" onClick={this.closeModal}><i className="fas fa-times"/></div>
                 {
-                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"100%", border: 0}} />
+                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"calc(100% - 39px)", border: 0}} />
                 }
               </div>
             }
