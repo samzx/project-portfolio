@@ -53,7 +53,7 @@ class Header extends React.Component {
           <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis}/>
         }
         </div>
-        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0, display: this.state.ellipsis ? "block" : "none"}}>
+        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0}}>
           <a onClick={this.handleAbout}> About</a>
           <a href="/blog">Blog</a>
         </div>
