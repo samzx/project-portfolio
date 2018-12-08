@@ -11,8 +11,8 @@ class Card extends React.Component {
       showTime * (document.body.clientHeight - window.innerHeight) -
       projectOffset +
       window.innerHeight / 2 +
-      this.props.calcImgHeight()/2 -
-      STARTING_OFFSET;
+      this.props.calcImgHeight() -
+      STARTING_OFFSET - 40;
     window.scrollTo(0, scrollPos);
   };
 
@@ -36,11 +36,6 @@ class Card extends React.Component {
           onMouseOver={() => this.setState({ hovering: true })}
           onMouseOut={() => this.setState({ hovering: false })}
         >
-          {src ? (
-            <img src={src} className="image" />
-          ) : (
-            <div className="placeholder-image" />
-          )}
           <ProjectDetails
             scroll={scroll}
             showTime={showTime}
@@ -50,6 +45,12 @@ class Card extends React.Component {
             innerHeight={innerHeight}
             item={item}
           />
+          {src ? (
+            <img src={src} className="image" />
+          ) : (
+            <div className="placeholder-image" />
+          )}
+
         </div>
       </div>
     );

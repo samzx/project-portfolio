@@ -42,11 +42,8 @@ class ProjectDetails extends React.Component {
         className="project-details"
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
-          <h2>
+          <h3 style={{margin: "0 auto"}}>
             {name}
-          </h2>
-          <p>{description}</p>
-          <p>
             <b>
               {
                 links && links.map(link =>
@@ -59,7 +56,7 @@ class ProjectDetails extends React.Component {
                 )
               }
             </b>
-          </p>
+          </h3>
         </div>
       </div>
     );

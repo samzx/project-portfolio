@@ -35,7 +35,7 @@ class App extends React.Component {
     const { scroll } = this.state;
     return (
       <div className="app">
-        <div className="background" style={{background: `url(${this.state.backgroundUrl})`}}/>
+
         <Landing scroll={scroll} />
         <Projects scroll={scroll} setBackgroundUrl={this.setBackgroundUrl} />
         <End scroll={scroll} />
