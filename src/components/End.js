@@ -32,7 +32,7 @@ class End extends React.Component {
         }}
       >
         <div className="end-container">
-          <Header />
+          <Header forceShow/>
           <h1>Stay curious.</h1>
           <Social/>
           {

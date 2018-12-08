@@ -24,7 +24,7 @@ const customStyles = {
 
 class Header extends React.Component {
   state = {
-    ellipsis: false,
+    ellipsis: this.props.forceShow,
     modalIsOpen: false,
   }
 
@@ -48,9 +48,12 @@ class Header extends React.Component {
           <a href="/blog">Blog</a>
         </div>
         <div className="header__ellipsis">
+        {
+          !this.props.forceShow &&
           <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis}/>
+        }
         </div>
-        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0}}>
+        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0, display: this.state.ellipsis ? "block" : "none"}}>
           <a onClick={this.handleAbout}> About</a>
           <a href="/blog">Blog</a>
         </div>
