@@ -53,9 +53,9 @@ class ProjectDetails extends React.Component {
         }}
       >
         <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
-          <h1 className="project-title">
+          <h2 className="project-title">
             {name}
-          </h1>
+          </h2>
           <p>{description}</p>
           <p>
             <b>
