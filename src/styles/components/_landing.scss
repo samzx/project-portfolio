@@ -27,10 +27,10 @@
   padding: 2rem;
 }
 
-.heart {
-  font-family:"serif";
-  font-size: 2.4rem;
-}
+// .heart {
+//   font-family:"serif";
+//   font-size: 2.4rem;
+// }
 
 .landing-statement {
   color: $primary-color;
@@ -57,7 +57,7 @@
   .landing {
     min-height: calc(100vh - 20rem);
   }
-  .heart {
-    font-size: 2rem;
-  }
+  // .heart {
+  //   font-size: 2rem;
+  // }
 }
