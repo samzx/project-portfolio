@@ -58,18 +58,16 @@ class ProjectDetails extends React.Component {
           </h2>
           <p>{description}</p>
           <p>
-            <b>
-              {
-                links && links.map(link =>
-                  <a
-                    className={`project-link ${this.selectIcon(link.name)}`}
-                    href={link.url}
-                    target="_blank"
-                    key={link.url}>{link.name}
-                  </a>
-                )
-              }
-            </b>
+            {
+              links && links.map(link =>
+                <a
+                  className={`project-link ${this.selectIcon(link.name)}`}
+                  href={link.url}
+                  target="_blank"
+                  key={link.url}>{link.name}
+                </a>
+              )
+            }
           </p>
         </div>
       </div>

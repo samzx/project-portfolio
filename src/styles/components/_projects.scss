@@ -48,3 +48,19 @@ $project-size: 15rem;
 .project-link-demo::before {
   content: "\f04b";
 }
+
+.project-link-source--meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 3rem;
+  z-index: 11;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-link-source--meta {
+    margin: 1.4rem;
+  }
+}

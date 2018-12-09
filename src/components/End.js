@@ -40,10 +40,10 @@ class End extends React.Component {
               Contact
             </a>
           }
-          <p>
-          <b><a className="project-link project-link-source" href="https://github.com/samzx/samxie" target="_blank">This Project is Open Source</a></b>
-          </p>
         </div>
+        <a className="project-link project-link-source--meta" href="https://github.com/samzx/samxie" target="_blank">
+          <i class="far fa-file-code"/> Source
+        </a>
       </div>
     );
   }
