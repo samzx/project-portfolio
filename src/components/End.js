@@ -42,7 +42,7 @@ class End extends React.Component {
           }
         </div>
         <a className="project-link project-link-source--meta" href="https://github.com/samzx/samxie" target="_blank">
-          <i class="far fa-file-code"/>
+          <i className="far fa-file-code"/>
         </a>
       </div>
     );
