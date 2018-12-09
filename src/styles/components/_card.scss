@@ -23,7 +23,7 @@ $card-radius: 1rem;
   flex-direction: column;
   justify-content: center;
   opacity: 1;
-  background: rgba(0, 0, 0, 0.7);
+  // background: rgba(0, 0, 0, 0.7);
   transition: opacity 0.3s;
   border-radius: $card-radius;
   z-index: 2;
@@ -38,6 +38,17 @@ $card-radius: 1rem;
   max-width: 36rem;
   margin: auto;
   color: white;
+  background-size: 720px !important;
+  background-position: center !important;
+  filter: blur(5px);
+  position: absolute;
+}
+
+.card-overlay-contents-content {
+  max-width: 36rem;
+  margin: auto;
+  color: white;
+  position: absolute;
 }
 
 .card-overlay-button {

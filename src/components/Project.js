@@ -21,7 +21,7 @@ class Project extends React.Component {
           staticPos={staticPos}
           showLength={showLength}
           index={index}
-          src={item.src}
+          item={item}
           projectOffset={projectOffset}
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
