@@ -59,8 +59,15 @@ $project-size: 15rem;
   text-transform: uppercase;
 }
 
+.project-link-source--meta::after {
+  content: " SOURCE"
+}
+
 @media only screen and (max-width: 600px) {
   .project-link-source--meta {
     margin: 1.4rem;
+  }
+  .project-link-source--meta::after {
+    content: ""
   }
 }
