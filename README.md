@@ -1,7 +1,7 @@
-# samxie
+# Project Portfolio
 
 <p align="center">
-  <img src="https://res.cloudinary.com/xielabs/image/upload/v1542536660/samxie.png" alt="webpreview"/>
+  <img src="https://res.cloudinary.com/xielabs/image/upload/v1544526601/Screen_Shot_2018-12-11_at_10.09.24_pm.png" alt="webpreview"/>
 </p>
 
 Personal website to display projects and social media links.
