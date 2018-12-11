@@ -4,7 +4,9 @@
   <img src="https://res.cloudinary.com/xielabs/image/upload/v1544526601/Screen_Shot_2018-12-11_at_10.09.24_pm.png" alt="webpreview"/>
 </p>
 
-Personal website to display projects and social media links.
+Personal website to display projects and outbound links.
+
+Built in React, each project represents a card which is stacked from the beginning. Navigation is done through scrolling or by selecting a card (in which a project will be scrolled to).
 
 ## Demo
 Live demo [here](https://samxie.net/).
@@ -23,12 +25,12 @@ Live demo [here](https://samxie.net/).
 
 Clone the project
 ```
-git clone https://github.com/samzx/samxie.git
+git clone https://github.com/samzx/project-portfolio.git
 ```
 
 Move into directory
 ```
-cd sam-xie
+cd project-portfolio
 ```
 
 Install dependancies
