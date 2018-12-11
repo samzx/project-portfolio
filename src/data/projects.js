@@ -43,7 +43,7 @@ export const developments = [
       "BookIT Maps guides users of the library booking system from bookit.unimelb.au to find the location of their bookings through an interactive map."
   },
   {
-    name: "Zendesk Coding Challenge",
+    name: "Coding Challenge",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1541582252/zendesk_mobile_ticket_viewer.png",
     links: [

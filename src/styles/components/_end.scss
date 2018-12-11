@@ -7,6 +7,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  transition: opacity 1s;
 }
 
 .end-container {
@@ -31,4 +32,8 @@
   background-color: $primary-color;
   color: white;
   transition: color 0.3s, background-color 0.3s;
+}
+
+.end-statement {
+  // color: $secondary-color;
 }

@@ -26,14 +26,14 @@ class End extends React.Component {
       <div
         className="end"
         style={{
-          opacity: scroll > showTime ? (scroll - showTime) / (1 - showTime) : 0,
+          opacity: scroll >= 1 ? 1 : 0,
           zIndex: scroll > showTime ? 1 : -1,
           display: scroll > showTime ? "flex" : "none"
         }}
       >
         <div className="end-container">
           <Header forceShow/>
-          <h1>Stay curious.</h1>
+          <h1 className="end-statement">Stay curious.</h1>
           <Social/>
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">

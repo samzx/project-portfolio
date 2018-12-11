@@ -1,9 +1,42 @@
 $project-size: 15rem;
 
 .project-title {
-  color: $primary-color;
+  padding: 2rem;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 0 2rem #eee;
+  // font-weight: 400;
+  // font-size: 2rem;
+  // font-family: monospace;
+  // text-transform: uppercase;
+}
+.project-title h1 {
+  background-image: -webkit-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
+  // background-image:         linear-gradient(to right, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  width: fit-content;
 }
 
+.project-description-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 15rem;
+}
+
+.project-description {
+  padding: 2rem;
+  max-width: 64rem;
+  margin: auto;
+  color: lighten($primary-color, 33%);
+}
 .project-container {
   display: flex;
   align-items: center;
@@ -13,7 +46,11 @@ $project-size: 15rem;
 }
 
 .project-details {
-  justify-content: center;
+  transition: opacity 0.3s;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
 }
 
 .project-link {
@@ -56,11 +93,12 @@ $project-size: 15rem;
   margin: 3rem;
   z-index: 11;
   font-size: 1.2rem;
-  text-transform: uppercase;
 }
 
 .project-link-source--meta::after {
-  content: " SOURCE"
+  content: " source";
+  font-family: monospace;
+  vertical-align: middle;
 }
 
 @media only screen and (max-width: 600px) {
@@ -68,6 +106,7 @@ $project-size: 15rem;
     margin: 1.4rem;
   }
   .project-link-source--meta::after {
-    content: ""
+    content: "";
+    vertical-align: none;
   }
 }

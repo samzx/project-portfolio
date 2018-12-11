@@ -9,9 +9,8 @@ class Card extends React.Component {
     const scrollPos =
       showTime * (document.body.clientHeight - window.innerHeight) -
       projectOffset +
-      window.innerHeight / 2 +
-      this.props.calcImgHeight() / 2 -
-      STARTING_OFFSET;
+      window.innerHeight -
+      STARTING_OFFSET - 77 - 150;
     window.scrollTo(0, scrollPos);
   };
 

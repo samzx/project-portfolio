@@ -42,33 +42,29 @@ class ProjectDetails extends React.Component {
       <div
         className="project-details"
         style={{
-          width: "100%",
-          textAlign: "center",
-          position: "fixed",
-          height: (innerHeight - calcImgHeight()) / 2,
-          top: 0,
-          display: scroll > showTime && scroll < showEnd ? "flex" : "none",
-          flexDirection: "column",
-          opacity: this.calcOpacity(scroll, showTime, pcOffset, showEnd)
+          opacity: scroll > showTime && scroll < showEnd ? "1" : 0,
+          pointerEvents: scroll > showTime && scroll < showEnd ? null : "none",
         }}
       >
-        <div style={{ padding: "2rem", maxWidth: "64rem", margin: "auto" }}>
-          <h2 className="project-title">
-            {name}
-          </h2>
-          <p>{description}</p>
-          <p>
-            {
-              links && links.map(link =>
-                <a
-                  className={`project-link ${this.selectIcon(link.name)}`}
-                  href={link.url}
-                  target="_blank"
-                  key={link.url}>{link.name}
-                </a>
-              )
-            }
-          </p>
+        <div className="project-title">
+          <h1>{name}</h1>
+        </div>
+        <div className="project-description-container">
+          <div className="project-description">
+            <p>{description}</p>
+            <p>
+              {
+                links && links.map(link =>
+                  <a
+                    className={`project-link ${this.selectIcon(link.name)}`}
+                    href={link.url}
+                    target="_blank"
+                    key={link.url}>{link.name}
+                  </a>
+                )
+              }
+            </p>
+          </div>
         </div>
       </div>
     );

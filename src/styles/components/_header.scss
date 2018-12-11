@@ -1,5 +1,5 @@
 .header__desktop {
-  position: absolute;
+  position: fixed;
   text-decoration: none;
   z-index: 10;
   top: 0;
@@ -7,6 +7,23 @@
   text-align: right;
   width: 100%;
   margin: 3rem 0;
+}
+
+.header__ellipsis {
+  display: none;
+}
+
+.header__mobile {
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  transition: opacity 0.3s;
+  display: none;
+  text-align: center;
 }
 
 .header a {
@@ -46,21 +63,6 @@
 //   background: $secondary-color;
 //   transition: 0.3s width;
 // }
-
-.header__ellipsis {
-  display: none;
-}
-
-.header__mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
-  transition: opacity 0.3s;
-  display: none;
-}
 
 .ReactModal__Overlay {
   z-index: 1000;
