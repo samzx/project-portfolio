@@ -1,6 +1,6 @@
 # Project Portfolio
 
-***Personal website to display projects and outbound links. Inspired by cards.***
+**Personal website to display projects and outbound links. Inspired by cards.**
 
 <p align="center">
   <img src="https://res.cloudinary.com/xielabs/image/upload/v1544526601/Screen_Shot_2018-12-11_at_10.09.24_pm.png" alt="webpreview"/>
