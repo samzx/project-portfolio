@@ -61,10 +61,13 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   padding: 2rem;
 }
 
-// .heart {
-//   font-family:"serif";
-//   font-size: 2.4rem;
-// }
+.heart {
+  background: $secondary-color;
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 2.4rem;
+}
 
 .landing-statement {
   cursor: pointer;
@@ -90,7 +93,7 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   .landing {
     min-height: calc(100vh - 20rem);
   }
-  // .heart {
-  //   font-size: 2rem;
-  // }
+  .heart {
+    font-size: 2rem;
+  }
 }
