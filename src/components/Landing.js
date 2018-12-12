@@ -54,7 +54,7 @@ class Landing extends React.Component {
           >
             <h1 className="hero">Hey, I'm Sam</h1>
             <h1>
-              I <span className="heart">❤️</span> {<Descriptions descriptions={synonyms} />} things.
+              I <span className="heart"><i class="fas fa-heart"></i></span> {<Descriptions descriptions={synonyms} />} things.
             </h1>
             <Social/>
             <h2 className="landing-statement" onClick={this.handleCuriosity}><i className="fas fa-fingerprint"/> Be curious.</h2>
