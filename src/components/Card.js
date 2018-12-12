@@ -4,24 +4,23 @@ class Card extends React.Component {
   state = {
     hovering: false
   }
+  
   handleClick = () => {
-    const { showTime, showLength, staticPos, projectOffset, STARTING_OFFSET } = this.props;
+    const { showTime, projectOffset, STARTING_OFFSET, innerHeight } = this.props;
     const scrollPos =
-      showTime * (document.body.clientHeight - window.innerHeight) -
+      showTime * (document.body.clientHeight - innerHeight) -
       projectOffset +
-      window.innerHeight -
+      innerHeight -
       STARTING_OFFSET - 77 - 150;
     window.scrollTo(0, scrollPos);
   };
 
   render() {
     const { scroll, showTime, staticPos, showLength, index, src } = this.props;
-
     return (
       <div className="card-container">
         <div
           className={"card"}
-          // TODO: split out into class names
           style={{
             top: scroll > showTime ? staticPos + showLength * index : staticPos,
             zIndex: -index + 100,
