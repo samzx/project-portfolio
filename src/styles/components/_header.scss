@@ -15,7 +15,7 @@
 
 .header__mobile {
   z-index: 9;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -24,6 +24,7 @@
   transition: opacity 0.3s;
   display: none;
   text-align: center;
+  background: white;
 }
 
 .header a {
@@ -41,7 +42,7 @@
 }
 
 .header a:hover {
-  color: $secondary-color;
+  color: lighten($secondary-color, 10%);
 }
 
 // // Enable underline
@@ -104,7 +105,7 @@
   }
   .header__ellipsis {
     display: inline;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 0;
     right: 0;

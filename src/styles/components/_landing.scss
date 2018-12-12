@@ -13,14 +13,47 @@
   transition: opacity 1s;
 }
 
+.accent {
+  background-image:         linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
+  background-image: -webkit-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/*
+
+Sea of marbles
+https://unsplash.com/photos/PO8Woh4YBD8
+https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80
+
+The Order of Chaos
+https://unsplash.com/photos/k8apfKm-Md4
+https://images.unsplash.com/photo-1484820986637-7ec3e85b394f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1660&q=80
+
+Abstract fluid art
+https://unsplash.com/photos/FWhTeWRCeis
+https://images.unsplash.com/photo-1504221507732-5246c045949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80
+
+*/
+$background-url: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80";
+$clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
 .hero {
   font-size: 6.4rem;
   font-weight: 700;
-  color: $primary-color;
-}
-
-.majestic {
-  color: $primary-color;
+  width: fit-content;
+  margin: 0.67em auto;
+  background: url($background-url);
+  background-repeat: no-repeat;
+  color: $clip-color;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+  background-attachment: fixed;
+  // background-position: center;
 }
 
 .title {
@@ -34,7 +67,6 @@
 // }
 
 .landing-statement {
-  color: $primary-color;
   cursor: pointer;
   width: fit-content;
   margin: 2rem auto;
@@ -52,7 +84,7 @@
     font-size: 1.67em;
   }
   .hero {
-    font-size: 3.6rem;
+    font-size: 4.8rem;
   }
 
   .landing {
