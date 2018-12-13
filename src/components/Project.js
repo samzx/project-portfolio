@@ -26,6 +26,7 @@ class Project extends React.Component {
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
           STARTING_OFFSET={STARTING_OFFSET}
+          showEnd={showEnd}
         />
         <ProjectDetails
           scroll={scroll}
@@ -36,6 +37,12 @@ class Project extends React.Component {
           calcImgHeight={this.props.calcImgHeight}
           innerHeight={innerHeight}
           pcOffset={pcOffset}
+        />
+        <div
+          className="scroll-indicator"
+          style={{
+            width: scroll > showTime && scroll < showEnd ? `${(scroll - showTime) / (showEnd - showTime) * 100}%` : 0,
+          }}
         />
       </div>
     );

@@ -98,6 +98,16 @@ $project-size: 15rem;
   vertical-align: middle;
 }
 
+.scroll-indicator {
+  height: 0.2rem;
+  background:         linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
+  background: -webkit-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
+  background:    -moz-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
+  background:     -ms-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
+  background:      -o-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
+  position: fixed;
+}
+
 @media only screen and (max-width: 600px) {
   .project-link-source--meta {
     margin: 1.4rem;

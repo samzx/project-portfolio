@@ -4,29 +4,44 @@ class Card extends React.Component {
   state = {
     hovering: false
   }
-  
-  handleClick = () => {
+
+  scrollPos = () => {
     const { showTime, projectOffset, STARTING_OFFSET, innerHeight } = this.props;
     const scrollPos =
       showTime * (document.body.clientHeight - innerHeight) -
       projectOffset +
       innerHeight -
       STARTING_OFFSET - 77 - 150;
-    window.scrollTo(0, scrollPos);
+      return scrollPos;
+  }
+  
+  handleClick = () => {
+    window.scrollTo(0, (this.props.showTime) * (document.body.clientHeight - innerHeight) + 1);
   };
 
+  calcTop = () => {
+    const { showTime, scroll, showEnd } = this.props;
+    if(scroll <= showTime) {
+      return this.props.staticPos
+    } else if (scroll > showTime && scroll < showEnd) {
+      return 77 + 150
+    } else {
+      return -window.innerHeight
+    }
+  }
+
   render() {
-    const { scroll, showTime, staticPos, showLength, index, src } = this.props;
+    const { scroll, showTime, showEnd, showLength, index, src } = this.props;
     return (
       <div className="card-container">
         <div
           className={"card"}
           style={{
-            top: scroll > showTime ? staticPos + showLength * index : staticPos,
+            top: this.calcTop(),
             zIndex: -index + 100,
-            position: scroll > showTime ? "absolute" : "fixed",
+            position: "fixed",//scroll > showTime ? "absolute" : "fixed",
             transform: `scale(${1 - index * 0.01})`,
-            transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s",
+            transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s",
             filter: scroll > showTime || this.state.hovering ? null : "grayscale(1)",
           }}
           onClick={this.handleClick}

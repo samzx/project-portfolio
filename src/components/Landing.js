@@ -24,7 +24,7 @@ class Landing extends React.Component {
 
   handleCuriosity = () => {
     const iterations = 2;
-    const interval = 2000;
+    const interval = 800;
     const scrollDistance = document.body.scrollHeight;
       setTimeout(() => {
         window.scrollTo(0, scrollDistance)
@@ -54,7 +54,7 @@ class Landing extends React.Component {
           >
             <h1 className="hero">Hey, I'm Sam</h1>
             <h1>
-              I <span className="heart"><i class="fas fa-heart"><span className="heart-alt">love</span></i></span> {<Descriptions descriptions={synonyms} />} things.
+              I <span className="heart"><i className="fas fa-heart"><span className="heart-alt">love</span></i></span> {<Descriptions descriptions={synonyms} />} things.
             </h1>
             <Social/>
             <h2 className="landing-statement" onClick={this.handleCuriosity}><i className="fas fa-fingerprint"/> Be curious.</h2>
