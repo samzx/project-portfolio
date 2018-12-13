@@ -27,8 +27,8 @@ class End extends React.Component {
         className="end"
         style={{
           opacity: scroll >= 0.99 ? 1 : 0,
-          zIndex: scroll > showTime ? 1 : -1,
-          display: scroll > showTime ? "flex" : "none"
+          zIndex: scroll > 0.99 ? 1 : -1,
+          pointerEvents: scroll >= 0.99 ? null : "none",
         }}
       >
         <div className="end-container">

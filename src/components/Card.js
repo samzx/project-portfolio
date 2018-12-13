@@ -39,7 +39,7 @@ class Card extends React.Component {
           style={{
             top: this.calcTop(),
             zIndex: -index + 100,
-            position: "fixed",//scroll > showTime ? "absolute" : "fixed",
+            position: "fixed",
             transform: `scale(${1 - index * 0.01})`,
             transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s",
             filter: scroll > showTime || this.state.hovering ? null : "grayscale(1)",
