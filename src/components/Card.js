@@ -2,7 +2,8 @@ import React from "react";
 
 class Card extends React.Component {
   state = {
-    hovering: false
+    hovering: false,
+    hidePos: -window.innerHeight,
   }
 
   scrollPos = () => {
@@ -19,6 +20,10 @@ class Card extends React.Component {
     window.scrollTo(0, this.props.showTime * (document.body.clientHeight - innerHeight) + 2);
   };
 
+  handleImageLoad = ({ target: img }) => {
+    this.setState(() => ({ hidePos: -img.offsetHeight - 10 }))
+  }
+
   calcTop = () => {
     const { showTime, scroll, showEnd } = this.props;
     if(scroll <= showTime) {
@@ -26,7 +31,7 @@ class Card extends React.Component {
     } else if (scroll > showTime && scroll < showEnd) {
       return 77 + 150
     } else {
-      return -window.innerHeight
+      return this.state.hidePos
     }
   }
 
@@ -40,7 +45,7 @@ class Card extends React.Component {
             top: this.calcTop(),
             zIndex: -index + 100,
             position: "fixed",
-            transform: scroll > showTime ? "scale(1)" : `scale(${1 - index * 0.01})`,
+            transform: scroll > showTime && scroll < showEnd ? "scale(1)" : `scale(${1 - index * 0.01})`,
             transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s, transform 0.3s",
             filter: scroll > showTime || this.state.hovering ? null : "grayscale(1)",
           }}
@@ -49,7 +54,7 @@ class Card extends React.Component {
           onMouseOut={() => this.setState({ hovering: false })}
         >
           {src ? (
-            <img src={src} className="image" />
+            <img src={src} className="image" onLoad={this.handleImageLoad} />
           ) : (
             <div className="placeholder-image" />
           )}
