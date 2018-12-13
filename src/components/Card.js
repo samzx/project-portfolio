@@ -21,7 +21,7 @@ class Card extends React.Component {
   };
 
   handleImageLoad = ({ target: img }) => {
-    this.setState(() => ({ hidePos: -img.offsetHeight - 10 }))
+    this.setState(() => ({ hidePos: -img.offsetHeight }))
   }
 
   calcTop = () => {
@@ -31,7 +31,8 @@ class Card extends React.Component {
     } else if (scroll > showTime && scroll < showEnd) {
       return 77 + 150
     } else {
-      return this.state.hidePos
+      // card shadow (10) & mobile url height (100)
+      return this.state.hidePos - 10 - 100
     }
   }
 
