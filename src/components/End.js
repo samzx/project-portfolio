@@ -26,7 +26,7 @@ class End extends React.Component {
       <div
         className="end"
         style={{
-          opacity: scroll >= 1 ? 1 : 0,
+          opacity: scroll >= 0.99 ? 1 : 0,
           zIndex: scroll > showTime ? 1 : -1,
           display: scroll > showTime ? "flex" : "none"
         }}
