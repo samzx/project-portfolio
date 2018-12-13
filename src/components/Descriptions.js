@@ -1,5 +1,7 @@
 import React from "react";
 
+const DESCRIPTION_ROTATE_INTERVAL_MS = 2000;
+
 class Descriptions extends React.Component {
   state = {
     description: "",
@@ -18,7 +20,7 @@ class Descriptions extends React.Component {
 
   componentDidMount() {
     this.handleDescription();
-    setInterval(this.handleDescription, 2000);
+    setInterval(this.handleDescription, DESCRIPTION_ROTATE_INTERVAL_MS);
   }
 
   render() {

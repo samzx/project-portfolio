@@ -4,7 +4,7 @@ import { developments } from "../data/projects";
 import Card from "./Card";
 import Project from "./Project";
 
-const heroOffset = 1;
+const HERO_OFFSET = 1;
 
 class Projects extends React.Component {
   state = {
@@ -24,21 +24,25 @@ class Projects extends React.Component {
   }
 
   calcImgHeight = () => {
+    const MOBILE_WIDTH = 800;
+    const DESKTOP_IMAGE_HEIGHT = 400;
+    const IMAGE_ASPECT_RATIO = 1.8;
     const width = this.state.innerWidth;
-    if (width < 800) {
-      return width / 1.8;
+    if (width < MOBILE_WIDTH) {
+      return width / IMAGE_ASPECT_RATIO;
     } else {
-      return 400;
+      return DESKTOP_IMAGE_HEIGHT;
     }
   };
 
   render() {
-    const numShows = developments.length + heroOffset;
+    const numShows = developments.length + HERO_OFFSET;
     const { innerHeight } = this.state;
     return (
       <div
         style={{
-          height: `calc(${numShows * innerHeight}px + ${(numShows - heroOffset) *
+          height: `calc(${numShows * innerHeight}px + ${(numShows -
+            HERO_OFFSET) *
             this.calcImgHeight()}px)`
         }}
       >
@@ -51,7 +55,6 @@ class Projects extends React.Component {
               scroll={this.props.scroll}
               total={developments.length}
               showLength={this.state.innerHeight + this.calcImgHeight()}
-              calcImgHeight={this.calcImgHeight}
               innerHeight={this.state.innerHeight}
               numShows={numShows}
             />

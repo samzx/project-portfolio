@@ -6,7 +6,7 @@ export const developments = [
     links: [
       {
         name: "Website",
-        url:  "https://elude.samxie.net"
+        url: "https://elude.samxie.net"
       }
     ],
     description:
@@ -36,7 +36,7 @@ export const developments = [
     links: [
       {
         name: "Source",
-        url:  "https://github.com/samzx/bookit-maps-front"
+        url: "https://github.com/samzx/bookit-maps-front"
       }
     ],
     description:
@@ -49,7 +49,7 @@ export const developments = [
     links: [
       {
         name: "Source",
-        url: "https://github.com/samzx/zendesk-coding-challenge",
+        url: "https://github.com/samzx/zendesk-coding-challenge"
       }
     ],
     description: "A mobile ticket viewer for Zendesk's coding challenge."
@@ -61,7 +61,7 @@ export const developments = [
     links: [
       {
         name: "Source",
-        url: "https://github.com/samzx/opengl2d-drawing",
+        url: "https://github.com/samzx/opengl2d-drawing"
       }
     ],
     description: "Animated artwork made with OpenGL as a study in graphics."

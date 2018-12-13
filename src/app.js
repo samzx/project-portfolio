@@ -15,8 +15,7 @@ class App extends React.Component {
   };
 
   handleScroll = () => {
-    const scrollMax =
-      document.body.clientHeight - window.innerHeight;
+    const scrollMax = document.body.clientHeight - window.innerHeight;
     const scrollY = window.scrollY;
     const scroll = scrollY / scrollMax;
     this.setState(() => ({ scroll }));
@@ -30,7 +29,7 @@ class App extends React.Component {
     const { scroll } = this.state;
     return (
       <div className="app">
-        <div className="background"/>
+        <div className="background" />
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
         <End scroll={scroll} />

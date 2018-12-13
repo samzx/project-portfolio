@@ -8,12 +8,32 @@ $project-size: 15rem;
   background: white;
 }
 .project-title h1 {
-  background-image:         linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
-  background-image: -webkit-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
-  background-image:    -moz-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
-  background-image:     -ms-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
-  background-image:      -o-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
-  color:transparent;
+  background-image: linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* Standard syntax; must be last */
+  background-image: -webkit-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For Chrome and Safari */
+  background-image: -moz-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Fx (3.6 to 15) */
+  background-image: -ms-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For pre-releases of IE 10*/
+  background-image: -o-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Opera (11.1 to 12.0) */
+  color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   letter-spacing: 1px;
@@ -100,11 +120,31 @@ $project-size: 15rem;
 
 .scroll-indicator {
   height: 0.2rem;
-  background:         linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
-  background: -webkit-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
-  background:    -moz-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
-  background:     -ms-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
-  background:      -o-linear-gradient(left, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
+  background: linear-gradient(
+    left,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* Standard syntax; must be last */
+  background: -webkit-linear-gradient(
+    left,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For Chrome and Safari */
+  background: -moz-linear-gradient(
+    left,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Fx (3.6 to 15) */
+  background: -ms-linear-gradient(
+    left,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For pre-releases of IE 10*/
+  background: -o-linear-gradient(
+    left,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Opera (11.1 to 12.0) */
   position: fixed;
 }
 

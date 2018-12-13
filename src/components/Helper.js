@@ -1,9 +1,11 @@
 import React from "react";
 
+const SHOW_TIME = 0.99;
+
 class Helper extends React.Component {
   handleClick = () => {
     const { scroll } = this.props;
-    if (scroll < 0.99) {
+    if (scroll < SHOW_TIME) {
       window.scrollTo(0, document.body.clientHeight);
     } else {
       window.scrollTo(0, 0);

@@ -14,7 +14,7 @@ export const follow = [
     name: "Twitter",
     src: "https://twitter.com/samzxie",
     icon: "fab fa-twitter-square"
-  },
+  }
 ];
 
 export const profile = [
@@ -27,7 +27,8 @@ export const profile = [
   {
     name: "LinkedIn",
     src: "https://www.linkedin.com/in/xiesam/",
-    image: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg",
+    image:
+      "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg",
     icon: "fab fa-linkedin"
   }
 ];

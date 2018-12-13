@@ -1,54 +1,80 @@
 import React from "react";
 
+const PLACEHOLDER_IMAGE_HEIGHT = 400;
+const HEADER_HEIGHT = 77;
+const PROJECT_DESCRIPTION_HEIGHT = 150;
+const CARD_SHADOW = 10;
+const MOBILE_URL_HEIGHT = 100;
+
+const MAX_Z_INDEX = 100;
+const SCALE_DOWN_AMOUNT = 0.01;
+
 class Card extends React.Component {
   state = {
     hovering: false,
-    hidePos: -window.innerHeight,
-  }
+    imgHeight: PLACEHOLDER_IMAGE_HEIGHT
+  };
 
   scrollPos = () => {
-    const { showTime, projectOffset, STARTING_OFFSET, innerHeight } = this.props;
+    const {
+      showTime,
+      projectOffset,
+      STARTING_OFFSET,
+      innerHeight
+    } = this.props;
     const scrollPos =
       showTime * (document.body.clientHeight - innerHeight) -
       projectOffset +
       innerHeight -
-      STARTING_OFFSET - 77 - 150;
-      return scrollPos;
-  }
-  
+      STARTING_OFFSET -
+      HEADER_HEIGHT -
+      PROJECT_DESCRIPTION_HEIGHT;
+    return scrollPos;
+  };
+
   handleClick = () => {
-    window.scrollTo(0, this.props.showTime * (document.body.clientHeight - innerHeight) + 2);
+    const SHOW_BUFFER = 2;
+    window.scrollTo(
+      0,
+      this.props.showTime * (document.body.clientHeight - innerHeight) +
+        SHOW_BUFFER
+    );
   };
 
   handleImageLoad = ({ target: img }) => {
-    this.setState(() => ({ hidePos: -img.offsetHeight }))
-  }
+    this.setState(() => ({ imgHeight: -img.offsetHeight }));
+  };
 
   calcTop = () => {
     const { showTime, scroll, showEnd } = this.props;
-    if(scroll <= showTime) {
-      return this.props.staticPos
+    if (scroll <= showTime) {
+      return this.props.staticPos;
     } else if (scroll > showTime && scroll < showEnd) {
-      return 77 + 150
+      return HEADER_HEIGHT + PROJECT_DESCRIPTION_HEIGHT;
     } else {
       // card shadow (10) & mobile url height (100)
-      return this.state.hidePos - 10 - 100
+      return this.state.hidePos - CARD_SHADOW - MOBILE_URL_HEIGHT;
     }
-  }
+  };
 
   render() {
-    const { scroll, showTime, showEnd, showLength, index, src } = this.props;
+    const { scroll, showTime, showEnd, index, src } = this.props;
     return (
       <div className="card-container">
         <div
           className={"card"}
           style={{
             top: this.calcTop(),
-            zIndex: -index + 100,
+            zIndex: -index + MAX_Z_INDEX,
             position: "fixed",
-            transform: scroll > showTime && scroll < showEnd ? "scale(1)" : `scale(${1 - index * 0.01})`,
-            transition: "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s, transform 0.3s",
-            filter: scroll > showTime || this.state.hovering ? null : "grayscale(1)",
+            transform:
+              scroll > showTime && scroll < showEnd
+                ? "scale(1)"
+                : `scale(${1 - index * SCALE_DOWN_AMOUNT})`,
+            transition:
+              "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s, transform 0.3s",
+            filter:
+              scroll > showTime || this.state.hovering ? null : "grayscale(1)"
           }}
           onClick={this.handleClick}
           onMouseOver={() => this.setState({ hovering: true })}

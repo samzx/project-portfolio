@@ -14,12 +14,32 @@
 }
 
 .accent {
-  background-image:         linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* Standard syntax; must be last */
-  background-image: -webkit-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For Chrome and Safari */
-  background-image:    -moz-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Fx (3.6 to 15) */
-  background-image:     -ms-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For pre-releases of IE 10*/
-  background-image:      -o-linear-gradient(80deg, $primary-color, lighten($secondary-color, 20%)); /* For old Opera (11.1 to 12.0) */
-  color:transparent;
+  background-image: linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* Standard syntax; must be last */
+  background-image: -webkit-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For Chrome and Safari */
+  background-image: -moz-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Fx (3.6 to 15) */
+  background-image: -ms-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For pre-releases of IE 10*/
+  background-image: -o-linear-gradient(
+    80deg,
+    $primary-color,
+    lighten($secondary-color, 20%)
+  ); /* For old Opera (11.1 to 12.0) */
+  color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -39,7 +59,7 @@ https://unsplash.com/photos/FWhTeWRCeis
 https://images.unsplash.com/photo-1504221507732-5246c045949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80
 
 */
-$background-url: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80";
+$background-url: "https://media.giphy.com/media/BZhu0J9I92INsBvG6n/giphy.gif";
 $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
 .hero {
   font-size: 6.4rem;

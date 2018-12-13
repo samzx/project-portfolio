@@ -1,5 +1,5 @@
-import React from 'react';
-import Modal from 'react-modal';
+import React from "react";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {
@@ -18,27 +18,27 @@ const customStyles = {
     height: "calc(100vh - 80px)",
     // Remove once iframe gone
     // overflow: "hidden",
-    padding: "0",
+    padding: "0"
   }
-}
+};
 
 class Header extends React.Component {
   state = {
     ellipsis: this.props.forceShow,
-    modalIsOpen: false,
-  }
+    modalIsOpen: false
+  };
 
   handleEllipsis = () => {
-    this.setState((prevState) => ({ ellipsis: !prevState.ellipsis }))
-  }
+    this.setState(prevState => ({ ellipsis: !prevState.ellipsis }));
+  };
 
   handleAbout = () => {
-    this.setState((prevState) => ({ modalIsOpen: true }))
-  }
+    this.setState(prevState => ({ modalIsOpen: true }));
+  };
 
   closeModal = () => {
-    this.setState((prevState) => ({ modalIsOpen: false }))
-  }
+    this.setState(prevState => ({ modalIsOpen: false }));
+  };
 
   render() {
     return (
@@ -48,12 +48,14 @@ class Header extends React.Component {
           <a href="/blog">Blog</a>
         </div>
         <div className="header__ellipsis">
-        {
-          !this.props.forceShow &&
-          <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis}/>
-        }
+          {!this.props.forceShow && (
+            <i className="fas fa-ellipsis-v" onClick={this.handleEllipsis} />
+          )}
         </div>
-        <div className="header__mobile" style={{opacity: this.state.ellipsis ? 1 : 0}}>
+        <div
+          className="header__mobile"
+          style={{ opacity: this.state.ellipsis ? 1 : 0 }}
+        >
           <a onClick={this.handleAbout}> About</a>
           <a href="/blog">Blog</a>
         </div>
@@ -71,9 +73,19 @@ class Header extends React.Component {
             {
               // Modal Contents
               <div className="modalContainer">
-                <div className="closeModal" onClick={this.closeModal}><i className="fas fa-times"/></div>
+                <div className="closeModal" onClick={this.closeModal}>
+                  <i className="fas fa-times" />
+                </div>
                 {
-                  <iframe src="https://www.samxie.net/blog/author/sam/" style={{width: "100%", height:"calc(100% - 39px)", border: 0, position: "absolute"}} />
+                  <iframe
+                    src="https://www.samxie.net/blog/author/sam/"
+                    style={{
+                      width: "100%",
+                      height: "calc(100% - 39px)",
+                      border: 0,
+                      position: "absolute"
+                    }}
+                  />
                 }
               </div>
             }
@@ -83,6 +95,5 @@ class Header extends React.Component {
     );
   }
 }
-
 
 export default Header;

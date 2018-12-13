@@ -2,6 +2,8 @@ import React from "react";
 import Social from "./Social";
 import Header from "./Header";
 
+const SHOW_TIME = 0.99;
+
 class End extends React.Component {
   state = {
     oneScreenScroll: 1
@@ -9,8 +11,7 @@ class End extends React.Component {
 
   setScreenScroll = () => {
     const oneScreenScroll =
-      window.innerHeight /
-      (document.body.clientHeight - window.innerHeight);
+      window.innerHeight / (document.body.clientHeight - window.innerHeight);
     this.setState(() => ({ oneScreenScroll }));
   };
 
@@ -26,23 +27,27 @@ class End extends React.Component {
       <div
         className="end"
         style={{
-          opacity: scroll >= 0.99 ? 1 : 0,
-          zIndex: scroll > 0.99 ? 1 : -1,
-          pointerEvents: scroll >= 0.99 ? null : "none",
+          opacity: scroll >= SHOW_TIME ? 1 : 0,
+          zIndex: scroll > SHOW_TIME ? 1 : -1,
+          pointerEvents: scroll >= SHOW_TIME ? null : "none"
         }}
       >
         <div className="end-container">
-          <Header forceShow/>
+          <Header forceShow />
           <h1 className="end-statement">Stay curious.</h1>
-          <Social/>
+          <Social />
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">
               Contact
             </a>
           }
         </div>
-        <a className="project-link project-link-source--meta" href="https://github.com/samzx/samxie" target="_blank">
-          <i className="far fa-file-code"/>
+        <a
+          className="project-link project-link-source--meta"
+          href="https://github.com/samzx/samxie"
+          target="_blank"
+        >
+          <i className="far fa-file-code" />
         </a>
       </div>
     );

@@ -13,8 +13,7 @@ class Landing extends React.Component {
 
   setScreenScroll = () => {
     const oneScreenScroll =
-      window.innerHeight /
-      (document.body.clientHeight - window.innerHeight);
+      window.innerHeight / (document.body.clientHeight - window.innerHeight);
     this.setState(() => ({ oneScreenScroll }));
   };
 
@@ -23,16 +22,15 @@ class Landing extends React.Component {
   }
 
   handleCuriosity = () => {
-    const iterations = 2;
-    const interval = 800;
+    const INTERVAL = 800;
     const scrollDistance = document.body.scrollHeight;
-      setTimeout(() => {
-        window.scrollTo(0, scrollDistance)
-      }, 0);
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-      }, interval);
-  }
+    setTimeout(() => {
+      window.scrollTo(0, scrollDistance);
+    }, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, INTERVAL);
+  };
 
   render() {
     const { oneScreenScroll } = this.state;
@@ -47,18 +45,24 @@ class Landing extends React.Component {
         }}
       >
         <div>
-          <Header/>
+          <Header />
         </div>
         <div className="landing">
-          <div
-            className="landing-content"
-          >
+          <div className="landing-content">
             <h1 className="hero">Hey, I'm Sam</h1>
             <h1>
-              I <span className="heart"><i className="fas fa-heart"><span className="heart-alt">love</span></i></span> {<Descriptions descriptions={synonyms} />} things.
+              I{" "}
+              <span className="heart">
+                <i className="fas fa-heart">
+                  <span className="heart-alt">love</span>
+                </i>
+              </span>{" "}
+              {<Descriptions descriptions={synonyms} />} things.
             </h1>
-            <Social/>
-            <h2 className="landing-statement" onClick={this.handleCuriosity}><i className="fas fa-fingerprint"/> Be curious.</h2>
+            <Social />
+            <h2 className="landing-statement" onClick={this.handleCuriosity}>
+              <i className="fas fa-fingerprint" /> Be curious.
+            </h2>
           </div>
         </div>
       </div>
