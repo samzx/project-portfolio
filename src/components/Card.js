@@ -42,7 +42,7 @@ class Card extends React.Component {
   };
 
   handleImageLoad = ({ target: img }) => {
-    this.setState(() => ({ imgHeight: -img.offsetHeight }));
+    this.setState(() => ({ imgHeight: img.offsetHeight }));
   };
 
   calcTop = () => {
@@ -53,7 +53,7 @@ class Card extends React.Component {
       return HEADER_HEIGHT + PROJECT_DESCRIPTION_HEIGHT;
     } else {
       // card shadow (10) & mobile url height (100)
-      return this.state.hidePos - CARD_SHADOW - MOBILE_URL_HEIGHT;
+      return -this.state.imgHeight - CARD_SHADOW - MOBILE_URL_HEIGHT;
     }
   };
 
