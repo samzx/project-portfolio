@@ -16,7 +16,7 @@ class Card extends React.Component {
   }
   
   handleClick = () => {
-    window.scrollTo(0, (this.props.showTime) * (document.body.clientHeight - innerHeight) + 1);
+    window.scrollTo(0, this.props.showTime * (document.body.clientHeight - innerHeight) + 2);
   };
 
   calcTop = () => {
