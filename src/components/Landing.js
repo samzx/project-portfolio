@@ -43,6 +43,7 @@ class Landing extends React.Component {
           opacity: scroll <= 0 ? 1 : 0,
           pointerEvents: scroll <= 0 ? null : "none",
           transition: "opacity 0.3s",
+          position: "relative"
         }}
       >
         <div>
