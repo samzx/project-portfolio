@@ -3,59 +3,18 @@ $card-radius: 1rem;
 .card {
   max-width: 72rem;
   width: 100%;
+  position: fixed;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   border-radius: $card-radius;
   min-height: 15rem;
   background: white;
+  transition: box-shadow 0.3s, transform ease-in-out 0.3s, filter 0.3s;
+  -webkit-animation-duration: 300ms;
 }
 
 .card:hover {
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
-}
-
-.card-overlay {
-  text-align: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 0.3s;
-  border-radius: $card-radius;
-  z-index: 2;
-}
-
-.card-overlay__hide {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card-overlay-contents {
-  max-width: 36rem;
-  margin: auto;
-  color: white;
-}
-
-.card-overlay-button {
-  background-color: transparent;
-  border: 0.1rem solid black;
-  padding: 1.6rem;
-  margin: 0.8rem;
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  z-index: 5;
-  transition: background-color 0.3s;
-}
-
-.card-overlay-button:hover {
-  background-color: black;
-  color: white;
-  transition: background-color 0.3s;
 }
 
 .card-container {

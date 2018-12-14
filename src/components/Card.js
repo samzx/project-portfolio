@@ -45,36 +45,29 @@ class Card extends React.Component {
     this.setState(() => ({ imgHeight: img.offsetHeight }));
   };
 
-  calcTop = () => {
-    const { showTime, scroll, showEnd } = this.props;
+  calculateTransform = () => {
+    const { showTime, scroll, showEnd, staticPos, index } = this.props;
     if (scroll <= showTime) {
-      return this.props.staticPos;
+      return `translateY(0) ` + `scale(${1 - index * SCALE_DOWN_AMOUNT})`;
     } else if (scroll > showTime && scroll < showEnd) {
-      return HEADER_HEIGHT + PROJECT_DESCRIPTION_HEIGHT;
+      return `translateY(${HEADER_HEIGHT + PROJECT_DESCRIPTION_HEIGHT - staticPos}px) scale(1)`;
     } else {
-      // card shadow (10) & mobile url height (100)
-      return -this.state.imgHeight - CARD_SHADOW - MOBILE_URL_HEIGHT;
+      return `translateY(${-this.state.imgHeight - CARD_SHADOW - MOBILE_URL_HEIGHT - staticPos}px) ` + `scale(${1 - index * SCALE_DOWN_AMOUNT})`;
     }
   };
 
   render() {
-    const { scroll, showTime, showEnd, index, src } = this.props;
+    const { scroll, showTime, showEnd, index, src, staticPos } = this.props;
     return (
       <div className="card-container">
         <div
           className={"card"}
           style={{
-            top: this.calcTop(),
+            top: staticPos,
             zIndex: -index + MAX_Z_INDEX,
-            position: "fixed",
-            transform:
-              scroll > showTime && scroll < showEnd
-                ? "scale(1)"
-                : `scale(${1 - index * SCALE_DOWN_AMOUNT})`,
-            transition:
-              "box-shadow 0.3s, transform 0.3s, filter 0.3s, top ease-in-out 0.3s, transform 0.3s",
-            filter:
-              scroll > showTime || this.state.hovering ? null : "grayscale(1)"
+            transform: this.calculateTransform(),
+            // filter:
+            //   scroll > showTime || this.state.hovering ? "none" : "grayscale(1)"
           }}
           onClick={this.handleClick}
           onMouseOver={() => this.setState({ hovering: true })}

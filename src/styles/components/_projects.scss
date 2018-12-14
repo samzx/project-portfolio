@@ -120,6 +120,8 @@ $project-size: 15rem;
 
 .scroll-indicator {
   height: 0.2rem;
+  transform-origin: left;
+  width: 100%;
   background: linear-gradient(
     left,
     $primary-color,

@@ -28,7 +28,7 @@ class End extends React.Component {
         className="end"
         style={{
           opacity: scroll >= SHOW_TIME ? 1 : 0,
-          zIndex: scroll > SHOW_TIME ? 1 : -1,
+          // zIndex: scroll > SHOW_TIME ? 1 : -1,
           pointerEvents: scroll >= SHOW_TIME ? null : "none"
         }}
       >

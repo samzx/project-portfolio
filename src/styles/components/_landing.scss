@@ -65,6 +65,7 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   font-size: 6.4rem;
   font-weight: 700;
   width: fit-content;
+  width: -moz-fit-content;
   margin: 0.67em auto;
   background: url($background-url);
   background-repeat: no-repeat;
@@ -72,8 +73,7 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   -webkit-background-clip: text;
   background-clip: text;
   background-size: cover;
-  // background-attachment: fixed;
-  // background-position: center;
+  background-position: center;
 }
 
 .title {

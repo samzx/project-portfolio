@@ -46,10 +46,10 @@ class Project extends React.Component {
         <div
           className="scroll-indicator"
           style={{
-            width:
+            transform: 
               scroll > showTime && scroll < showEnd
-                ? `${((scroll - showTime) / (showEnd - showTime)) * 100}%`
-                : 0
+                ? `scaleX(${((scroll - showTime) / (showEnd - showTime))})`
+                : 'scaleX(0)',
           }}
         />
       </div>
