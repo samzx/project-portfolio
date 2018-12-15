@@ -5,6 +5,7 @@ import Card from "./Card";
 import Project from "./Project";
 
 const HERO_OFFSET = 1;
+const SCROLL_LENGTH = 400;
 
 class Projects extends React.Component {
   state = {
@@ -41,9 +42,7 @@ class Projects extends React.Component {
     return (
       <div
         style={{
-          height: `calc(${numShows * innerHeight}px + ${(numShows -
-            HERO_OFFSET) *
-            this.calcImgHeight()}px)`
+          height: `calc(${numShows * SCROLL_LENGTH + innerHeight}px`
         }}
       >
         <div>
