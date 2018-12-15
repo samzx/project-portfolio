@@ -30,6 +30,7 @@ class Project extends React.Component {
           showTime={showTime}
           staticPos={staticPos}
           index={index}
+          total={total}
           src={item.src}
           projectOffset={projectOffset}
           innerHeight={innerHeight}

@@ -72,15 +72,18 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   color: $clip-color;
   -webkit-background-clip: text;
   background-clip: text;
-  background-size: cover;
+  // background-size: cover;
   background-position: center top;
-  animation-name: scroll;
+  animation-name: scrolling;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  -moz-animation-name: scrolling;
+  -moz-animation-duration: 5s;
+  -moz-animation-timing-function: linear;
 }
 
-@keyframes scroll {
+@keyframes scrolling {
   0% {
     background-position: center top;
   }
