@@ -20,7 +20,14 @@ class Descriptions extends React.Component {
 
   componentDidMount() {
     this.handleDescription();
-    setInterval(this.handleDescription, DESCRIPTION_ROTATE_INTERVAL_MS);
+    this.interval = setInterval(
+      this.handleDescription,
+      DESCRIPTION_ROTATE_INTERVAL_MS
+    );
+  }
+
+  componentWillMount() {
+    clearInterval(this.interval);
   }
 
   render() {

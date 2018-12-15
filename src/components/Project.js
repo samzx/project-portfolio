@@ -15,7 +15,7 @@ class Project extends React.Component {
       numShows
     } = this.props;
     const FINAL_OFFSET = 100;
-    const STARTING_OFFSET = FINAL_OFFSET / total + 50;
+    const STARTING_OFFSET = FINAL_OFFSET / total + 20;
     const showTime = index / total;
     const showEnd = index == total - 1 ? 0.99 : (index + 1) / total;
     const projectOffset = (FINAL_OFFSET * index) / total;
@@ -46,10 +46,10 @@ class Project extends React.Component {
         <div
           className="scroll-indicator"
           style={{
-            transform: 
+            transform:
               scroll > showTime && scroll < showEnd
-                ? `scaleX(${((scroll - showTime) / (showEnd - showTime))})`
-                : 'scaleX(0)',
+                ? `scaleX(${(scroll - showTime) / (showEnd - showTime)})`
+                : "scaleX(0)"
           }}
         />
       </div>

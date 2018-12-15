@@ -7,20 +7,6 @@ import Header from "./Header";
 const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 
 class Landing extends React.Component {
-  state = {
-    oneScreenScroll: 1
-  };
-
-  setScreenScroll = () => {
-    const oneScreenScroll =
-      window.innerHeight / (document.body.clientHeight - window.innerHeight);
-    this.setState(() => ({ oneScreenScroll }));
-  };
-
-  componentDidMount() {
-    this.setScreenScroll();
-  }
-
   handleCuriosity = () => {
     const INTERVAL = 800;
     const scrollDistance = document.body.scrollHeight;
@@ -33,7 +19,6 @@ class Landing extends React.Component {
   };
 
   render() {
-    const { oneScreenScroll } = this.state;
     const { scroll } = this.props;
     return (
       <div
@@ -41,7 +26,8 @@ class Landing extends React.Component {
           opacity: scroll <= 0 ? 1 : 0,
           pointerEvents: scroll <= 0 ? null : "none",
           transition: "opacity 0.3s",
-          position: "relative"
+          position: "relative",
+          display: scroll < 0.5 ? null : "none"
         }}
       >
         <div>

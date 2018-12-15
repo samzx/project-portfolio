@@ -50,9 +50,16 @@ class Card extends React.Component {
     if (scroll <= showTime) {
       return `translateY(0) ` + `scale(${1 - index * SCALE_DOWN_AMOUNT})`;
     } else if (scroll > showTime && scroll < showEnd) {
-      return `translateY(${HEADER_HEIGHT + PROJECT_DESCRIPTION_HEIGHT - staticPos}px) scale(1)`;
+      return `translateY(${HEADER_HEIGHT +
+        PROJECT_DESCRIPTION_HEIGHT -
+        staticPos}px) scale(1)`;
     } else {
-      return `translateY(${-this.state.imgHeight - CARD_SHADOW - MOBILE_URL_HEIGHT - staticPos}px) ` + `scale(${1 - index * SCALE_DOWN_AMOUNT})`;
+      return (
+        `translateY(${-this.state.imgHeight -
+          CARD_SHADOW -
+          MOBILE_URL_HEIGHT -
+          staticPos}px) ` + `scale(${1 - index * SCALE_DOWN_AMOUNT})`
+      );
     }
   };
 
@@ -65,7 +72,7 @@ class Card extends React.Component {
           style={{
             top: staticPos,
             zIndex: -index + MAX_Z_INDEX,
-            transform: this.calculateTransform(),
+            transform: this.calculateTransform()
             // filter:
             //   scroll > showTime || this.state.hovering ? "none" : "grayscale(1)"
           }}

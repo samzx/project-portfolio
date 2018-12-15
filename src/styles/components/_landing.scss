@@ -1,5 +1,5 @@
 .landing {
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 7rem);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -59,7 +59,7 @@ https://unsplash.com/photos/FWhTeWRCeis
 https://images.unsplash.com/photo-1504221507732-5246c045949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80
 
 */
-$background-url: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80";
+$background-url: "https://res.cloudinary.com/xielabs/image/upload/v1544831416/background.jpg";
 $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
 .hero {
   font-size: 6.4rem;
@@ -68,12 +68,25 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
   width: -moz-fit-content;
   margin: 0.67em auto;
   background: url($background-url);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   color: $clip-color;
   -webkit-background-clip: text;
   background-clip: text;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
+  animation-name: scroll;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes scroll {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
 }
 
 .title {
@@ -116,6 +129,7 @@ $clip-color: rgba(13, 74, 96, 0.5); //transparent;// rgba(0,0,0,0.2);
 
   .landing {
     min-height: calc(100vh - 20rem);
+    top: 0;
   }
   .heart {
     font-size: 2rem;
