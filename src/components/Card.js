@@ -48,7 +48,10 @@ class Card extends React.Component {
   calculateTransform = () => {
     const { showTime, scroll, showEnd, staticPos, index, total } = this.props;
     if (scroll <= showTime) {
-      return `translateY(0) ` + `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`;
+      return (
+        `translateY(0) ` +
+        `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`
+      );
     } else if (scroll > showTime && scroll < showEnd) {
       return `translateY(${HEADER_HEIGHT +
         PROJECT_DESCRIPTION_HEIGHT -
@@ -58,7 +61,8 @@ class Card extends React.Component {
         `translateY(${-this.state.imgHeight -
           CARD_SHADOW -
           MOBILE_URL_HEIGHT -
-          staticPos}px) ` + `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`
+          staticPos}px) ` +
+        `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`
       );
     }
   };

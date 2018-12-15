@@ -32,7 +32,8 @@ class Header extends React.Component {
     this.setState(prevState => ({ ellipsis: !prevState.ellipsis }));
   };
 
-  handleAbout = () => {
+  handleAbout = e => {
+    e.preventDefault();
     this.setState(prevState => ({ modalIsOpen: true }));
   };
 
@@ -44,7 +45,9 @@ class Header extends React.Component {
     return (
       <div className="header">
         <div className="header__desktop">
-          <a onClick={this.handleAbout}>About</a>
+          <a onClick={this.handleAbout} href="/blog/author/sam/">
+            About
+          </a>
           <a href="/blog">Blog</a>
         </div>
         <div className="header__ellipsis">
@@ -56,7 +59,10 @@ class Header extends React.Component {
           className="header__mobile"
           style={{ opacity: this.state.ellipsis ? 1 : 0 }}
         >
-          <a onClick={this.handleAbout}> About</a>
+          <a onClick={this.handleAbout} href="/blog/author/sam/">
+            {" "}
+            About
+          </a>
           <a href="/blog">Blog</a>
         </div>
         {

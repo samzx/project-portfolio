@@ -9,13 +9,13 @@ const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 class Landing extends React.Component {
   handleCuriosity = () => {
     const INTERVAL = 800;
-    const scrollDistance = document.body.scrollHeight;
+    const scrollDistance = 1; //document.body.scrollHeight;
     setTimeout(() => {
       window.scrollTo(0, scrollDistance);
     }, 0);
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, INTERVAL);
+    // setTimeout(() => {
+    //   window.scrollTo(0, 0);
+    // }, INTERVAL);
   };
 
   render() {
@@ -47,8 +47,11 @@ class Landing extends React.Component {
             </h1>
             <Social />
             <h2 className="landing-statement" onClick={this.handleCuriosity}>
-              <i className="fas fa-fingerprint" /> Be curious.
+              <i className="fas fa-seedling" /> Things below.
             </h2>
+            {
+              // <p style={{position: "absolute", bottom: 10, width: "100%", color: "#aaa"}}>Take a look at my projects below.</p>
+            }
           </div>
         </div>
       </div>

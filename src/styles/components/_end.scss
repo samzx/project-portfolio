@@ -38,3 +38,33 @@
 .end-statement {
   // color: $secondary-color;
 }
+
+.heart-end {
+  color: $primary-color;
+  transform: rotateY(0deg);
+  display: inline-block;
+  animation: rotating-heart 5s ease-in-out 0s infinite;
+}
+
+@keyframes rotating-heart {
+  0% {
+    transform: rotateY(0deg);
+    color: $primary-color;
+  }
+  40% {
+    transform: rotateY(0deg);
+    color: $primary-color;
+  }
+  50% {
+    transform: rotateY(180deg);
+    color: $secondary-color;
+  }
+  90% {
+    transform: rotateY(180deg);
+    color: $secondary-color;
+  }
+  100% {
+    transform: rotateY(0deg);
+    color: $primary-color;
+  }
+}

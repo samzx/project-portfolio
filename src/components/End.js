@@ -19,7 +19,14 @@ class End extends React.Component {
       >
         <div className="end-container">
           <Header forceShow />
-          <h1 className="end-statement">Stay curious.</h1>
+          <h1 className="end-statement">
+            Made with{" "}
+            <div className="heart heart-end">
+              <i className="fas fa-heart">
+                <span className="heart-alt">love</span>
+              </i>
+            </div>
+          </h1>
           <Social />
           {
             <a className="end-button" href="mailto:samxie.net@gmail.com">
