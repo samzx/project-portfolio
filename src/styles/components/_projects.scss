@@ -3,9 +3,9 @@ $project-size: 15rem;
 .project-title {
   padding: 2rem;
   margin: 0;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 0 2rem #eee;
-  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.066);
+  box-shadow: 0 0 2rem rgba(0,0,0,0.066);
+  background: rgba(255,255,255,0.066);
 }
 .project-title h1 {
   background-image: linear-gradient(

@@ -26,14 +26,14 @@ html {
 }
 
 .background {
-  // background-attachment: fixed;
-  // // background: linear-gradient(45deg, #20052c, #041b2b);
+  background-attachment: fixed;
+  // background: linear-gradient(45deg, #e8fcff, #bbcbff);
   // background: white;
-  // background-repeat: no-repeat;
-  // height: 100vh;
-  // width: 100vw;
-  // position: fixed;
-  // top: 0;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 @media only screen and (max-width: 600px) {
