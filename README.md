@@ -1,7 +1,7 @@
 # Project Portfolio
 
 <p align="center">
-  <img src="https://res.cloudinary.com/xielabs/image/upload/v1544610906/Screen_Shot_2018-12-12_at_9.34.37_pm.png" alt="webpreview"/>
+  <img src="https://res.cloudinary.com/xielabs/image/upload/v1544835104/Screen_Shot_2018-12-15_at_11.51.29_am.png" alt="webpreview"/>
 </p>
 
 **Personal website to display projects and outbound links. Inspired by cards.**
