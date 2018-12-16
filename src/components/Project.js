@@ -48,7 +48,7 @@ class Project extends React.Component {
           className="scroll-indicator"
           style={{
             transform:
-              scroll > showTime && scroll < showEnd
+              scroll > showTime && scroll <= showEnd
                 ? `scaleX(${(scroll - showTime) / (showEnd - showTime)})`
                 : "scaleX(0)"
           }}

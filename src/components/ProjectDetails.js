@@ -46,8 +46,8 @@ class ProjectDetails extends React.Component {
       <div
         className="project-details"
         style={{
-          opacity: scroll > showTime && scroll < showEnd ? "1" : 0,
-          pointerEvents: scroll > showTime && scroll < showEnd ? null : "none"
+          opacity: scroll > showTime && scroll <= showEnd ? "1" : 0,
+          pointerEvents: scroll > showTime && scroll <= showEnd ? null : "none"
         }}
       >
         <div className="project-title">

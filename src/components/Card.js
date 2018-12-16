@@ -52,7 +52,7 @@ class Card extends React.Component {
         `translateY(0) ` +
         `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`
       );
-    } else if (scroll > showTime && scroll < showEnd) {
+    } else if (scroll > showTime && scroll <= showEnd) {
       return `translateY(${HEADER_HEIGHT +
         PROJECT_DESCRIPTION_HEIGHT -
         staticPos}px) scale(1)`;
