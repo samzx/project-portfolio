@@ -1,6 +1,6 @@
 .social-img {
   transition: transform 0.3s, color 0.3s;
-  font-size: 5rem;
+  font-size: 2.5em;
   color: $primary-color;
 }
 .social-img:hover {
@@ -11,6 +11,6 @@
 
 @media only screen and (max-width: 600px) {
   .social-img {
-    font-size: 4rem;
+    font-size: 2em;
   }
 }
