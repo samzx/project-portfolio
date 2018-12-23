@@ -1,16 +1,16 @@
 export const developments = [
   {
-    name: "Project Elude",
+    name: "Project VR",
     src:
-      "https://thumbs.gfycat.com/EmbellishedRepulsiveBlackbuck-size_restricted.gif",
-    links: [
-      {
-        name: "Website",
-        url: "https://elude.samxie.net"
-      }
-    ],
+      "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
+    // links: [
+    //   {
+    //     name: "Website",
+    //     url: "https://elude.samxie.net"
+    //   }
+    // ],
     description:
-      "An upcoming virtual reality game. With a unique locomotion system, blaze through dangerous environments."
+      "An upcoming virtual reality game with a unique locomotion system that creates a fluid combat experience."
   },
   {
     name: "MPHWatch",
