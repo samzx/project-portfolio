@@ -8,8 +8,14 @@
 }
 .helper-bar {
   height: 1rem;
-  background: $primary-color;
+  background: rgba(255,255,255,0.5);
   width: 20rem;
   border-radius: 100px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.helper-bar:hover {
+  background: rgba(255,255,255,0.8);
+  transition: all 0.3s;
 }
