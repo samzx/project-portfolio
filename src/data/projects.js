@@ -3,12 +3,12 @@ export const developments = [
     name: "Project VR",
     src:
       "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
-    // links: [
-    //   {
-    //     name: "Website",
-    //     url: "https://elude.samxie.net"
-    //   }
-    // ],
+    links: [
+      {
+        name: "Website (WIP)",
+        // url: "https://elude.samxie.net"
+      }
+    ],
     description:
       "An upcoming virtual reality game with a unique locomotion system that creates a fluid combat experience."
   },

@@ -9,6 +9,8 @@ import Landing from "./components/Landing";
 import End from "./components/End";
 import Helper from "./components/Helper";
 
+const hue = 30 * (Math.random() * 2 - 1);
+
 class App extends React.Component {
   state = {
     scroll: 0
@@ -33,7 +35,7 @@ class App extends React.Component {
     const { scroll } = this.state;
     return (
       <div className="app">
-        <div className="background" />
+        <div className="background" style={{filter: `hue-rotate(${hue}deg)`}}/>
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
         <End scroll={scroll} />

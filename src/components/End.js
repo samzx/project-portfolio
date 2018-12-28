@@ -39,7 +39,7 @@ class End extends React.Component {
           href="https://github.com/samzx/samxie"
           target="_blank"
         >
-          <i className="far fa-file-code" />
+          <i className="fas fa-file-code" />
         </a>
       </div>
     );

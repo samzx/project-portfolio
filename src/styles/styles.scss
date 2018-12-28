@@ -28,7 +28,7 @@ html {
 .background {
   // background: linear-gradient(90deg, #fae8ff, #bbcbff);
   // background: white;
-  background: url("https://images.unsplash.com/photo-1490131784822-b4626a8ec96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+  background: url("https://res.cloudinary.com/xielabs/image/upload/q_80/v1545991509/minimalistic-backgrounds-wallpapers-25256-3675462.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   height: 100vh;
@@ -37,7 +37,10 @@ html {
   background-size: cover;
   background-position: center;
   top: 0;
+  filter: grayscale(1) !important;
+  opacity: 0.33;
 }
 
 @media only screen and (max-width: 600px) {
+
 }

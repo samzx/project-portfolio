@@ -55,6 +55,12 @@ $project-size: 15rem;
   margin: auto;
   color: $primary-color;
 }
+
+.project-description p {
+  font-family: Roboto;
+  // font-weight: bold;
+}
+
 .project-container {
   display: flex;
   align-items: center;
@@ -97,7 +103,7 @@ $project-size: 15rem;
 }
 
 .project-link-source::before {
-  content: "\f126";
+  content: "\f1c9";
 }
 
 .project-link-demo::before {
