@@ -74,6 +74,6 @@ export const developments = [
         url: "https://github.com/samzx/opengl2d-drawing"
       }
     ],
-    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (the prize was some chocolates to share, yum!)"
+    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (The prize was some chocolates to share, yum!)"
   }
 ];
