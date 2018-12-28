@@ -2,7 +2,7 @@ import React from "react";
 
 const PLACEHOLDER_IMAGE_HEIGHT = 400;
 const HEADER_HEIGHT = 77;
-const PROJECT_DESCRIPTION_HEIGHT = 150;
+const MOBILE_WIDTH = 600;
 const CARD_SHADOW = 10;
 const MOBILE_URL_HEIGHT = 100;
 
@@ -14,6 +14,15 @@ class Card extends React.Component {
     hovering: false,
     imgHeight: PLACEHOLDER_IMAGE_HEIGHT
   };
+
+  componentDidMount() {
+    // Set card position
+    if (window.innerWidth < MOBILE_WIDTH) {
+      this.PROJECT_DESCRIPTION_HEIGHT = 200;
+    } else {
+      this.PROJECT_DESCRIPTION_HEIGHT = 150;
+    }
+  }
 
   scrollPos = () => {
     const {
@@ -28,7 +37,7 @@ class Card extends React.Component {
       innerHeight -
       STARTING_OFFSET -
       HEADER_HEIGHT -
-      PROJECT_DESCRIPTION_HEIGHT;
+      this.PROJECT_DESCRIPTION_HEIGHT;
     return scrollPos;
   };
 
@@ -54,7 +63,7 @@ class Card extends React.Component {
       );
     } else if (scroll > showTime && scroll <= showEnd) {
       return `translateY(${HEADER_HEIGHT +
-        PROJECT_DESCRIPTION_HEIGHT -
+        this.PROJECT_DESCRIPTION_HEIGHT -
         staticPos}px) scale(1)`;
     } else {
       return (

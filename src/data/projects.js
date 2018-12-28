@@ -1,16 +1,26 @@
 export const developments = [
   {
+    name: "About Me",
+    src: "https://res.cloudinary.com/xielabs/image/upload/v1545996888/36717772_273049933445320_229693858852634624_n.jpg",
+    description:
+      "Born and raised in Melbourne, Australia. I have a huge passion for creating things. My journey began when I was 12 and learned how to edit videos. Ever since, I've leveraged the internet to learn and create new things. During the day, I build software (you can stalk my Linkedin). In my spare time, I pour my heart into my personal projects. Take a look below!",
+  },
+  {
     name: "Project VR",
     src:
       "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
     links: [
       {
-        name: "Website (WIP)",
+        name: "Website (N/A)",
         // url: "https://elude.samxie.net"
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/samxstudio"
       }
     ],
     description:
-      "An upcoming virtual reality game with a unique locomotion system that creates a fluid combat experience."
+      "An upcoming virtual reality game. I've developed a unique locomotion system that allows for a fluid combat experience. I'm looking to release it on the Oculus and SteamVR store around late 2019. Follow the progress on my Twitter."
   },
   {
     name: "MPHWatch",
@@ -27,7 +37,7 @@ export const developments = [
       }
     ],
     description:
-      "Stats for miners mining on Mining Pool Hub. Clean and simple interface for monitoring mining activity."
+      "I created a dashboard to displays statistics for cryptocurrency miners on Mining Pool Hub. It's a clean and simple interface to monitoring mining activity. Try out the live demo below! (You'll need a Mining Pool Hub account)"
   },
   {
     name: "BookIT Maps",
@@ -40,7 +50,7 @@ export const developments = [
       }
     ],
     description:
-      "BookIT Maps guides users of the library booking system from bookit.unimelb.au to find the location of their bookings through an interactive map."
+      "As part of working as an IT support agent at the University of Melbourne, I was able to develop a web application that helps students to find the location of their bookings through an interactive map. It is integrated with the University booking system - BookIT."
   },
   {
     name: "Coding Challenge",
@@ -52,7 +62,7 @@ export const developments = [
         url: "https://github.com/samzx/zendesk-coding-challenge"
       }
     ],
-    description: "A mobile ticket viewer for Zendesk's coding challenge."
+    description: "Part of the application for an intern position Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (and of course after a round of interviews)."
   },
   {
     name: "OpenGL Art",
@@ -64,6 +74,6 @@ export const developments = [
         url: "https://github.com/samzx/opengl2d-drawing"
       }
     ],
-    description: "Animated artwork made with OpenGL as a study in graphics."
+    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (I won some chocolates to share, yum!)"
   }
 ];

@@ -43,11 +43,11 @@ class Landing extends React.Component {
                   <span className="heart-alt">love</span>
                 </i>
               </span>{" "}
-              {<Descriptions descriptions={synonyms} />} <u>things</u>.
+              {<Descriptions descriptions={synonyms} />} things.
             </h1>
             <Social />
             <h2 className="landing-statement" onClick={this.handleCuriosity}>
-              <i className="fas fa-seedling" /> My <u>things</u> below.
+              <i className="fas fa-seedling" /> things below.
             </h2>
             {
               // <p style={{position: "absolute", bottom: 10, width: "100%", color: "#aaa"}}>Take a look at my projects below.</p>
