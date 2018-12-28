@@ -62,7 +62,7 @@ export const developments = [
         url: "https://github.com/samzx/zendesk-coding-challenge"
       }
     ],
-    description: "Part of the application for an intern position Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (and of course after a round of interviews)."
+    description: "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (and of course after a couple rounds of interviews)."
   },
   {
     name: "OpenGL Art",
@@ -74,6 +74,6 @@ export const developments = [
         url: "https://github.com/samzx/opengl2d-drawing"
       }
     ],
-    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (I won some chocolates to share, yum!)"
+    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (the prize was some chocolates to share, yum!)"
   }
 ];
