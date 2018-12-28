@@ -77,15 +77,20 @@ class Card extends React.Component {
             top: staticPos,
             zIndex: -index + MAX_Z_INDEX,
             transform: this.calculateTransform()
-            // filter:
-            //   scroll > showTime || this.state.hovering ? "none" : "grayscale(1)"
           }}
           onClick={this.handleClick}
           onMouseOver={() => this.setState({ hovering: true })}
           onMouseOut={() => this.setState({ hovering: false })}
         >
           {src ? (
-            <img src={src} className="image" onLoad={this.handleImageLoad} />
+            <img
+              src={src}
+              className="image"
+              onLoad={this.handleImageLoad}
+              style={{
+                opacity: scroll > showTime ? 1 : 0
+              }}
+            />
           ) : (
             <div className="placeholder-image" />
           )}
