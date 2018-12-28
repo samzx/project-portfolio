@@ -62,7 +62,7 @@ export const developments = [
         url: "https://github.com/samzx/zendesk-coding-challenge"
       }
     ],
-    description: "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (and of course after a couple rounds of interviews)."
+    description: "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (after some interviews of course)."
   },
   {
     name: "OpenGL Art",
