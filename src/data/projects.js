@@ -1,7 +1,7 @@
 export const developments = [
   {
     name: "About Me",
-    src: "https://res.cloudinary.com/xielabs/image/upload/v1545996888/36717772_273049933445320_229693858852634624_n.jpg",
+    src: "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
     description:
       "Born and raised in Melbourne, Australia. I have a huge passion for creating things. My journey began when I was 12 and learned how to edit videos. Ever since, I've leveraged the internet to learn and create new things. During the day, I build software (you can stalk my Linkedin). In my spare time, I pour my heart into my personal projects. Take a look below!",
   },
