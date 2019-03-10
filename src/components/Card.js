@@ -1,13 +1,21 @@
 import React from "react";
 
 const PLACEHOLDER_IMAGE_HEIGHT = 400;
-const HEADER_HEIGHT = 77;
+export const HEADER_HEIGHT = 77;
 const MOBILE_WIDTH = 600;
 const CARD_SHADOW = 10;
 const MOBILE_URL_HEIGHT = 100;
 
 const MAX_Z_INDEX = 100;
 const MAX_SCALE_DOWN_AMOUNT = 0.2;
+
+export const projectDescriptionHeight = (myWindow, myThis) => {
+  if (myWindow.innerWidth < MOBILE_WIDTH) {
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 200;
+  } else {
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 150;
+  }
+};
 
 class Card extends React.Component {
   state = {
@@ -17,11 +25,7 @@ class Card extends React.Component {
 
   componentDidMount() {
     // Set card position
-    if (window.innerWidth < MOBILE_WIDTH) {
-      this.PROJECT_DESCRIPTION_HEIGHT = 200;
-    } else {
-      this.PROJECT_DESCRIPTION_HEIGHT = 150;
-    }
+    projectDescriptionHeight(window, this);
   }
 
   scrollPos = () => {
@@ -42,12 +46,23 @@ class Card extends React.Component {
   };
 
   handleClick = () => {
+    const {
+      showTime,
+      projectOffset,
+      STARTING_OFFSET,
+      innerHeight
+    } = this.props;
     const SHOW_BUFFER = 2;
-    window.scrollTo(
-      0,
+    const scrollCardStart =
       this.props.showTime * (document.body.clientHeight - innerHeight) +
-        SHOW_BUFFER
-    );
+      SHOW_BUFFER;
+    const scrollDisplayTop = innerHeight - STARTING_OFFSET - projectOffset;
+    const displayTargetOffsetFromTop =
+      HEADER_HEIGHT + this.PROJECT_DESCRIPTION_HEIGHT;
+    const scrollYTarget =
+      scrollCardStart + scrollDisplayTop - displayTargetOffsetFromTop;
+
+    window.scrollTo({ top: scrollYTarget, behavior: "smooth" });
   };
 
   handleImageLoad = ({ target: img }) => {
@@ -77,15 +92,38 @@ class Card extends React.Component {
   };
 
   render() {
-    const { scroll, showTime, showEnd, index, src, staticPos } = this.props;
+    const {
+      scroll,
+      showTime,
+      showEnd,
+      index,
+      src,
+      staticPos,
+      innerHeight,
+      total,
+      projectOffset,
+      pageHeight
+    } = this.props;
+    // console.log(window.scrollY, showTime * (pageHeight - innerHeight))
+    // console.log(showTime)
     return (
       <div className="card-container">
         <div
           className={"card"}
           style={{
-            top: staticPos,
-            zIndex: -index + MAX_Z_INDEX,
-            transform: this.calculateTransform()
+            // top: staticPos,
+            // zIndex: -index + MAX_Z_INDEX,
+            // transform: this.calculateTransform()
+            top:
+              scroll > showTime
+                ? staticPos + showTime * (pageHeight - innerHeight)
+                : staticPos,
+            zIndex: -index + 100,
+            position: scroll > showTime ? "absolute" : "fixed",
+            transform:
+              scroll > showTime
+                ? "scale(1)"
+                : `scale(${1 - (index / total) * MAX_SCALE_DOWN_AMOUNT})`
           }}
           onClick={this.handleClick}
           onMouseOver={() => this.setState({ hovering: true })}

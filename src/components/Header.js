@@ -2,7 +2,7 @@ import React from "react";
 
 class Header extends React.Component {
   state = {
-    ellipsis: this.props.forceShow,
+    ellipsis: this.props.forceShow
   };
 
   handleEllipsis = () => {

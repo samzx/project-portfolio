@@ -9,13 +9,10 @@ const synonyms = ["making", "building", "creating", "designing", "dreaming of"];
 class Landing extends React.Component {
   handleCuriosity = () => {
     const INTERVAL = 800;
-    const scrollDistance = 1; //document.body.scrollHeight;
+    const scrollDistance = 1;
     setTimeout(() => {
       window.scrollTo(0, scrollDistance);
     }, 0);
-    // setTimeout(() => {
-    //   window.scrollTo(0, 0);
-    // }, INTERVAL);
   };
 
   render() {

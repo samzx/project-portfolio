@@ -63,7 +63,7 @@ class ProjectDetails extends React.Component {
                     className={`project-link ${this.selectIcon(link.name)}`}
                     href={link.url}
                     target="_blank"
-                    key={link.url}
+                    key={link.name}
                   >
                     {link.name}
                   </a>

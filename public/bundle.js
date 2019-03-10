@@ -644,6 +644,7 @@ function updateLink (link, options, obj) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.projectDescriptionHeight = exports.HEADER_HEIGHT = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -660,13 +661,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var PLACEHOLDER_IMAGE_HEIGHT = 400;
-var HEADER_HEIGHT = 77;
+var HEADER_HEIGHT = exports.HEADER_HEIGHT = 77;
 var MOBILE_WIDTH = 600;
 var CARD_SHADOW = 10;
 var MOBILE_URL_HEIGHT = 100;
 
 var MAX_Z_INDEX = 100;
 var MAX_SCALE_DOWN_AMOUNT = 0.2;
+
+var projectDescriptionHeight = exports.projectDescriptionHeight = function projectDescriptionHeight(myWindow, myThis) {
+  if (myWindow.innerWidth < MOBILE_WIDTH) {
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 200;
+  } else {
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 150;
+  }
+};
 
 var Card = function (_React$Component) {
   _inherits(Card, _React$Component);
@@ -695,8 +704,19 @@ var Card = function (_React$Component) {
       var scrollPos = showTime * (document.body.clientHeight - innerHeight) - projectOffset + innerHeight - STARTING_OFFSET - HEADER_HEIGHT - _this.PROJECT_DESCRIPTION_HEIGHT;
       return scrollPos;
     }, _this.handleClick = function () {
+      var _this$props2 = _this.props,
+          showTime = _this$props2.showTime,
+          projectOffset = _this$props2.projectOffset,
+          STARTING_OFFSET = _this$props2.STARTING_OFFSET,
+          innerHeight = _this$props2.innerHeight;
+
       var SHOW_BUFFER = 2;
-      window.scrollTo(0, _this.props.showTime * (document.body.clientHeight - innerHeight) + SHOW_BUFFER);
+      var scrollCardStart = _this.props.showTime * (document.body.clientHeight - innerHeight) + SHOW_BUFFER;
+      var scrollDisplayTop = innerHeight - STARTING_OFFSET - projectOffset;
+      var displayTargetOffsetFromTop = HEADER_HEIGHT + _this.PROJECT_DESCRIPTION_HEIGHT;
+      var scrollYTarget = scrollCardStart + scrollDisplayTop - displayTargetOffsetFromTop;
+
+      window.scrollTo({ top: scrollYTarget, behavior: "smooth" });
     }, _this.handleImageLoad = function (_ref2) {
       var img = _ref2.target;
 
@@ -704,13 +724,13 @@ var Card = function (_React$Component) {
         return { imgHeight: img.offsetHeight };
       });
     }, _this.calculateTransform = function () {
-      var _this$props2 = _this.props,
-          showTime = _this$props2.showTime,
-          scroll = _this$props2.scroll,
-          showEnd = _this$props2.showEnd,
-          staticPos = _this$props2.staticPos,
-          index = _this$props2.index,
-          total = _this$props2.total;
+      var _this$props3 = _this.props,
+          showTime = _this$props3.showTime,
+          scroll = _this$props3.scroll,
+          showEnd = _this$props3.showEnd,
+          staticPos = _this$props3.staticPos,
+          index = _this$props3.index,
+          total = _this$props3.total;
 
       if (scroll <= showTime) {
         return "translateY(0) " + ("scale(" + (1 - index / total * MAX_SCALE_DOWN_AMOUNT) + ")");
@@ -726,11 +746,7 @@ var Card = function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       // Set card position
-      if (window.innerWidth < MOBILE_WIDTH) {
-        this.PROJECT_DESCRIPTION_HEIGHT = 200;
-      } else {
-        this.PROJECT_DESCRIPTION_HEIGHT = 150;
-      }
+      projectDescriptionHeight(window, this);
     }
   }, {
     key: "render",
@@ -743,7 +759,13 @@ var Card = function (_React$Component) {
           showEnd = _props.showEnd,
           index = _props.index,
           src = _props.src,
-          staticPos = _props.staticPos;
+          staticPos = _props.staticPos,
+          innerHeight = _props.innerHeight,
+          total = _props.total,
+          projectOffset = _props.projectOffset,
+          pageHeight = _props.pageHeight;
+      // console.log(window.scrollY, showTime * (pageHeight - innerHeight))
+      // console.log(showTime)
 
       return _react2.default.createElement(
         "div",
@@ -753,9 +775,13 @@ var Card = function (_React$Component) {
           {
             className: "card",
             style: {
-              top: staticPos,
-              zIndex: -index + MAX_Z_INDEX,
-              transform: this.calculateTransform()
+              // top: staticPos,
+              // zIndex: -index + MAX_Z_INDEX,
+              // transform: this.calculateTransform()
+              top: scroll > showTime ? staticPos + showTime * (pageHeight - innerHeight) : staticPos,
+              zIndex: -index + 100,
+              position: scroll > showTime ? "absolute" : "fixed",
+              transform: scroll > showTime ? "scale(1)" : "scale(" + (1 - index / total * MAX_SCALE_DOWN_AMOUNT) + ")"
             },
             onClick: this.handleClick,
             onMouseOver: function onMouseOver() {
@@ -1011,7 +1037,10 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { className: "app" },
-        _react2.default.createElement("div", { className: "background", style: { filter: "hue-rotate(" + hue + "deg)" } }),
+        _react2.default.createElement("div", {
+          className: "background",
+          style: { filter: "hue-rotate(" + hue + "deg)" }
+        }),
         _react2.default.createElement(_Landing2.default, { scroll: scroll }),
         _react2.default.createElement(_Projects2.default, { scroll: scroll }),
         _react2.default.createElement(_End2.default, { scroll: scroll }),
@@ -1586,6 +1615,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var HERO_OFFSET = 1;
 var SCROLL_LENGTH = 400;
 
+var FINAL_OFFSET = 100;
+var STARTING_OFFSET = FINAL_OFFSET / _projects.developments.length + 20;
+
 var Projects = function (_React$Component) {
   _inherits(Projects, _React$Component);
 
@@ -1602,7 +1634,9 @@ var Projects = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       innerHeight: 1,
-      innerWidth: 1
+      innerWidth: 1,
+      lastScroll: 0,
+      scrolled: true
     }, _this.setInnerDimensions = function () {
       _this.setState(function () {
         return {
@@ -1627,20 +1661,88 @@ var Projects = function (_React$Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.setInnerDimensions();
+      this.watchPauseInScrollBehaviour();
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      (0, _Card.projectDescriptionHeight)(window, this);
+    }
+  }, {
+    key: "watchPauseInScrollBehaviour",
+    value: function watchPauseInScrollBehaviour() {
+      var _this2 = this;
+
+      setInterval(function () {
+        if (_this2.props.scroll == _this2.state.lastScroll) {
+          if (!_this2.state.scrolled) {
+            var innerHeight = _this2.state.innerHeight;
+            var showTime = _this2.findClosestCard();
+            var scrollCardStart = showTime * (document.body.clientHeight - innerHeight);
+
+            var total = _projects.developments.length;
+            var index = total * showTime;
+            var projectOffset = FINAL_OFFSET * index / total;
+            var scrollDisplayTop = innerHeight - STARTING_OFFSET - projectOffset;
+
+            var displayTargetOffsetFromTop = _Card.HEADER_HEIGHT + _this2.PROJECT_DESCRIPTION_HEIGHT;
+
+            var scrollYTarget = scrollCardStart + scrollDisplayTop - displayTargetOffsetFromTop + 2;
+
+            window.scrollTo({ top: scrollYTarget, behavior: "smooth" });
+
+            _this2.setState(function () {
+              return { scrolled: true };
+            });
+          }
+        } else {
+          _this2.setState(function () {
+            return { scrolled: false };
+          });
+        }
+        _this2.setState(function () {
+          return { lastScroll: _this2.props.scroll };
+        });
+      }, 300);
+    }
+  }, {
+    key: "findClosestCard",
+    value: function findClosestCard() {
+      var scroll = this.props.scroll;
+      var indexes = Array.from(Array(_projects.developments.length).keys());
+      var increment = 1 / indexes.length;
+      var levels = indexes.map(function (index) {
+        return increment * index;
+      });
+      levels.push(1);
+
+      if (scroll == 0) return -1; // make it scroll all the way up regardless of buffer
+
+      for (var i = 1; i < levels.length; i++) {
+        if (scroll < levels[i] && scroll >= levels[i - 1]) {
+          return levels[i - 1];
+        }
+      }
+
+      return 2;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var numShows = _projects.developments.length + HERO_OFFSET;
       var innerHeight = this.state.innerHeight;
+
+      var pageHeight = numShows * (innerHeight + this.calcImgHeight() - 100) + innerHeight;
+      this.findClosestCard();
+      // console.log(this.props.scroll)
 
       return _react2.default.createElement(
         "div",
         {
           style: {
-            height: "calc(" + (numShows * SCROLL_LENGTH + innerHeight) + "px"
+            height: pageHeight + "px"
           }
         },
         _react2.default.createElement(
@@ -1651,11 +1753,13 @@ var Projects = function (_React$Component) {
               key: item.name,
               item: item,
               index: index,
-              scroll: _this2.props.scroll,
+              scroll: _this3.props.scroll,
               total: _projects.developments.length,
-              showLength: _this2.state.innerHeight + _this2.calcImgHeight(),
-              innerHeight: _this2.state.innerHeight,
-              numShows: numShows
+              innerHeight: _this3.state.innerHeight,
+              numShows: numShows,
+              pageHeight: pageHeight,
+              STARTING_OFFSET: STARTING_OFFSET,
+              FINAL_OFFSET: FINAL_OFFSET
             });
           })
         )
@@ -1780,12 +1884,12 @@ var Project = function (_React$Component) {
           index = _props.index,
           scroll = _props.scroll,
           total = _props.total,
-          showLength = _props.showLength,
           innerHeight = _props.innerHeight,
-          numShows = _props.numShows;
+          numShows = _props.numShows,
+          pageHeight = _props.pageHeight,
+          STARTING_OFFSET = _props.STARTING_OFFSET,
+          FINAL_OFFSET = _props.FINAL_OFFSET;
 
-      var FINAL_OFFSET = 100;
-      var STARTING_OFFSET = FINAL_OFFSET / total + 20;
       var showTime = index / total;
       var showEnd = index == total - 1 ? 0.99 : (index + 1) / total;
       var projectOffset = FINAL_OFFSET * index / total;
@@ -1804,7 +1908,8 @@ var Project = function (_React$Component) {
           projectOffset: projectOffset,
           innerHeight: innerHeight,
           STARTING_OFFSET: STARTING_OFFSET,
-          showEnd: showEnd
+          showEnd: showEnd,
+          pageHeight: pageHeight
         }),
         _react2.default.createElement(_ProjectDetails2.default, {
           scroll: scroll,
@@ -1812,12 +1917,6 @@ var Project = function (_React$Component) {
           showEnd: showEnd,
           item: item,
           pcOffset: pcOffset
-        }),
-        _react2.default.createElement("div", {
-          className: "scroll-indicator",
-          style: {
-            transform: scroll > showTime && scroll <= showEnd ? "scaleX(" + (scroll - showTime) / (showEnd - showTime) + ")" : "scaleX(0)"
-          }
         })
       );
     }
@@ -1947,7 +2046,7 @@ var ProjectDetails = function (_React$Component) {
                     className: "project-link " + _this2.selectIcon(link.name),
                     href: link.url,
                     target: "_blank",
-                    key: link.url
+                    key: link.name
                   },
                   link.name
                 );
@@ -2019,13 +2118,10 @@ var Landing = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Landing.__proto__ || Object.getPrototypeOf(Landing)).call.apply(_ref, [this].concat(args))), _this), _this.handleCuriosity = function () {
       var INTERVAL = 800;
-      var scrollDistance = 1; //document.body.scrollHeight;
+      var scrollDistance = 1;
       setTimeout(function () {
         window.scrollTo(0, scrollDistance);
       }, 0);
-      // setTimeout(() => {
-      //   window.scrollTo(0, 0);
-      // }, INTERVAL);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -2383,9 +2479,9 @@ var Helper = function (_React$Component) {
       var scroll = _this.props.scroll;
 
       if (scroll < SHOW_TIME) {
-        window.scrollTo(0, document.body.clientHeight);
+        window.scrollTo({ top: document.body.clientHeight, behavior: "smooth" });
       } else {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }

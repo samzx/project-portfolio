@@ -6,9 +6,9 @@ class Helper extends React.Component {
   handleClick = () => {
     const { scroll } = this.props;
     if (scroll < SHOW_TIME) {
-      window.scrollTo(0, document.body.clientHeight);
+      window.scrollTo({ top: document.body.clientHeight, behavior: "smooth" });
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 

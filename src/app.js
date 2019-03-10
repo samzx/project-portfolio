@@ -35,7 +35,10 @@ class App extends React.Component {
     const { scroll } = this.state;
     return (
       <div className="app">
-        <div className="background" style={{filter: `hue-rotate(${hue}deg)`}}/>
+        <div
+          className="background"
+          style={{ filter: `hue-rotate(${hue}deg)` }}
+        />
         <Landing scroll={scroll} />
         <Projects scroll={scroll} />
         <End scroll={scroll} />

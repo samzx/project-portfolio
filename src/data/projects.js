@@ -1,17 +1,17 @@
 export const developments = [
   {
     name: "About Me",
-    src: "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
+    src:
+      "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
     description:
-      "Born and raised in Melbourne, Australia. I have a huge passion for creating things. My journey began when I was 12 and learned how to edit videos. Ever since, I've leveraged the internet to learn and create new things. During the day, I build software (you can stalk my Linkedin). In my spare time, I pour my heart into my personal projects. Take a look below!",
+      "Born and raised in Melbourne, Australia. I have a huge passion for creating things. My journey began when I was 12 and learned how to edit videos. Ever since, I've leveraged the internet to learn and create new things. During the day, I build software (you can stalk my Linkedin). In my spare time, I pour my heart into my personal projects. Take a look below!"
   },
   {
     name: "Project VR",
-    src:
-      "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
+    src: "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
     links: [
       {
-        name: "Website (N/A)",
+        name: "Website (N/A)"
         // url: "https://elude.samxie.net"
       },
       {
@@ -62,7 +62,8 @@ export const developments = [
         url: "https://github.com/samzx/zendesk-coding-challenge"
       }
     ],
-    description: "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (after some interviews of course)."
+    description:
+      "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (after some interviews of course)."
   },
   {
     name: "OpenGL Art",
@@ -74,6 +75,7 @@ export const developments = [
         url: "https://github.com/samzx/opengl2d-drawing"
       }
     ],
-    description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (The prize was some chocolates to share, yum!)"
+    description:
+      "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (The prize was some chocolates to share, yum!)"
   }
 ];

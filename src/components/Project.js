@@ -10,12 +10,12 @@ class Project extends React.Component {
       index,
       scroll,
       total,
-      showLength,
       innerHeight,
-      numShows
+      numShows,
+      pageHeight,
+      STARTING_OFFSET,
+      FINAL_OFFSET
     } = this.props;
-    const FINAL_OFFSET = 100;
-    const STARTING_OFFSET = FINAL_OFFSET / total + 20;
     const showTime = index / total;
     const showEnd = index == total - 1 ? 0.99 : (index + 1) / total;
     const projectOffset = (FINAL_OFFSET * index) / total;
@@ -36,6 +36,7 @@ class Project extends React.Component {
           innerHeight={innerHeight}
           STARTING_OFFSET={STARTING_OFFSET}
           showEnd={showEnd}
+          pageHeight={pageHeight}
         />
         <ProjectDetails
           scroll={scroll}
@@ -44,15 +45,18 @@ class Project extends React.Component {
           item={item}
           pcOffset={pcOffset}
         />
-        <div
-          className="scroll-indicator"
-          style={{
-            transform:
-              scroll > showTime && scroll <= showEnd
-                ? `scaleX(${(scroll - showTime) / (showEnd - showTime)})`
-                : "scaleX(0)"
-          }}
-        />
+        {
+          // <div
+          //   className="scroll-indicator"
+          //   style={{
+          //     dislay: scroll > showTime && scroll <= showEnd ? "block" : "none",
+          //     transform:
+          //       scroll > showTime && scroll <= showEnd
+          //         ? `scaleX(${(scroll - showTime) / (showEnd - showTime)})`
+          //         : "scaleX(0)"
+          //   }}
+          // />
+        }
       </div>
     );
   }
