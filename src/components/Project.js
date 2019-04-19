@@ -37,6 +37,7 @@ class Project extends React.Component {
           STARTING_OFFSET={STARTING_OFFSET}
           showEnd={showEnd}
           pageHeight={pageHeight}
+          description={item.description}
         />
         <ProjectDetails
           scroll={scroll}

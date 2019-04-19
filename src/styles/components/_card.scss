@@ -4,7 +4,7 @@ $card-radius: 1rem;
   max-width: 72rem;
   width: 100%;
   position: fixed;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.066);
   border-radius: $card-radius;
   min-height: 15rem;
   transition: box-shadow 0.3s, transform ease-in-out 0.3s, filter 0.3s;
@@ -45,6 +45,40 @@ $card-radius: 1rem;
   justify-content: center;
 }
 
+.card-description-container {
+  position: absolute;
+  top: 0px;
+  transition: opacity 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.card-description-container::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.card-description {
+  font-size: 32px;
+  font-weight: bold;
+  // text-align: center;
+  padding: 60px;
+  color: darken($secondary-color, 5%);
+}
+
+.card-description p {
+  transition: opacity 0.3s;
+}
+
+$elements: 15;
+@for $i from 0 to $elements {
+  .card-description p:nth-child(#{$i + 1}) {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+
 .placeholder-image {
   max-width: 72rem;
   width: 100%;
@@ -76,5 +110,9 @@ $card-radius: 1rem;
   }
   .image {
     border-radius: $card-radius / 2;
+  }
+  .card-description {
+    font-size: 16px;
+    padding: 20px;
   }
 }

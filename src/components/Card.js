@@ -11,9 +11,9 @@ const MAX_SCALE_DOWN_AMOUNT = 0.2;
 
 export const projectDescriptionHeight = (myWindow, myThis) => {
   if (myWindow.innerWidth < MOBILE_WIDTH) {
-    myThis.PROJECT_DESCRIPTION_HEIGHT = 200;
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 52;
   } else {
-    myThis.PROJECT_DESCRIPTION_HEIGHT = 150;
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 72;
   }
 };
 
@@ -102,18 +102,14 @@ class Card extends React.Component {
       innerHeight,
       total,
       projectOffset,
-      pageHeight
+      pageHeight,
+      description
     } = this.props;
-    // console.log(window.scrollY, showTime * (pageHeight - innerHeight))
-    // console.log(showTime)
     return (
       <div className="card-container">
         <div
           className={"card"}
           style={{
-            // top: staticPos,
-            // zIndex: -index + MAX_Z_INDEX,
-            // transform: this.calculateTransform()
             top:
               scroll > showTime
                 ? staticPos + showTime * (pageHeight - innerHeight)
@@ -135,12 +131,32 @@ class Card extends React.Component {
               className="image"
               onLoad={this.handleImageLoad}
               style={{
-                opacity: scroll > showTime ? 1 : 0
+                opacity: scroll > showTime ? (this.state.hovering ? 0.2 : 1) : 0
               }}
             />
           ) : (
             <div className="placeholder-image" />
           )}
+          {
+            <div
+              className="card-description-container"
+              style={{
+                // opacity: this.state.hovering ? 1 : 0,
+                height: this.state.imgHeight
+              }}
+            >
+              <div className="card-description">
+                {description.map((line, index) => (
+                  <p
+                    key={`card-description-line-${index}`}
+                    style={{ opacity: this.state.hovering ? 1 : 0 }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </div>
+          }
         </div>
       </div>
     );

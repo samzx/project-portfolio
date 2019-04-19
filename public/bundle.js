@@ -671,9 +671,9 @@ var MAX_SCALE_DOWN_AMOUNT = 0.2;
 
 var projectDescriptionHeight = exports.projectDescriptionHeight = function projectDescriptionHeight(myWindow, myThis) {
   if (myWindow.innerWidth < MOBILE_WIDTH) {
-    myThis.PROJECT_DESCRIPTION_HEIGHT = 200;
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 52;
   } else {
-    myThis.PROJECT_DESCRIPTION_HEIGHT = 150;
+    myThis.PROJECT_DESCRIPTION_HEIGHT = 72;
   }
 };
 
@@ -763,9 +763,8 @@ var Card = function (_React$Component) {
           innerHeight = _props.innerHeight,
           total = _props.total,
           projectOffset = _props.projectOffset,
-          pageHeight = _props.pageHeight;
-      // console.log(window.scrollY, showTime * (pageHeight - innerHeight))
-      // console.log(showTime)
+          pageHeight = _props.pageHeight,
+          description = _props.description;
 
       return _react2.default.createElement(
         "div",
@@ -775,9 +774,6 @@ var Card = function (_React$Component) {
           {
             className: "card",
             style: {
-              // top: staticPos,
-              // zIndex: -index + MAX_Z_INDEX,
-              // transform: this.calculateTransform()
               top: scroll > showTime ? staticPos + showTime * (pageHeight - innerHeight) : staticPos,
               zIndex: -index + 100,
               position: scroll > showTime ? "absolute" : "fixed",
@@ -796,9 +792,33 @@ var Card = function (_React$Component) {
             className: "image",
             onLoad: this.handleImageLoad,
             style: {
-              opacity: scroll > showTime ? 1 : 0
+              opacity: scroll > showTime ? this.state.hovering ? 0.2 : 1 : 0
             }
-          }) : _react2.default.createElement("div", { className: "placeholder-image" })
+          }) : _react2.default.createElement("div", { className: "placeholder-image" }),
+          _react2.default.createElement(
+            "div",
+            {
+              className: "card-description-container",
+              style: {
+                // opacity: this.state.hovering ? 1 : 0,
+                height: this.state.imgHeight
+              }
+            },
+            _react2.default.createElement(
+              "div",
+              { className: "card-description" },
+              description.map(function (line, index) {
+                return _react2.default.createElement(
+                  "p",
+                  {
+                    key: "card-description-line-" + index,
+                    style: { opacity: _this2.state.hovering ? 1 : 0 }
+                  },
+                  line
+                );
+              })
+            )
+          )
         )
       );
     }
@@ -1572,7 +1592,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.card {\n  max-width: 72rem;\n  width: 100%;\n  position: fixed;\n  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);\n  border-radius: 1rem;\n  min-height: 15rem;\n  transition: box-shadow 0.3s, transform ease-in-out 0.3s, filter 0.3s;\n  background-image: linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For old Opera (11.1 to 12.0) */ }\n\n.card:hover {\n  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);\n  cursor: pointer; }\n\n.card-container {\n  display: flex;\n  justify-content: center; }\n\n.placeholder-image {\n  max-width: 72rem;\n  width: 100%;\n  height: 40rem;\n  border-radius: 1rem; }\n\n.image {\n  max-width: 100%;\n  width: 100%;\n  vertical-align: middle;\n  border-radius: 1rem;\n  transition: opacity 1s; }\n\n@media only screen and (max-width: 600px) {\n  .card {\n    border-radius: 0.5rem;\n    transform-origin: bottom; }\n  .placeholder-image {\n    max-width: 72rem;\n    width: 100%;\n    height: 24rem;\n    border-radius: 0.5rem; }\n  .placeholder-image {\n    border-radius: 0.5rem; }\n  .image {\n    border-radius: 0.5rem; } }\n\n.landing {\n  min-height: calc(100vh - 5rem);\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n  position: fixed;\n  width: 100%; }\n\n.landing-content {\n  padding: 2rem;\n  transition: opacity 0.3s; }\n\n.accent {\n  background-image: linear-gradient(80deg, #000, #198fba);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, #000, #198fba);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text; }\n\n/*\n\nSea of marbles\nhttps://unsplash.com/photos/PO8Woh4YBD8\nhttps://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80\n\nThe Order of Chaos\nhttps://unsplash.com/photos/k8apfKm-Md4\nhttps://images.unsplash.com/photo-1484820986637-7ec3e85b394f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1660&q=80\n\nAbstract fluid art\nhttps://unsplash.com/photos/FWhTeWRCeis\nhttps://images.unsplash.com/photo-1504221507732-5246c045949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80\n\n*/\n.hero {\n  font-size: 6.4rem;\n  font-weight: 700;\n  width: fit-content;\n  width: -moz-fit-content;\n  margin: 0.67em auto;\n  background: url(\"https://res.cloudinary.com/xielabs/image/upload/v1544831416/background.jpg\");\n  background-repeat: repeat-y;\n  color: rgba(13, 74, 96, 0.5);\n  -webkit-background-clip: text;\n  background-clip: text;\n  background-position: center top;\n  animation-name: scrolling;\n  animation-duration: 5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n  -moz-animation-name: scrolling;\n  -moz-animation-duration: 5s;\n  -moz-animation-timing-function: linear; }\n\n@keyframes scrolling {\n  0% {\n    background-position: center top; }\n  100% {\n    background-position: center bottom; } }\n\n.title {\n  text-align: center;\n  padding: 2rem; }\n\n.heart {\n  color: #0d4a60;\n  font-size: 2.4rem;\n  vertical-align: middle; }\n\n.landing-statement {\n  cursor: pointer;\n  width: fit-content;\n  width: -moz-fit-content;\n  margin: 2rem auto;\n  transition: color 0.3s, transform 0.3s; }\n\n.landing-statement:hover {\n  color: #0d4a60;\n  transform: scale(1.1);\n  transition: color 0.3s, transform 0.3s; }\n\n.heart-alt {\n  width: 0px;\n  display: inherit;\n  opacity: 0; }\n\n@media only screen and (max-width: 600px) {\n  h1 {\n    font-size: 1.67em; }\n  .hero {\n    font-size: 4.8rem; }\n  .landing {\n    min-height: calc(100vh - 14rem);\n    top: 0; }\n  .heart {\n    font-size: 2rem; } }\n\n.social-img {\n  transition: transform 0.3s, color 0.3s;\n  font-size: 2.5em;\n  color: #000; }\n\n.social-img:hover {\n  transform: scale(1.1);\n  color: #0d4a60;\n  transition: transform 0.3s, color 0.3s; }\n\n@media only screen and (max-width: 600px) {\n  .social-img {\n    font-size: 2em; } }\n\n.project-title {\n  padding: 2rem;\n  margin: 0;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.066);\n  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.066);\n  background: rgba(255, 255, 255, 0.066); }\n\n.project-title h1 {\n  background-image: linear-gradient(80deg, #000, #198fba);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, #000, #198fba);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text;\n  letter-spacing: 1px;\n  margin: 0 auto;\n  width: fit-content;\n  width: -moz-fit-content; }\n\n.project-description-container {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  height: 15rem; }\n\n.project-description {\n  padding: 2rem;\n  max-width: 64rem;\n  margin: auto;\n  color: #000; }\n\n.project-description p {\n  font-family: Roboto, sans-serif; }\n\n.project-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-flow: column wrap;\n  align-content: center; }\n\n.project-details {\n  transition: opacity 0.3s;\n  width: 100%;\n  text-align: center;\n  position: fixed;\n  top: 0; }\n\n.project-link {\n  margin: auto 1rem;\n  text-decoration: none;\n  color: #0d4a60;\n  opacity: 0.65;\n  transition: opacity 0.3s; }\n\n.project-link:hover {\n  opacity: 1;\n  transition: opacity 0.3s; }\n\n.project-link::before {\n  font-family: \"Font Awesome 5 Free\";\n  transition: opacity 0.3s;\n  padding-right: 0.5rem;\n  font-size: 1.6rem;\n  font-weight: 900; }\n\n.project-link-other::before {\n  content: \"\\F0C1\"; }\n\n.project-link-source::before {\n  content: \"\\F1C9\"; }\n\n.project-link-demo::before {\n  content: \"\\F04B\"; }\n\n.project-link-source--meta {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin: 3rem;\n  z-index: 11;\n  font-size: 1.2rem; }\n\n.project-link-source--meta::after {\n  content: \" source\";\n  font-family: monospace;\n  vertical-align: middle; }\n\n.scroll-indicator {\n  height: 0.2rem;\n  transform-origin: left;\n  width: 100%;\n  background: linear-gradient(left, #000, #198fba);\n  /* Standard syntax; must be last */\n  background: -webkit-linear-gradient(left, #000, #198fba);\n  /* For Chrome and Safari */\n  background: -moz-linear-gradient(left, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background: -ms-linear-gradient(left, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background: -o-linear-gradient(left, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  position: fixed; }\n\n@media only screen and (max-width: 600px) {\n  .project-link-source--meta {\n    margin: 1.4rem; }\n  .project-link-source--meta::after {\n    content: \"\";\n    vertical-align: none; }\n  .project-description-container {\n    height: 20rem; } }\n\n.end {\n  position: fixed;\n  width: 100%;\n  top: 0;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n  transition: opacity 0.3s; }\n\n.end-container {\n  padding: 2rem; }\n\n.end-button {\n  background-color: transparent;\n  padding: 1.4rem;\n  margin: 1.4rem;\n  display: inline-block;\n  border: 0.3rem solid #000;\n  text-transform: uppercase;\n  color: #000;\n  letter-spacing: 0.2rem;\n  text-decoration: none;\n  font-weight: bold;\n  transition: color 0.3s, background-color 0.3s; }\n\n.end-button:hover {\n  background-color: #000;\n  color: white;\n  transition: color 0.3s, background-color 0.3s; }\n\n.heart-end {\n  color: #000;\n  transform: rotateY(0deg);\n  display: inline-block;\n  animation: rotating-heart 5s ease-in-out 0s infinite; }\n\n@keyframes rotating-heart {\n  0% {\n    transform: rotateY(0deg);\n    color: #000; }\n  40% {\n    transform: rotateY(0deg);\n    color: #000; }\n  50% {\n    transform: rotateY(180deg);\n    color: #0d4a60; }\n  90% {\n    transform: rotateY(180deg);\n    color: #0d4a60; }\n  100% {\n    transform: rotateY(0deg);\n    color: #000; } }\n\n.helper {\n  position: fixed;\n  bottom: 1.5rem;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  z-index: 2; }\n\n.helper-bar {\n  height: 1rem;\n  background: #000;\n  width: 20rem;\n  border-radius: 100px;\n  cursor: pointer;\n  transition: all 0.3s; }\n\n.helper-bar:hover {\n  background: #0d4a60;\n  transition: all 0.3s; }\n\n.header__desktop {\n  position: fixed;\n  text-decoration: none;\n  z-index: 10;\n  top: 0;\n  right: 0;\n  text-align: right;\n  width: 100%;\n  margin: 3rem 0; }\n\n.header__ellipsis {\n  display: none; }\n\n.header__mobile {\n  z-index: 9;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  padding: 1rem 0;\n  border-bottom: 1px solid #eee;\n  transition: opacity 0.3s;\n  display: none;\n  text-align: center; }\n\n.header a {\n  text-decoration: none;\n  font-weight: 400;\n  color: #000;\n  letter-spacing: 0.4px;\n  margin-right: 4rem;\n  transition: color 0.3s;\n  cursor: pointer;\n  text-transform: uppercase;\n  font-size: 1.2rem;\n  font-family: sans-serif;\n  position: relative; }\n\n.header a:hover {\n  color: #136d8d; }\n\n@media only screen and (max-width: 600px) {\n  .header__desktop {\n    display: none; }\n  .header__ellipsis {\n    display: inline;\n    position: fixed;\n    z-index: 10;\n    top: 0;\n    right: 0;\n    margin: 1rem; }\n  .header__mobile {\n    display: block; }\n  .header a {\n    margin: 2rem; } }\n\nbody {\n  background: white;\n  font-family: \"-apple-system, system-ui, \" Segoe UI \", Roboto, Oxygen, Ubuntu, Cantarell, \" Open Sans \", \" Helvetica Neue \", sans-serif\"; }\n\np {\n  font-family: sans-serif; }\n\nhtml {\n  color: #000; }\n\n.background {\n  background: url(\"https://res.cloudinary.com/xielabs/image/upload/q_80/v1545991509/minimalistic-backgrounds-wallpapers-25256-3675462.jpg\");\n  background-repeat: no-repeat;\n  height: 100vh;\n  width: 100%;\n  position: fixed;\n  background-size: cover;\n  background-position: center;\n  top: 0;\n  filter: grayscale(1) !important;\n  opacity: 0.33; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.card {\n  max-width: 72rem;\n  width: 100%;\n  position: fixed;\n  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.066);\n  border-radius: 1rem;\n  min-height: 15rem;\n  transition: box-shadow 0.3s, transform ease-in-out 0.3s, filter 0.3s;\n  background-image: linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, rgba(13, 76, 98, 0.33), white);\n  /* For old Opera (11.1 to 12.0) */ }\n\n.card:hover {\n  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);\n  cursor: pointer; }\n\n.card-container {\n  display: flex;\n  justify-content: center; }\n\n.card-description-container {\n  position: absolute;\n  top: 0px;\n  transition: opacity 0.5s;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  overflow-y: scroll; }\n\n.card-description-container::-webkit-scrollbar {\n  width: 0px;\n  background: transparent; }\n\n.card-description {\n  font-size: 32px;\n  font-weight: bold;\n  padding: 60px;\n  color: #0a394a; }\n\n.card-description p {\n  transition: opacity 0.3s; }\n\n.card-description p:nth-child(1) {\n  transition-delay: 0s; }\n\n.card-description p:nth-child(2) {\n  transition-delay: 0.1s; }\n\n.card-description p:nth-child(3) {\n  transition-delay: 0.2s; }\n\n.card-description p:nth-child(4) {\n  transition-delay: 0.3s; }\n\n.card-description p:nth-child(5) {\n  transition-delay: 0.4s; }\n\n.card-description p:nth-child(6) {\n  transition-delay: 0.5s; }\n\n.card-description p:nth-child(7) {\n  transition-delay: 0.6s; }\n\n.card-description p:nth-child(8) {\n  transition-delay: 0.7s; }\n\n.card-description p:nth-child(9) {\n  transition-delay: 0.8s; }\n\n.card-description p:nth-child(10) {\n  transition-delay: 0.9s; }\n\n.card-description p:nth-child(11) {\n  transition-delay: 1s; }\n\n.card-description p:nth-child(12) {\n  transition-delay: 1.1s; }\n\n.card-description p:nth-child(13) {\n  transition-delay: 1.2s; }\n\n.card-description p:nth-child(14) {\n  transition-delay: 1.3s; }\n\n.card-description p:nth-child(15) {\n  transition-delay: 1.4s; }\n\n.placeholder-image {\n  max-width: 72rem;\n  width: 100%;\n  height: 40rem;\n  border-radius: 1rem; }\n\n.image {\n  max-width: 100%;\n  width: 100%;\n  vertical-align: middle;\n  border-radius: 1rem;\n  transition: opacity 1s; }\n\n@media only screen and (max-width: 600px) {\n  .card {\n    border-radius: 0.5rem;\n    transform-origin: bottom; }\n  .placeholder-image {\n    max-width: 72rem;\n    width: 100%;\n    height: 24rem;\n    border-radius: 0.5rem; }\n  .placeholder-image {\n    border-radius: 0.5rem; }\n  .image {\n    border-radius: 0.5rem; }\n  .card-description {\n    font-size: 16px;\n    padding: 20px; } }\n\n.landing {\n  min-height: calc(100vh - 5rem);\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n  position: fixed;\n  width: 100%; }\n\n.landing-content {\n  padding: 2rem;\n  transition: opacity 0.3s; }\n\n.accent {\n  background-image: linear-gradient(80deg, #000, #198fba);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, #000, #198fba);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text; }\n\n/*\n\nSea of marbles\nhttps://unsplash.com/photos/PO8Woh4YBD8\nhttps://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80\n\nThe Order of Chaos\nhttps://unsplash.com/photos/k8apfKm-Md4\nhttps://images.unsplash.com/photo-1484820986637-7ec3e85b394f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1660&q=80\n\nAbstract fluid art\nhttps://unsplash.com/photos/FWhTeWRCeis\nhttps://images.unsplash.com/photo-1504221507732-5246c045949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80\n\n*/\n.hero {\n  font-size: 6.4rem;\n  font-weight: 700;\n  width: fit-content;\n  width: -moz-fit-content;\n  margin: 0.67em auto;\n  background: url(\"https://res.cloudinary.com/xielabs/image/upload/v1544831416/background.jpg\");\n  background-repeat: repeat-y;\n  color: rgba(13, 74, 96, 0.5);\n  -webkit-background-clip: text;\n  background-clip: text;\n  background-position: center top;\n  animation-name: scrolling;\n  animation-duration: 5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n  -moz-animation-name: scrolling;\n  -moz-animation-duration: 5s;\n  -moz-animation-timing-function: linear; }\n\n@keyframes scrolling {\n  0% {\n    background-position: center top; }\n  100% {\n    background-position: center bottom; } }\n\n.title {\n  text-align: center;\n  padding: 2rem; }\n\n.heart {\n  color: #0d4a60;\n  font-size: 2.4rem;\n  vertical-align: middle; }\n\n.landing-statement {\n  cursor: pointer;\n  width: fit-content;\n  width: -moz-fit-content;\n  margin: 2rem auto;\n  transition: color 0.3s, transform 0.3s; }\n\n.landing-statement:hover {\n  color: #0d4a60;\n  transform: scale(1.1);\n  transition: color 0.3s, transform 0.3s; }\n\n.heart-alt {\n  width: 0px;\n  display: inherit;\n  opacity: 0; }\n\n@media only screen and (max-width: 600px) {\n  h1 {\n    font-size: 1.67em; }\n  .hero {\n    font-size: 4.8rem; }\n  .landing {\n    min-height: calc(100vh - 14rem);\n    top: 0; }\n  .heart {\n    font-size: 2rem; } }\n\n.social-img {\n  transition: transform 0.3s, color 0.3s;\n  font-size: 2.5em;\n  color: #000; }\n\n.social-img:hover {\n  transform: scale(1.1);\n  color: #0d4a60;\n  transition: transform 0.3s, color 0.3s; }\n\n@media only screen and (max-width: 600px) {\n  .social-img {\n    font-size: 2em; } }\n\n.project-title {\n  padding: 2rem;\n  margin: 0;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.066);\n  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.066);\n  background: rgba(255, 255, 255, 0.066); }\n\n.project-title h1 {\n  background-image: linear-gradient(80deg, #000, #198fba);\n  /* Standard syntax; must be last */\n  background-image: -webkit-linear-gradient(80deg, #000, #198fba);\n  /* For Chrome and Safari */\n  background-image: -moz-linear-gradient(80deg, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background-image: -ms-linear-gradient(80deg, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background-image: -o-linear-gradient(80deg, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text;\n  letter-spacing: 1px;\n  margin: 0 auto;\n  width: fit-content;\n  width: -moz-fit-content; }\n\n.project-description-container {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  height: 7.2rem; }\n\n.project-description {\n  padding: 2rem;\n  max-width: 64rem;\n  margin: auto;\n  color: #000; }\n\n.project-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-flow: column wrap;\n  align-content: center; }\n\n.project-details {\n  transition: opacity 0.3s;\n  width: 100%;\n  text-align: center;\n  position: fixed;\n  top: 0; }\n\n.project-text {\n  color: #0d4a60;\n  font-style: italic; }\n\n.project-link {\n  margin: auto 1rem;\n  text-decoration: none;\n  color: #0d4a60;\n  opacity: 0.65;\n  transition: opacity 0.3s; }\n\n.project-link:hover {\n  opacity: 1;\n  transition: opacity 0.3s; }\n\n.project-link::before {\n  font-family: \"Font Awesome 5 Free\";\n  transition: opacity 0.3s;\n  padding-right: 0.5rem;\n  font-size: 1.6rem;\n  font-weight: 900; }\n\n.project-link-other::before {\n  content: \"\\F0C1\"; }\n\n.project-link-source::before {\n  content: \"\\F1C9\"; }\n\n.project-link-demo::before {\n  content: \"\\F04B\"; }\n\n.project-link-source--meta {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin: 3rem;\n  z-index: 11;\n  font-size: 1.2rem; }\n\n.project-link-source--meta::after {\n  content: \" source\";\n  font-family: monospace;\n  vertical-align: middle; }\n\n.scroll-indicator {\n  height: 0.2rem;\n  transform-origin: left;\n  width: 100%;\n  background: linear-gradient(left, #000, #198fba);\n  /* Standard syntax; must be last */\n  background: -webkit-linear-gradient(left, #000, #198fba);\n  /* For Chrome and Safari */\n  background: -moz-linear-gradient(left, #000, #198fba);\n  /* For old Fx (3.6 to 15) */\n  background: -ms-linear-gradient(left, #000, #198fba);\n  /* For pre-releases of IE 10*/\n  background: -o-linear-gradient(left, #000, #198fba);\n  /* For old Opera (11.1 to 12.0) */\n  position: fixed; }\n\n@media only screen and (max-width: 600px) {\n  .project-link-source--meta {\n    margin: 1.4rem; }\n  .project-link-source--meta::after {\n    content: \"\";\n    vertical-align: none; }\n  .project-description-container {\n    height: 5.2rem; } }\n\n.end {\n  position: fixed;\n  width: 100%;\n  top: 0;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center;\n  transition: opacity 0.3s; }\n\n.end-container {\n  padding: 2rem; }\n\n.end-button {\n  background-color: transparent;\n  padding: 1.4rem;\n  margin: 1.4rem;\n  display: inline-block;\n  border: 0.3rem solid #000;\n  text-transform: uppercase;\n  color: #000;\n  letter-spacing: 0.2rem;\n  text-decoration: none;\n  font-weight: bold;\n  transition: color 0.3s, background-color 0.3s; }\n\n.end-button:hover {\n  background-color: #000;\n  color: white;\n  transition: color 0.3s, background-color 0.3s; }\n\n.heart-end {\n  color: #000;\n  transform: rotateY(0deg);\n  display: inline-block;\n  animation: rotating-heart 5s ease-in-out 0s infinite; }\n\n@keyframes rotating-heart {\n  0% {\n    transform: rotateY(0deg);\n    color: #000; }\n  40% {\n    transform: rotateY(0deg);\n    color: #000; }\n  50% {\n    transform: rotateY(180deg);\n    color: #0d4a60; }\n  90% {\n    transform: rotateY(180deg);\n    color: #0d4a60; }\n  100% {\n    transform: rotateY(0deg);\n    color: #000; } }\n\n.helper {\n  position: fixed;\n  bottom: 1.5rem;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  z-index: 2; }\n\n.helper-bar {\n  height: 1rem;\n  background: #000;\n  width: 20rem;\n  border-radius: 100px;\n  cursor: pointer;\n  transition: all 0.3s; }\n\n.helper-bar:hover {\n  background: #0d4a60;\n  transition: all 0.3s; }\n\n.header__desktop {\n  position: fixed;\n  text-decoration: none;\n  z-index: 10;\n  top: 0;\n  right: 0;\n  text-align: right;\n  width: 100%;\n  margin: 3rem 0; }\n\n.header__ellipsis {\n  display: none; }\n\n.header__mobile {\n  z-index: 9;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  padding: 1rem 0;\n  border-bottom: 1px solid #eee;\n  transition: opacity 0.3s;\n  display: none;\n  text-align: center; }\n\n.header a {\n  text-decoration: none;\n  font-weight: 400;\n  color: #000;\n  letter-spacing: 0.4px;\n  margin-right: 4rem;\n  transition: color 0.3s;\n  cursor: pointer;\n  text-transform: uppercase;\n  font-size: 1.2rem;\n  font-family: sans-serif;\n  position: relative; }\n\n.header a:hover {\n  color: #136d8d; }\n\n@media only screen and (max-width: 600px) {\n  .header__desktop {\n    display: none; }\n  .header__ellipsis {\n    display: inline;\n    position: fixed;\n    z-index: 10;\n    top: 0;\n    right: 0;\n    margin: 1rem; }\n  .header__mobile {\n    display: block; }\n  .header a {\n    margin: 2rem; } }\n\nbody {\n  background: white;\n  font-family: \"-apple-system, system-ui, \" Segoe UI \", Roboto, Oxygen, Ubuntu, Cantarell, \" Open Sans \", \" Helvetica Neue \", sans-serif\"; }\n\np {\n  font-family: sans-serif; }\n\nhtml {\n  color: #000; }\n\n.background {\n  background: url(\"https://res.cloudinary.com/xielabs/image/upload/q_80/v1545991509/minimalistic-backgrounds-wallpapers-25256-3675462.jpg\");\n  background-repeat: no-repeat;\n  height: 100vh;\n  width: 100%;\n  position: fixed;\n  background-size: cover;\n  background-position: center;\n  top: 0;\n  filter: grayscale(1) !important;\n  opacity: 0.33; }\n", ""]);
 
 // exports
 
@@ -1613,7 +1633,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var HERO_OFFSET = 1;
-var SCROLL_LENGTH = 400;
 
 var FINAL_OFFSET = 100;
 var STARTING_OFFSET = FINAL_OFFSET / _projects.developments.length + 20;
@@ -1785,18 +1804,24 @@ Object.defineProperty(exports, "__esModule", {
 var developments = exports.developments = [{
   name: "About Me",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
-  description: "Born and raised in Melbourne, Australia. I have a huge passion for creating things. My journey began when I was 12 and learned how to edit videos. Ever since, I've leveraged the internet to learn and create new things. During the day, I build software (you can stalk my Linkedin). In my spare time, I pour my heart into my personal projects. Take a look below!"
+  text: "Hover or touch a card for more details",
+  description: ["I'm a software guy based in in Melbourne, Australia.", "Creating thing is what I live for.", "Products. Systems. Art."]
 }, {
   name: "Project VR",
   src: "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",
   links: [{
-    name: "Website (N/A)"
+    name: "Website (Coming Soon)"
     // url: "https://elude.samxie.net"
   }, {
     name: "Twitter",
     url: "https://twitter.com/samxstudio"
   }],
-  description: "An upcoming virtual reality game. I've developed a unique locomotion system that allows for a fluid combat experience. I'm looking to release it on the Oculus and SteamVR store around late 2019. Follow the progress on my Twitter."
+  description: ["An upcoming virtual reality game.", "Created a custom locomotion system that allows for a fluid combat experience."]
+}, {
+  name: "GradPlanner",
+  src: "https://res.cloudinary.com/xielabs/image/upload/v1555684799/gradplanner.png",
+  text: "Coming Soon",
+  description: ["Helping graduating students find jobs."]
 }, {
   name: "MPHWatch",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1541582260/mphwatch.png",
@@ -1807,7 +1832,7 @@ var developments = exports.developments = [{
     name: "Demo",
     url: "https://mphwatch.samxie.net"
   }],
-  description: "I created a dashboard to displays statistics for cryptocurrency miners on Mining Pool Hub. It's a clean and simple interface to monitoring mining activity. Try out the live demo below! (You'll need a Mining Pool Hub account)"
+  description: ["Stats for cryptocurrency miners mining on Mining Pool Hub.", "Clean and simple interface for monitoring mining activity."]
 }, {
   name: "BookIT Maps",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1541582252/bookitmaps.png",
@@ -1815,7 +1840,7 @@ var developments = exports.developments = [{
     name: "Source",
     url: "https://github.com/samzx/bookit-maps-front"
   }],
-  description: "As part of working as an IT support agent at the University of Melbourne, I was able to develop a web application that helps students to find the location of their bookings through an interactive map. It is integrated with the University booking system - BookIT."
+  description: ["BookIT Maps guides users to find the location of their bookings through an interactive map."]
 }, {
   name: "Coding Challenge",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1541582252/zendesk_mobile_ticket_viewer.png",
@@ -1823,7 +1848,7 @@ var developments = exports.developments = [{
     name: "Source",
     url: "https://github.com/samzx/zendesk-coding-challenge"
   }],
-  description: "Part of the application for an intern position at Zendesk was a coding challenge. I was required to create a ticket viewer that interacted with the Zendesk API. I was successfully chosen as an intern with this submission (after some interviews of course)."
+  description: ["A mobile ticket viewer for Zendesk Support tickets."]
 }, {
   name: "OpenGL Art",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1542539504/opengl.gif",
@@ -1831,7 +1856,7 @@ var developments = exports.developments = [{
     name: "Source",
     url: "https://github.com/samzx/opengl2d-drawing"
   }],
-  description: "During my computer graphics module on my exchange at the National University of Singapore, I created an animated artwork using OpenGL. This submission was voted and won first place. (The prize was some chocolates to share, yum!)"
+  description: ["A study in computer Graphics.", "2D animation using OpenGL."]
 }];
 
 /***/ }),
@@ -1909,7 +1934,8 @@ var Project = function (_React$Component) {
           innerHeight: innerHeight,
           STARTING_OFFSET: STARTING_OFFSET,
           showEnd: showEnd,
-          pageHeight: pageHeight
+          pageHeight: pageHeight,
+          description: item.description
         }),
         _react2.default.createElement(_ProjectDetails2.default, {
           scroll: scroll,
@@ -2004,8 +2030,8 @@ var ProjectDetails = function (_React$Component) {
           item = _props.item,
           pcOffset = _props.pcOffset;
       var name = item.name,
-          description = item.description,
-          links = item.links;
+          links = item.links,
+          text = item.text;
 
       return _react2.default.createElement(
         "div",
@@ -2034,11 +2060,11 @@ var ProjectDetails = function (_React$Component) {
             _react2.default.createElement(
               "p",
               null,
-              description
-            ),
-            _react2.default.createElement(
-              "p",
-              null,
+              text && _react2.default.createElement(
+                "span",
+                { className: "project-text" },
+                text
+              ),
               links && links.map(function (link) {
                 return _react2.default.createElement(
                   "a",

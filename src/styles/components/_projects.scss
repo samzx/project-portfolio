@@ -46,7 +46,7 @@ $project-size: 15rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 15rem;
+  height: 7.2rem;
 }
 
 .project-description {
@@ -57,7 +57,7 @@ $project-size: 15rem;
 }
 
 .project-description p {
-  font-family: Roboto, sans-serif;
+  // font-family: Roboto, sans-serif;
   // font-weight: bold;
 }
 
@@ -75,6 +75,11 @@ $project-size: 15rem;
   text-align: center;
   position: fixed;
   top: 0;
+}
+
+.project-text {
+  color: $secondary-color;
+  font-style: italic;
 }
 
 .project-link {
@@ -166,6 +171,6 @@ $project-size: 15rem;
     vertical-align: none;
   }
   .project-description-container {
-    height: 20rem;
+    height: 5.2rem;
   }
 }

@@ -41,7 +41,7 @@ class ProjectDetails extends React.Component {
   };
   render() {
     const { scroll, showTime, showEnd, item, pcOffset } = this.props;
-    const { name, description, links } = item;
+    const { name, links, text } = item;
     return (
       <div
         className="project-details"
@@ -55,8 +55,8 @@ class ProjectDetails extends React.Component {
         </div>
         <div className="project-description-container">
           <div className="project-description">
-            <p>{description}</p>
             <p>
+              {text && <span className={"project-text"}>{text}</span>}
               {links &&
                 links.map(link => (
                   <a

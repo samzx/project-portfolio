@@ -6,7 +6,6 @@ import Project from "./Project";
 import { projectDescriptionHeight, HEADER_HEIGHT } from "./Card";
 
 const HERO_OFFSET = 1;
-const SCROLL_LENGTH = 400;
 
 const FINAL_OFFSET = 100;
 const STARTING_OFFSET = FINAL_OFFSET / developments.length + 20;
