@@ -20,7 +20,8 @@ export const projectDescriptionHeight = (myWindow, myThis) => {
 class Card extends React.Component {
   state = {
     hovering: false,
-    imgHeight: PLACEHOLDER_IMAGE_HEIGHT
+    imgHeight: PLACEHOLDER_IMAGE_HEIGHT,
+    active: false
   };
 
   componentDidMount() {
@@ -63,6 +64,7 @@ class Card extends React.Component {
       scrollCardStart + scrollDisplayTop - displayTargetOffsetFromTop;
 
     window.scrollTo({ top: scrollYTarget, behavior: "smooth" });
+    this.setState(prevState => ({ active: !prevState.active }));
   };
 
   handleImageLoad = ({ target: img }) => {
@@ -131,7 +133,7 @@ class Card extends React.Component {
               className="image"
               onLoad={this.handleImageLoad}
               style={{
-                opacity: scroll > showTime ? (this.state.hovering ? 0.2 : 1) : 0
+                opacity: scroll > showTime ? (this.state.active ? 0.2 : 1) : 0
               }}
             />
           ) : (
@@ -141,7 +143,6 @@ class Card extends React.Component {
             <div
               className="card-description-container"
               style={{
-                // opacity: this.state.hovering ? 1 : 0,
                 height: this.state.imgHeight
               }}
             >
@@ -149,7 +150,7 @@ class Card extends React.Component {
                 {description.map((line, index) => (
                   <p
                     key={`card-description-line-${index}`}
-                    style={{ opacity: this.state.hovering ? 1 : 0 }}
+                    style={{ opacity: this.state.active ? 1 : 0 }}
                   >
                     {line}
                   </p>

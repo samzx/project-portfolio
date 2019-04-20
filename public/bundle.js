@@ -693,7 +693,8 @@ var Card = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Card.__proto__ || Object.getPrototypeOf(Card)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       hovering: false,
-      imgHeight: PLACEHOLDER_IMAGE_HEIGHT
+      imgHeight: PLACEHOLDER_IMAGE_HEIGHT,
+      active: false
     }, _this.scrollPos = function () {
       var _this$props = _this.props,
           showTime = _this$props.showTime,
@@ -717,6 +718,9 @@ var Card = function (_React$Component) {
       var scrollYTarget = scrollCardStart + scrollDisplayTop - displayTargetOffsetFromTop;
 
       window.scrollTo({ top: scrollYTarget, behavior: "smooth" });
+      _this.setState(function (prevState) {
+        return { active: !prevState.active };
+      });
     }, _this.handleImageLoad = function (_ref2) {
       var img = _ref2.target;
 
@@ -792,7 +796,7 @@ var Card = function (_React$Component) {
             className: "image",
             onLoad: this.handleImageLoad,
             style: {
-              opacity: scroll > showTime ? this.state.hovering ? 0.2 : 1 : 0
+              opacity: scroll > showTime ? this.state.active ? 0.2 : 1 : 0
             }
           }) : _react2.default.createElement("div", { className: "placeholder-image" }),
           _react2.default.createElement(
@@ -800,7 +804,6 @@ var Card = function (_React$Component) {
             {
               className: "card-description-container",
               style: {
-                // opacity: this.state.hovering ? 1 : 0,
                 height: this.state.imgHeight
               }
             },
@@ -812,7 +815,7 @@ var Card = function (_React$Component) {
                   "p",
                   {
                     key: "card-description-line-" + index,
-                    style: { opacity: _this2.state.hovering ? 1 : 0 }
+                    style: { opacity: _this2.state.active ? 1 : 0 }
                   },
                   line
                 );
@@ -1680,7 +1683,7 @@ var Projects = function (_React$Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.setInnerDimensions();
-      this.watchPauseInScrollBehaviour();
+      // this.watchPauseInScrollBehaviour();
     }
   }, {
     key: "componentDidMount",
@@ -1804,8 +1807,8 @@ Object.defineProperty(exports, "__esModule", {
 var developments = exports.developments = [{
   name: "About Me",
   src: "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
-  text: "Hover or touch a card for more details",
-  description: ["I'm a software guy based in in Melbourne, Australia.", "Creating thing is what I live for.", "Products. Systems. Art."]
+  text: "Click or touch a card for more details",
+  description: ["I'm a software guy based in in Melbourne, Australia.", "Creating things are what I live for.", "Products. Systems. Art."]
 }, {
   name: "Project VR",
   src: "https://thumbs.gfycat.com/MagnificentFlippantHornedtoad-small.gif",

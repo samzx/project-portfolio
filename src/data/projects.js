@@ -3,10 +3,10 @@ export const developments = [
     name: "About Me",
     src:
       "https://res.cloudinary.com/xielabs/image/upload/v1550782196/IMG_7942.jpg",
-    text: "Hover or touch a card for more details",
+    text: "Click or touch a card for more details",
     description: [
       "I'm a software guy based in in Melbourne, Australia.",
-      "Creating thing is what I live for.",
+      "Creating things are what I live for.",
       "Products. Systems. Art."
     ]
   },

@@ -27,7 +27,7 @@ class Projects extends React.Component {
 
   componentWillMount() {
     this.setInnerDimensions();
-    this.watchPauseInScrollBehaviour();
+    // this.watchPauseInScrollBehaviour();
   }
 
   componentDidMount() {
